@@ -1,0 +1,278 @@
+@mixin declare-font-face($font-family, $font-filename, $font-weight : normal, $font-style :normal, $font-stretch : normal) {
+@font-face {
+font-family: '#{$font-family}';
+src: url(font-path('#{$font-filename}.eot'));
+src: url(font-path('#{$font-filename}.eot?#iefix')) format('embedded-opentype'),
+url(font-path('#{$font-filename}.woff')) format('woff'),
+url(font-path('#{$font-filename}.ttf')) format('truetype'),
+url(font-path('#{$font-filename}.svg##{$font-family}')) format('svg');
+font-weight: $font-weight;
+font-style: $font-style;
+font-stretch: $font-stretch;
+}
+}
+
+@include declare-font-face('nunito-regular', 'Nunito-Regular', 400);
+@include declare-font-face('nunito-bold', 'Nunito-Bold', 700);
+@include declare-font-face('nunito-light', 'Nunito-Light', 300);
+
+.bg-center{
+	background-position: center!important;
+}
+.cshow{
+	display:inherit!important;
+}
+.chide{
+	display:none;
+}
+.centered{
+	text-align:center;
+}
+.justify{
+	text-align: justify;
+}
+.bg-black{
+	background-color:rgba(32, 26, 22, 0.9);
+}
+.aftermargin{
+	margin-bottom: 2em;
+}
+.pull-right{
+	float:right;
+}
+*{
+	font-family:nunito-regular;
+}
+p{
+	font-size: 18px;
+	font-family:nunito-regular;
+}
+h1,h2,h3,h4,h5{
+	font-family:nunito-light;
+}
+a{
+	font-family: nunito-regular;
+}
+main{
+	min-height:500px;
+}
+.sqs-block {
+    position: relative;
+    height: auto;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    outline: none;
+    box-shadow: inset 0 0 0 1px rgba(128,128,128,0);
+    -webkit-transition: box-shadow .2s ease-in-out;
+    transition: box-shadow .2s ease-in-out;
+}
+
+.content-section{
+	padding: 3em 0 0 0;
+}
+
+.section-content .content-wrap{
+	padding: 3em 1em;
+}
+
+.content-basemargin{
+	margin-bottom:2em;
+}
+
+.home{
+	background: url(/images/home/home.jpg);
+
+}
+.budokon{
+	background: url(/images/budokon/budokon.jpg);
+
+}
+.schedule{
+	background: url(/images/schedule/schedule.jpg);
+;
+}
+.attila{
+	background: url(/images/home/bioavatar.jpg);
+
+}
+.services{
+	background: url(/images/services/service.jpg);
+}
+.contacts{
+	background: url(/images/contacts/contacts.jpg);
+	
+}
+.events{
+	background: url(/images/events/events.jpg);
+	
+}
+.hero{
+	height: 100vh;
+	background-position: top center;
+}
+.parallax-section{
+	height: 300px;
+}
+.hero.container-fluid, .parallax-section.container-fluid {
+	background-size: cover!important;
+	background-repeat: no-repeat !important;
+	overflow-x: hidden;
+	.row{
+		height:100%;
+		background-color: rgba(0,0,0,0.2);
+		.caption-wrap{
+			color: #fff;
+    		height: 100%;
+    		display: -webkit-box;
+		    display: -webkit-flex;
+		    display: -ms-flexbox;
+		    display: flex;
+    		-webkit-box-align: center;
+    		-webkit-align-items: center;
+    		-ms-flex-align: center;
+    		align-items: center;
+    		.caption{
+    			font-family: nunito-light;
+    			width:100%;
+    			text-align:center;
+    			h3{
+    				display:inline;
+    				line-height: 1.4;
+    				background-color: rgba(0,0,0,0.3);
+    				box-shadow: 7px 0 0 rgba(0,0,0,0.3), -7px 0 0 rgba(0,0,0,0.3);
+
+    			}
+    			h1{
+    				display:inline;
+    				line-height: 1.4;
+    				font-size: 86px;
+    				background-color: rgba(0,0,0,0.3);
+    				box-shadow: 7px 0 0 rgba(0,0,0,0.3), -7px 0 0 rgba(0,0,0,0.3);
+    			}
+    		}
+		}
+	}
+}
+@media (max-width: 991px) { 
+	.hero.container-fluid .row .caption-wrap .caption h1{
+		font-size:2em;
+	}
+}
+
+
+
+//
+//home//
+//
+.home-bio{
+	margin-bottom: 2em;
+}
+//
+//attila//
+//
+.edu-list{
+	list-style-type: none;
+	padding:0;
+}
+//
+//service
+//
+.service-select{
+	.service-tab{
+		padding: 0;
+		overflow:hidden;
+		height:250px;
+		.service-tab-background{
+			position: absolute;
+			z-index: -1;
+			display:flex;
+			height:100%;
+			width:100%;
+			align-items: center;
+			justify-content: center;
+			background-size:cover;
+			background-position: center;
+			text-align:center;
+			.service-tab-background-caption{
+				padding: 5px;
+				margin:auto;
+				h5{
+					color:white;
+					display: inline;
+				    line-height: 1.4;
+				    background-color: rgba(0, 0, 0, 0.3);
+				    -webkit-box-shadow: 7px 0 0 rgba(0, 0, 0, 0.3), -7px 0 0 rgba(0, 0, 0, 0.3);
+				    box-shadow: 7px 0 0 rgba(0, 0, 0, 0.3), -7px 0 0 rgba(0, 0, 0, 0.3);
+				}
+			}
+		}
+		.service-tab-caption{
+			display:none;
+			height:100%;
+			width:100%;
+			background-color: rgba(0,0,0,0.8);
+			.service-card-content{
+			padding:5px;
+			height:80%;
+			color: white;
+			text-align:justify;
+			}
+			.service-card-footer{
+				display: flex;
+				height:20%;
+				background-color: #f0f0f0;
+				div{
+					margin: auto 1em auto auto;
+					.button-link{
+						display:block;
+						button{
+							cursor:pointer;
+						}
+					}
+				}	
+			}
+		}
+	}
+}
+//
+//schedule
+//
+.schedule-card{
+	ul{
+		list-style-type: none;
+	}
+}
+//
+//parallax section header
+//
+.parallax-section-header{
+	position: relative;
+	height:350px;
+	width:100%;
+	overflow:hidden;
+	.parallax-heading-text-wrap{
+		display: flex;
+		position:absolute;
+		height:100%;
+		width:100%;
+		z-index: 0;
+    	align-items: center;
+    	padding: 1em;
+		.parallax-heading-text{
+			padding: 5px;
+			background-color: rgba(0,0,0,0.3);
+			color:white;
+			margin: auto;
+			vertical-align: middle;
+		}
+	}
+	.parallax-img-wrap{
+		height:100%;
+		img{
+			z-index: -1;
+			height:auto;
+			width:100%;  
+			position:absolute;
+		}
+	}
+}
