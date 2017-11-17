@@ -28,6 +28,10 @@
 		background-color:rgba(32, 26, 22, 0.9);
 		.footer-content{
 			padding:15px;
+			a{
+				text-decoration: none;
+				color:inherit;
+			}
 		}
 	}
 }

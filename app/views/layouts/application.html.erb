@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Budokonduesseldorf</title>
     <%= csrf_meta_tags %>
@@ -13,6 +14,10 @@
     <main>
     <%= yield %>
     </main>
+    <% if current_page?(root_path) || current_page?(attila_path) || current_page?(services_path) || current_page?(schedule_path) || current_page?(events_path) %>
+      <%= render'pages/serviceselect' %>
+    <% end %>
     <%= render'layouts/footer' %>
   </body>
+
 </html>

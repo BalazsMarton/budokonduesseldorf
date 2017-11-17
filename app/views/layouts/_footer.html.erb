@@ -3,7 +3,7 @@
 	<div class="row footer-wrap">
 		<div class="col-sm-12 footer-pre centered">
 			<div class="footer-pre-content">
-				<h5>LET’S SOCIALIZE</h5>
+				<h3>LET’S SOCIALIZE</h3>
 				<p>Thanks for stopping by – and feel free to say Hi on Facebook, Instagram and Youtube</p>
 				<div class="social-icons">
 					<%= link_to 'https://www.facebook.com/attila.gyomrei' do %>
@@ -24,7 +24,9 @@
 				<p>info@budokonattila.com</p>
 				<p>Proud member of Budokon//Cameron &amp; Melayne Shayne
 				</p>
-				<%= link_to 'Terms & Policy', policy_path %>
+				<%= link_to policy_path do %>
+					<p>Terms & Policy</p>
+				<% end %>
 			</div>
 		</div>
 	</div>
