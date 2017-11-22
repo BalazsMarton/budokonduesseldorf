@@ -34,8 +34,9 @@ document.addEventListener("turbolinks:load", function() {
 
 	$.stellar({
 	    horizontalScrolling: false,
+	    //scrollProperty: 'transform',
 	    responsive: true,
-	     hideDistantElements: false
+	    hideDistantElements: false,
 	});
 
 	$('.service-tab').hover(
@@ -48,9 +49,6 @@ document.addEventListener("turbolinks:load", function() {
        		$(this).find(".service-tab-background-caption").removeClass('chide') 
        	}
 	)
-
-	  
-
 
 });
 
