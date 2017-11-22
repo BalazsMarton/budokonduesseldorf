@@ -111,18 +111,15 @@ ul li{
 }
 .hero{
 	height: 100vh;
-	background-position: top center;
-	background-attachment:fixed;
+	background-position: center;
 }
 .parallax-section{
 	height: 300px;
 	background-position:center;
-	background-attachment:fixed;
 }
 .service-hero{
 	height:50vh;
     background-position:center;
-    background-attachment:fixed;
 }
 .service-hero.container-fluid, .hero.container-fluid, .parallax-section.container-fluid {
 	background-size: cover!important;
