@@ -111,7 +111,8 @@ ul li{
 }
 .hero{
 	height: 100vh;
-	background-position: top center;
+	background-position:top center;
+	background-attachment: fixed!important;
 }
 .parallax-section{
 	height: 300px;
