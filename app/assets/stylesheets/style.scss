@@ -99,7 +99,7 @@ ul li{
 
 }
 .services{
-	background: url(/images/services/service.jpg);
+	background-image: url(/images/services/service.jpg);
 }
 .contacts{
 	background: url(/images/contacts/contacts.jpg);
@@ -111,8 +111,7 @@ ul li{
 }
 .hero{
 	height: 100vh;
-	background-position:top center;
-	background-attachment: fixed!important;
+	background-position: top center;
 }
 .parallax-section{
 	height: 300px;
