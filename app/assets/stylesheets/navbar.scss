@@ -1,3 +1,6 @@
+.navbutton-active{
+	background-color:rgba(32, 26, 22, 0.9)!important;
+}
 span.navbar-toggler-icon{
 	cursor:pointer;
 }
@@ -20,7 +23,10 @@ span.navbar-toggler-icon{
 		
 	}
 }
-
+// #navbarCollapse.show{
+// margin: 5px -15px -7px -15px;
+// background-color:rgba(32, 26, 22, 0.9)!important;
+// }
 .top-nav-collapse{
 	background-color:rgba(32, 26, 22, 0.9)!important;
 	.navbar-brand{
