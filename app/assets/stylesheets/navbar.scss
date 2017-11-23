@@ -1,5 +1,9 @@
-.navbutton-active{
+@media screen and (max-width:767px){
+.navontop .show, .navontop .collapsing{
 	background-color:rgba(32, 26, 22, 0.9)!important;
+	border:1px solid white;
+	box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2);
+}
 }
 span.navbar-toggler-icon{
 	cursor:pointer;
@@ -23,10 +27,6 @@ span.navbar-toggler-icon{
 		
 	}
 }
-// #navbarCollapse.show{
-// margin: 5px -15px -7px -15px;
-// background-color:rgba(32, 26, 22, 0.9)!important;
-// }
 .top-nav-collapse{
 	background-color:rgba(32, 26, 22, 0.9)!important;
 	.navbar-brand{
