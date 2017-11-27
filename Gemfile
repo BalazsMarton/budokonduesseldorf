@@ -36,6 +36,11 @@ gem 'jquery-rails'
 
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 
+#An ActionMailer adapter to send email using SendGrid's HTTPS Web API (instead of SMTP).
+#https://github.com/eddiezane/sendgrid-actionmailer
+gem 'sendgrid-actionmailer'
+
+
 # official font awesome gem http://fontawesome.io/get-started/
 gem 'font-awesome-sass'
 #aniamte.css animation library https://github.com/camelmasa/animate-rails
