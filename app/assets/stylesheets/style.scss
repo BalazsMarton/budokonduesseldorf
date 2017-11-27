@@ -44,7 +44,7 @@ font-stretch: $font-stretch;
 	font-family:nunito-regular;
 }
 p{
-	font-size: 20px;
+	font-size: 22px;
 	font-family:nunito-regular;
 }
 h1,h2,h3,h4,h5{
@@ -57,7 +57,7 @@ main{
 	min-height:500px;
 }
 ul li{
- font-size: 20px;
+ font-size: 22px;
 }
 .sqs-block {
     position: relative;
@@ -114,7 +114,7 @@ ul li{
 	background-position: top center;
 }
 .parallax-section{
-	height: 300px;
+	height: 400px;
 	background-position:top center;
 }
 .service-hero{
@@ -247,8 +247,22 @@ ul li{
 //schedule
 //
 .schedule-card{
+	p{
+		color:#c8ab2d;
+	}
 	ul{
 		list-style-type: none;
 	}
 }
 
+//
+// contact
+//
+ul.contact-info{
+	list-style-type: none;
+	padding:0;
+}
+.contact-map-wrap{
+	padding:0;
+	background-color: #f0f0f0;
+}
