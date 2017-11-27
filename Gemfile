@@ -40,7 +40,6 @@ gem 'bootstrap', '~> 4.0.0.beta2.1'
 #https://github.com/eddiezane/sendgrid-actionmailer
 gem 'sendgrid-actionmailer'
 
-
 # official font awesome gem http://fontawesome.io/get-started/
 gem 'font-awesome-sass'
 #aniamte.css animation library https://github.com/camelmasa/animate-rails
@@ -55,6 +54,8 @@ group :development, :test do
 
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+
+  gem "figaro"
 
 end
 
