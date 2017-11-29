@@ -15,12 +15,10 @@ module Budokonduesseldorf
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
   	
-  	config.active_record.raise_in_transactional_callbacks = true
-
     config.action_mailer.delivery_method = :sendgrid_actionmailer
     config.action_mailer.sendgrid_actionmailer_settings = {
         api_key: ENV['SENDGRID_API_KEY']
     }
-    
+
   end
 end
