@@ -13,7 +13,7 @@
 					<h1>Contact me today</h1>
 					<p>Please feel free to reach out to me if you have any questions or comments about the services I offer. Also, you could always just send me a friendly hello.</p>
 				</div>
-				<div>
+				<div class="aftermargin">
 					<h2>Contact information</h2>
 					<ul class="contact-info">
 						<li>attilapt.com</li>
@@ -26,6 +26,7 @@
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-12">
+				
 				<%= form_for Message.new, html: { remote: true }, url: contact_path do |message_form| %>
 					<div class="row">
 
@@ -34,7 +35,7 @@
 						</div>
 
 						<div class="form-group col-sm-12">
-							<%= message_form.email_field :email, placeholder: "Email", class: "form-control" %>
+							<%= message_form.text_field :email, placeholder: "Email", class: "form-control" %>
 						</div>
 
 						<div class="form-group col-sm-12">

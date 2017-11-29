@@ -23,7 +23,7 @@ class MessageController < ApplicationController
       format.js do
         if @message.valid?
           MessageMailer.new_message(@message).deliver_now
-          flash.now[:notice] = "Message sent!"
+          flash.now[:notice] = "Your message has been sent!"
         else
           flash.now[:error]
         end

@@ -1,12 +1,10 @@
 <% if flash[:notice] %>
-$('#new_message').before('<div class="notice row"><%= flash[:notice] %></div>');
-$('#errors').remove();
+$('#new_message').before('<div class="notice row"><p><%= flash[:notice] %></p></div>');
 $('#new_message').remove();
 $('.notice').click(function(){
     $(this).remove();
 });
 <% end %>
-
 
 
 <% if @message.errors[:name].any? %>
@@ -23,4 +21,36 @@ $('#message_nameFeedback').click(function(){
 $('#message_name').parent('.form-group').removeClass('has-warning');
 $('#message_name').removeClass('form-control-warning');
 $('#message_nameFeedback').remove();
+<% end %>
+
+<% if @message.errors[:email].any? %>
+$('#message_email').parent('.form-group').removeClass('has-warning');
+$('#message_email').removeClass('form-control-warning');
+$('#message_emailFeedback').remove();
+$('#message_email').parent('.form-group').addClass('has-warning');
+$('#message_email').addClass('form-control-warning');
+$('#message_email').after('<div class="form-control-feedback" id="message_emailFeedback"><% @message.errors[:email].each do |msg| %><%= msg %><br><% end %></div>');
+$('#message_emailFeedback').click(function(){
+    $(this).remove();
+});
+<% else %>
+$('#message_email').parent('.form-group').removeClass('has-warning');
+$('#message_email').removeClass('form-control-warning');
+$('#message_emailFeedback').remove();
+<% end %>
+
+<% if @message.errors[:content].any? %>
+$('#message_content').parent('.form-group').removeClass('has-warning');
+$('#message_content').removeClass('form-control-warning');
+$('#message_contentFeedback').remove();
+$('#message_content').parent('.form-group').addClass('has-warning');
+$('#message_content').addClass('form-control-warning');
+$('#message_content').after('<div class="form-control-feedback" id="message_contentFeedback"><% @message.errors[:content].each do |msg| %><%= msg %><br><% end %></div>');
+$('#message_contentFeedback').click(function(){
+    $(this).remove();
+});
+<% else %>
+$('#message_content').parent('.form-group').removeClass('has-warning');
+$('#message_content').removeClass('form-control-warning');
+$('#message_contentFeedback').remove();
 <% end %>
