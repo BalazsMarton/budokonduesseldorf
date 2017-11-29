@@ -1,6 +1,6 @@
 class MessageMailer < ApplicationMailer
 	default from: "<info@attilapt.com>"
-	default to: "Attilapt <info@attilapt.com>, BDK DUS <info@budokonduesseldorf.com>"
+	default to: "AttilaPT <info@attilapt.com>, "
  
 	def new_message(message)
 		@message = message
