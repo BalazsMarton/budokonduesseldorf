@@ -26,7 +26,28 @@
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-12">
-				
+				<%= form_for Message.new, html: { remote: true }, url: contact_path do |message_form| %>
+					<div class="row">
+
+						<div class="form-group col-sm-12">
+							<%= message_form.text_field :name, placeholder: "Name", class: "form-control" %>
+						</div>
+
+						<div class="form-group col-sm-12">
+							<%= message_form.email_field :email, placeholder: "Email", class: "form-control" %>
+						</div>
+
+						<div class="form-group col-sm-12">
+							<%= message_form.text_area :content, placeholder: "Message", class: "form-control",rows: "5" %>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="field col-sm-12">
+							<%= message_form.submit "Send", class: "pull-right btn btn-default btn-lg" %>
+						</div>
+					</div>
+					<% end %>
 			</div>
 		</div>
 	</div>

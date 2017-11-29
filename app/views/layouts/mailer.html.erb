@@ -1,13 +1,80 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
-      /* Email styles need to be inline */
-    </style>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+<head>
+	<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+	<style>
+		#navbar-brand {
+			font-size: 30px;
+			color: #506a85 !important;
+		}
+		#navbar-brand small {
+			color: grey;
+		}
+		#mfooter{
+			background-color: #2f4052;;
+		}
+		#mfooter td{
+			padding-top:5px;
+			padding-bottom:5px;
+			text-align:center;
+			font-size: 1em;
+			color:white;
+		}
+		#mcontent{
+			padding-left:10px;
+			padding-right:10px;
+			padding-bottom: 10px;
+			color:#506a85;
+		}
+		#mheader{
+		}
+		#mheader td{
+			padding-top:10px;
+			padding-left:10px;
+			padding-right:10px;
+			font-size: 1.6em;
+			color:#506a85;
+		}
+		#mcontenttitle{
+			text-align:left;
+			font-size: 1.4em;
+			color:#506a85;
+			padding-bottom:10px;
+		}
+		#mfrom{
+			padding-top:5px;
+			padding-bottom:5px;
+			font-size:1em;
+		}
+		#mfrom #msender{
+			font-size:0.8em;
+		}
+		#mmessage{
+			font-size:1.2em;
+		}
+		#mmessagelabel{
+			font-size: 1em;
+		}
+	</style>
+</head>
+<html>
+<body>
+	<table style="background-color:#ececec;" border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr id="mheader">
+			<span id="navbar-brand">
+				AttilaPT <small>COM</small>
+			</span>
+		</tr>
+		<tr>
+			<td id="mcontent">
+				<%= yield %>
+			</td>
+		</tr>
+		<tr id="mfooter">
+			<td>
+				AttilaPT COM @ <%= Time.current.year %>
+			</td>
+		</tr>
+	</table>
+</body>
 </html>

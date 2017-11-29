@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   get 'services', to: 'pages#services'
   get 'schedule', to: 'pages#schedule'
   get 'events', to: 'pages#events'
-  get 'contact', to: 'pages#contact'
+  get 'contacts', to: 'pages#contact'
+  post 'contact', to: 'message#create'
+  get 'contact_error', to: 'message#contact_error', as: 'contact_error'
+  get 'contact_sent', to: 'message#contact_sent', as: 'contact_sent'
   get 'policy', to: 'pages#policy'
 
   get 'services/personal_training', to: 'pages#oneonone'

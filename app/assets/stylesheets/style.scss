@@ -266,3 +266,26 @@ ul.contact-info{
 	padding:0;
 	background-color: #f0f0f0;
 }
+
+//
+//bootstrap 4 beta validation
+//
+.has-warning .form-control {
+    border-color: #f0ad4e;
+}
+.has-warning .form-control-warning {
+    background-image: url(/images/ic_warning_black.svg);
+}
+.form-control-danger, .form-control-success, .form-control-warning {
+    padding-right: 2.25rem;
+    background-repeat: no-repeat;
+    background-position: center right .5625rem;
+    -webkit-background-size: 1.125rem 1.125rem;
+    background-size: 1.125rem 1.125rem;
+}
+.has-warning .form-control-feedback{
+    color: #f0ad4e;
+}
+.form-control-feedback {
+    margin-top: .25rem;
+}

@@ -1,0 +1,26 @@
+<% if flash[:notice] %>
+$('#new_message').before('<div class="notice row"><%= flash[:notice] %></div>');
+$('#errors').remove();
+$('#new_message').remove();
+$('.notice').click(function(){
+    $(this).remove();
+});
+<% end %>
+
+
+
+<% if @message.errors[:name].any? %>
+$('#message_name').parent('.form-group').removeClass('has-warning');
+$('#message_name').removeClass('form-control-warning');
+$('#message_nameFeedback').remove();
+$('#message_name').parent('.form-group').addClass('has-warning');
+$('#message_name').addClass('form-control-warning');
+$('#message_name').after('<div class="form-control-feedback" id="message_nameFeedback"><% @message.errors[:name].each do |msg| %><%= msg %><br><% end %></div>');
+$('#message_nameFeedback').click(function(){
+    $(this).remove();
+});
+<% else %>
+$('#message_name').parent('.form-group').removeClass('has-warning');
+$('#message_name').removeClass('form-control-warning');
+$('#message_nameFeedback').remove();
+<% end %>
