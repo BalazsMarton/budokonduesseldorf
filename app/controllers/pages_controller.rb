@@ -21,6 +21,9 @@ class PagesController < ApplicationController
   def events
   end
   
+  def event
+  end
+  
  #services
   def oneonone
   end

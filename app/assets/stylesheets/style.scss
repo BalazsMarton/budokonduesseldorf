@@ -152,7 +152,11 @@ ul li{
 	height:50vh;
     background-position:top center;
 }
-.service-hero.container-fluid, .hero.container-fluid, .parallax-section.container-fluid {
+.event-hero{
+	height:50vh;
+    background-position:top center;
+}
+.event-hero.container-fluid, .service-hero.container-fluid, .hero.container-fluid, .parallax-section.container-fluid {
 	background-size: cover!important;
 	background-repeat: no-repeat !important;
 	overflow-x: hidden;
@@ -380,3 +384,7 @@ ul.contact-info{
 		margin-bottom:2em;
 	}
 }
+
+//
+//event//
+//
