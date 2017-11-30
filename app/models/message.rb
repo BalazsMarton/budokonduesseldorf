@@ -7,12 +7,12 @@ class Message
   attr_accessor :name, :email, :content
 
   validates :name,
-            presence: { message: "We need your name to contact you" }
+            presence: { message: "I need your name to contact you" }
   validates_length_of :name, :within => 2..20, :message => "Your name must be min. 2, max. 20 char long"
   validates_format_of :name, :with => /\A[a-zA-ZÀÁÂÃÄÅàáâãäåÒÓÔÕÖŐØòóôõőöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ\s]+\z/, :message=> "Use only letters"
 
   validates :email,
-            presence: { message: "We need your email address to contact you" }
+            presence: { message: "I need your email address to contact you" }
   validates_format_of :email, :with => /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/, :message => "Please enter a valid email address"
 
   validates :content,

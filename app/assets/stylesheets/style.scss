@@ -40,6 +40,18 @@ font-stretch: $font-stretch;
 .pull-right{
 	float:right;
 }
+.button-link{
+	cursor:pointer;
+	display:block;
+	border-radius:0;
+	button{
+		cursor:pointer;
+		border-radius:0;
+	}
+}
+.color-gold{
+	color:#c8ab2d;
+}
 *{
 	font-family:nunito-regular;
 }
@@ -232,12 +244,6 @@ ul li{
 				background-color: #f0f0f0;
 				div{
 					margin: auto 1em auto auto;
-					.button-link{
-						display:block;
-						button{
-							cursor:pointer;
-						}
-					}
 				}	
 			}
 		}
