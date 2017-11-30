@@ -97,6 +97,22 @@ ul li{
 	margin-bottom:2em;
 }
 
+.jumptarget{
+    display: block;
+    height: 65px;
+    margin: -65px 0 0 0;
+    background-color: transparent;
+}
+@media (max-width: 767px) { 
+	.jumptarget{
+		height: 59px;
+    	margin: -59px 0 0 0;
+	}
+}
+
+//
+////
+
 .home{
 	background: url(/images/home/home.jpg);
 
@@ -317,5 +333,50 @@ ul.contact-info{
 	color:#5cb85c;
 	p{
 		margin:0 auto;
+	}
+}
+
+//
+//events
+//
+
+.events-card{
+	margin-bottom:2em;
+	padding: 0 20px;
+	.events-card-thumb{
+		min-height:250px;
+		background-size: cover !important;
+		background-position: center !important;
+		.row{
+			padding:15px;
+			.events-card-date{
+				padding:3px;
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				height: auto;
+
+				border:1px solid dimgrey;
+				background-color: rgba(255,255,255,0.8);
+			}
+		}
+	}
+	.events-card-content{
+		.events-card-nav{
+			div{
+				&:nth-child(1){
+					margin-bottom:1em;
+				}
+				a{
+				display:inline-block;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 575px) { 
+	.events-card-thumb{
+		margin-bottom:2em;
 	}
 }

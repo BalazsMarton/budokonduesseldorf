@@ -7,6 +7,9 @@
 		</div>
 	</div>
 </div>
+
+<div class="jumptarget" id="content-jump"></div>
+
 <div class="container section-content">
 	<div class="row">
 		<div class="col-sm-12 content-wrap justify">
@@ -25,9 +28,9 @@ take you and your partner(s) through an amazing workout to reach your fitness ne
 goals.</p>
 <p>
 Don’t wait any longer. Set up a complementary workout today.</p>
-<%= link_to contacts_path, class: 'button-link' do %>
-	<button type="button" class="btn btn-lg btn-outline-secondary pull-right">BOOK NOW</button>
-<% end %>
+<%= link_to contacts_path(anchor: 'content-jump'), class: 'button-link' do %>
+						<button type="button" class="btn btn-lg btn-outline-secondary pull-right">BOOK NOW</button>
+					<% end %>
 		</div>
 	</div>
 </div>

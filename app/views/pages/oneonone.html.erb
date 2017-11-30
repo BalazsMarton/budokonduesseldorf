@@ -6,6 +6,9 @@
 		</div>
 	</div>
 </div>
+
+<div class="jumptarget" id="content-jump"></div>
+
 <div class="container section-content">
 	<div class="row">
 		<div class="col-sm-12 content-wrap justify">
@@ -33,9 +36,9 @@ root causes of pain.</p>
 
 <p>Schedule your workout today</p>
 
-<%= link_to contacts_path, class: 'button-link' do %>
-	<button type="button" class="btn btn-lg btn-outline-secondary pull-right">BOOK NOW</button>
-<% end %>
+<%= link_to contacts_path(anchor: 'content-jump'), class: 'button-link' do %>
+						<button type="button" class="btn btn-lg btn-outline-secondary pull-right">BOOK NOW</button>
+					<% end %>
 
 		</div>
 	</div>

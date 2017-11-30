@@ -7,6 +7,9 @@
 		</div>
 	</div>
 </div>
+
+<div class="jumptarget" id="content-jump"></div>
+
 <div class="container section-content">
 	<div class="row">
 		<div class="col-sm-12 content-wrap justify">
@@ -19,9 +22,10 @@ relieved through massage.</p>
 <p>A consultation will be offered before your massage to help locate the original trauma, with
 information being relayed to you throughout so you understand what needs attention,
 strengthening and possible further treatment. Get relief and empowerment in one session!</p>
-<%= link_to contacts_path, class: 'button-link' do %>
-	<button type="button" class="btn btn-lg btn-outline-secondary pull-right">BOOK NOW</button>
-<% end %>
+
+			<%= link_to contacts_path(anchor: 'content-jump'), class: 'button-link' do %>
+				<button type="button" class="btn btn-lg btn-outline-secondary pull-right">BOOK NOW</button>
+			<% end %>
 		</div>
 	</div>
 </div>
