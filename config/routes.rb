@@ -15,8 +15,10 @@ Rails.application.routes.draw do
   get 'contact_sent', to: 'message#contact_sent', as: 'contact_sent'
   get 'policy', to: 'pages#policy'
 
-  get 'services/personal_training', to: 'pages#oneonone'
-  get 'services/massage', to: 'pages#massage'
-  get 'services/group_training', to: 'pages#group'
-  
+  scope "/services" do
+    get 'personal_training', to: 'pages#oneonone'
+    get 'massage', to: 'pages#massage'
+    get 'group_training', to: 'pages#group'
+  end
+
 end
