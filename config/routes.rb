@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'schedule', to: 'pages#schedule'
   get 'events', to: 'pages#events'
   get 'event', to: 'pages#event'
+  get 'event2', to: 'pages#event2'
   get 'contacts', to: 'pages#contact'
   post 'contact', to: 'message#create'
   get 'contact_error', to: 'message#contact_error', as: 'contact_error'
