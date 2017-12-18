@@ -110,6 +110,20 @@ ul li{
 	}
 }
 
+.inside-link{
+	color:#332e2a;
+	
+	&:hover{
+		color: dimgrey;text-decoration: none;
+	}
+}
+.outside-link{
+	color:#332e2a;
+
+	&:hover{
+		color: dimgrey;text-decoration: none;
+	}
+}
 //
 ////
 

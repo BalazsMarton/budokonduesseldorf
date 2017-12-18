@@ -6,7 +6,7 @@ document.addEventListener("turbolinks:load", function() {
     };
 
     // Initialize the media query
-	  var mediaQuery = window.matchMedia('(min-width: 990px)');
+	  var mediaQuery = window.matchMedia('(min-width: 1280px)');
 	  // Add a listen event
 	  mediaQuery.addListener(doSomething);
 	  
