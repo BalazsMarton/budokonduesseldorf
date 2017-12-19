@@ -45,6 +45,12 @@ gem 'font-awesome-sass'
 #aniamte.css animation library https://github.com/camelmasa/animate-rails
 gem "animate-rails"
 
+#seo
+gem 'meta-tags'
+
+#analytics
+gem 'google-analytics-rails', '1.1.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
