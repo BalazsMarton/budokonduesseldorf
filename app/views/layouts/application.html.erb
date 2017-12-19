@@ -2,9 +2,10 @@
 <html>
 
   <head>
+    <%= display_meta_tags site: 'attilapt.com', reverse: true %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', defer: Rails.env.production?, 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
     <%= analytics_init if GoogleAnalytics.valid_tracker? %>
   </head>
