@@ -1,4 +1,7 @@
 Rails.application.configure do
+  # replace this with your google analytics tracker code
+  GA.tracker = ENV['GA_KEY']
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
