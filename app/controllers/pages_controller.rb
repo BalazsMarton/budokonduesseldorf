@@ -18,7 +18,7 @@ about my practice and work.'
         title: @page_title,
         type:     'website',
         url:  'http://www.attilapt.com',
-        image:    'http://www.attilapt.com/',
+        image:    'http://www.attilapt.com/images/meta/home_mini.jpg',
         description: @page_description,
     }
   end
@@ -43,7 +43,7 @@ WARRIOR&#39;s service, protection, and courage.'
         title: @page_title,
         type:     'website',
         url:  'http://www.attilapt.com',
-        image:    'http://www.attilapt.com/',
+        image:    'http://www.attilapt.com/images/meta/budokon_mini.jpg',
         description: @page_description,
     }
   end
@@ -65,7 +65,7 @@ healthy eating a solid part of their daily routine and lifestyle.'
         title: @page_title,
         type:     'website',
         url:  'http://www.attilapt.com',
-        image:    'http://www.attilapt.com/',
+        image:    'http://www.attilapt.com/images/meta/attila_mini.jpg',
         description: @page_description,
     }
   end
@@ -97,7 +97,7 @@ how I work with you as you develop and meet your goals.'
         title: @page_title,
         type:     'website',
         url:  'http://www.attilapt.com',
-        image:    'http://www.attilapt.com/',
+        image:    'http://www.attilapt.com/images/meta/services_mini.jpg',
         description: @page_description,
     }
   end
@@ -119,7 +119,7 @@ international (more info at “events” page).'
         title: @page_title,
         type:     'website',
         url:  'http://www.attilapt.com',
-        image:    'http://www.attilapt.com/',
+        image:    'http://www.attilapt.com/images/meta/schedule_mini.jpg',
         description: @page_description,
     }
   end
@@ -139,7 +139,7 @@ could always just send me a friendly hello.'
         title: @page_title,
         type:     'website',
         url:  'http://www.attilapt.com',
-        image:    'http://www.attilapt.com/',
+        image:    'http://www.attilapt.com/images/meta/contact_mini.jpg',
         description: @page_description,
     }
   end
@@ -160,7 +160,7 @@ me to come and teach at your studio.'
         title: @page_title,
         type:     'website',
         url:  'http://www.attilapt.com',
-        image:    'http://www.attilapt.com/',
+        image:    'http://www.attilapt.com/images/meta/events_mini.jpg',
         description: @page_description,
     }
   end
@@ -182,7 +182,7 @@ me to come and teach at your studio.'
         title: @page_title,
         type:     'website',
         url:  'http://www.attilapt.com',
-        image:    'http://www.attilapt.com/',
+        image:    'http://www.attilapt.com/images/meta/oneonone_mini.jpg',
         description: @page_description,
     }
   end
@@ -200,7 +200,7 @@ me to come and teach at your studio.'
         title: @page_title,
         type:     'website',
         url:  'http://www.attilapt.com',
-        image:    'http://www.attilapt.com/',
+        image:    'http://www.attilapt.com/images/meta/massage_mini.jpg',
         description: @page_description,
     }
   end 
@@ -218,7 +218,7 @@ me to come and teach at your studio.'
         title: @page_title,
         type:     'website',
         url:  'http://www.attilapt.com',
-        image:    'http://www.attilapt.com/',
+        image:    'http://www.attilapt.com/images/meta/grouptr_mini.jpg',
         description: @page_description,
     }
   end
