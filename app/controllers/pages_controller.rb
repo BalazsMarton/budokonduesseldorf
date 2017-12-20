@@ -17,7 +17,7 @@ about my practice and work.'
     set_meta_tags og: {
         title: @page_title,
         type:     'website',
-        url:  'http://www.attilapt.com',
+        url:  'http://www.attilapt.com/home',
         image:    'http://www.attilapt.com/images/meta/home_mini.jpg',
         description: @page_description,
     }
@@ -42,7 +42,7 @@ WARRIOR&#39;s service, protection, and courage.'
     set_meta_tags og: {
         title: @page_title,
         type:     'website',
-        url:  'http://www.attilapt.com',
+        url:  'http://www.attilapt.com/budokon',
         image:    'http://www.attilapt.com/images/meta/budokon_mini.jpg',
         description: @page_description,
     }
@@ -64,7 +64,7 @@ healthy eating a solid part of their daily routine and lifestyle.'
     set_meta_tags og: {
         title: @page_title,
         type:     'website',
-        url:  'http://www.attilapt.com',
+        url:  'http://www.attilapt.com/attila',
         image:    'http://www.attilapt.com/images/meta/attila_mini.jpg',
         description: @page_description,
     }
@@ -96,7 +96,7 @@ how I work with you as you develop and meet your goals.'
     set_meta_tags og: {
         title: @page_title,
         type:     'website',
-        url:  'http://www.attilapt.com',
+        url:  'http://www.attilapt.com/services',
         image:    'http://www.attilapt.com/images/meta/services_mini.jpg',
         description: @page_description,
     }
@@ -118,7 +118,7 @@ international (more info at “events” page).'
     set_meta_tags og: {
         title: @page_title,
         type:     'website',
-        url:  'http://www.attilapt.com',
+        url:  'http://www.attilapt.com/schedule',
         image:    'http://www.attilapt.com/images/meta/schedule_mini.jpg',
         description: @page_description,
     }
@@ -138,7 +138,7 @@ could always just send me a friendly hello.'
     set_meta_tags og: {
         title: @page_title,
         type:     'website',
-        url:  'http://www.attilapt.com',
+        url:  'http://www.attilapt.com/contacts',
         image:    'http://www.attilapt.com/images/meta/contact_mini.jpg',
         description: @page_description,
     }
@@ -159,7 +159,7 @@ me to come and teach at your studio.'
     set_meta_tags og: {
         title: @page_title,
         type:     'website',
-        url:  'http://www.attilapt.com',
+        url:  'http://www.attilapt.com/events',
         image:    'http://www.attilapt.com/images/meta/events_mini.jpg',
         description: @page_description,
     }
@@ -181,7 +181,7 @@ me to come and teach at your studio.'
     set_meta_tags og: {
         title: @page_title,
         type:     'website',
-        url:  'http://www.attilapt.com',
+        url:  'http://www.attilapt.com/services/personal_training',
         image:    'http://www.attilapt.com/images/meta/oneonone_mini.jpg',
         description: @page_description,
     }
@@ -199,7 +199,7 @@ me to come and teach at your studio.'
     set_meta_tags og: {
         title: @page_title,
         type:     'website',
-        url:  'http://www.attilapt.com',
+        url:  'http://www.attilapt.com/services/massage',
         image:    'http://www.attilapt.com/images/meta/massage_mini.jpg',
         description: @page_description,
     }
@@ -217,7 +217,7 @@ me to come and teach at your studio.'
     set_meta_tags og: {
         title: @page_title,
         type:     'website',
-        url:  'http://www.attilapt.com',
+        url:  'http://www.attilapt.com/services/group_training',
         image:    'http://www.attilapt.com/images/meta/grouptr_mini.jpg',
         description: @page_description,
     }
