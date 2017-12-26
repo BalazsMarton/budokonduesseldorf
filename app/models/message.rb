@@ -17,6 +17,6 @@ class Message
 
   validates :content,
             presence: { message: "Please fill out the message field" }
-  validates_length_of :content, :within => 3..600, :message => "Your message must be min. 3, max. 600 char long"
+  validates_length_of :content, :within => 3..1500, :message => "Your message must be min. 3, max. 1500 char long"
 
 end
