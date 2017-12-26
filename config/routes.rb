@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   get 'services', to: 'pages#services'
   get 'schedule', to: 'pages#schedule'
   get 'events', to: 'pages#events'
-  get 'event', to: 'pages#event'
-  get 'event2', to: 'pages#event2'
   get 'contacts', to: 'pages#contact'
   post 'contact', to: 'message#create'
   get 'contact_error', to: 'message#contact_error', as: 'contact_error'
@@ -22,4 +20,10 @@ Rails.application.routes.draw do
     get 'group_training', to: 'pages#group'
   end
 
+  #demo events
+  get 'event', to: 'pages#event'
+  get 'event2', to: 'pages#event2'
+  get 'event3', to: 'pages#event3'
+  get 'event4', to: 'pages#event4'
+  get 'event5', to: 'pages#event5'
 end

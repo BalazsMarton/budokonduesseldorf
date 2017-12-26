@@ -171,8 +171,12 @@ me to come and teach at your studio.'
  #services
   def oneonone
     #meta gem -seo - generate metacontent
-    @page_title = ''
-    @page_description = ''
+    @page_title = 'Personal Training in Düsseldorf with Attila Gyömrei'
+    @page_description = 'Designed to be progressive and challenging, the plan
+will take you through all facets of fitness development, making
+sure that you are not just leaner, but also stronger, more
+flexible, more stable and agile. I guarantee my commitment,
+alongside your own, will deliver results … fast.'
     set_meta_tags(
         title: @page_title,
         description: @page_description,
@@ -189,8 +193,12 @@ me to come and teach at your studio.'
 
   def massage
   #meta gem -seo - generate metacontent
-    @page_title = ''
-    @page_description = ''
+    @page_title = 'Massage in Düsseldorf with Attila Gyömrei'
+    @page_description = 'Relaxation is vital to managing stress and the
+overall health of mind and body. Through the massage
+sessions, my goal is to help you relax from the day-to- day
+stress we all face, recharge your mind and body, and refresh
+and renew your skin.'
     set_meta_tags(
         title: @page_title,
         description: @page_description,
@@ -207,8 +215,11 @@ me to come and teach at your studio.'
 
   def group
   #meta gem -seo - generate metacontent
-    @page_title = ''
-    @page_description = ''
+    @page_title = 'Group Training – Motivation and Fun'
+    @page_description = 'Do you prefer to workout with a small group of other
+motivated individuals? Train in group &amp; share the cost, all
+while having fun with your session partners and build better
+communication and trust between members of a team!'
     set_meta_tags(
         title: @page_title,
         description: @page_description,
