@@ -11,6 +11,15 @@ span.navbar-toggler-icon{
 .nav-item a{
 	text-align:center;
 }
+@media screen and (min-width:768px){
+	.nav-item.bordered{
+		border: 2px solid rgba(255, 255, 255, 0.5);
+		background-color: rgba(255,255,255,0);
+		&:hover{
+			background-color:rgba(255, 255, 255, 0.5);
+		}
+	}
+}
 .navbar-brand{
 	p{
 		animation-duration:1s;
