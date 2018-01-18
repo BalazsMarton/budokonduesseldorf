@@ -1,4 +1,4 @@
-class MessageController < ApplicationController
+class Front::MessageController < FrontController
   skip_before_action :verify_authenticity_token #, only: [:one_or_two_actions_here]
 
 
@@ -23,7 +23,7 @@ class MessageController < ApplicationController
       format.js do
         if @message.valid?
           MessageMailer.new_message(@message).deliver_now
-          flash.now[:notice] = "Your message has been sent!"
+          flash.now[:message_notice] = "Your message has been sent!"
         else
           flash.now[:error]
         end

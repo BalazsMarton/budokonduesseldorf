@@ -15,4 +15,4 @@
 //= require jquery2
 //= require popper
 //= require bootstrap-sprockets
-//= require_tree ./front
+//= require_tree ./admin

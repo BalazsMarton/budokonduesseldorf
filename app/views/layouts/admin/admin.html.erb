@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'admin', defer: Rails.env.production?, 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+  	<%= render'layouts/admin/admin_navbar' %>
+    <main>
+    <%= yield %>
+    </main>
+    <%= render'layouts/admin/admin_footer' %>
+  </body>
+
+</html>

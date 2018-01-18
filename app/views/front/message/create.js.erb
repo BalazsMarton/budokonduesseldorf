@@ -1,5 +1,5 @@
-<% if flash[:notice] %>
-$('#new_message').before('<div class="notice row"><p><%= flash[:notice] %></p></div>');
+<% if flash[:message_notice] %>
+$('#new_message').before('<div class="notice row"><p><%= flash[:message_notice] %></p></div>');
 $('#new_message').remove();
 $('.notice').click(function(){
     $(this).remove();

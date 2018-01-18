@@ -3,7 +3,7 @@
 
   <head>
     <%= display_meta_tags site: 'attilapt.com', reverse: true %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', defer: Rails.env.production?, 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
@@ -11,14 +11,14 @@
   </head>
 
   <body>
-  	<%= render'layouts/navbar' %>
+  	<%= render'layouts/front/navbar' %>
     <main>
     <%= yield %>
     </main>
     <% if current_page?(root_path) || current_page?(attila_path) || current_page?(services_path) || current_page?(schedule_path) || current_page?(events_path) %>
-      <%= render'pages/serviceselect' %>
+      <%= render'front/pages/serviceselect' %>
     <% end %>
-    <%= render'layouts/footer' %>
+    <%= render'layouts/front/footer' %>
   </body>
 
 </html>

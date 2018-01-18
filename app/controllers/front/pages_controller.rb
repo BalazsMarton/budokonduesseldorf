@@ -1,4 +1,4 @@
-class PagesController < ApplicationController
+class Front::PagesController < FrontController
   
   def home
     #meta gem -seo - generate metacontent
