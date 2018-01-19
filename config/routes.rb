@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
-  devise_for :admins, skip: :registrations
+  devise_for :admins, path: 'admin', skip: :registrations
   #scope module: 'admin', path: 'admin' do
   namespace :admin do
     root 'pages#adminpaneldemo'
