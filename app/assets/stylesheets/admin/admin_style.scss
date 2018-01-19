@@ -1,0 +1,127 @@
+@mixin declare-font-face($font-family, $font-filename, $font-weight : normal, $font-style :normal, $font-stretch : normal) {
+@font-face {
+font-family: '#{$font-family}';
+src: url(font-path('#{$font-filename}.eot'));
+src: url(font-path('#{$font-filename}.eot?#iefix')) format('embedded-opentype'),
+url(font-path('#{$font-filename}.woff')) format('woff'),
+url(font-path('#{$font-filename}.ttf')) format('truetype'),
+url(font-path('#{$font-filename}.svg##{$font-family}')) format('svg');
+font-weight: $font-weight;
+font-style: $font-style;
+font-stretch: $font-stretch;
+}
+}
+
+@include declare-font-face('nunito-regular', 'Nunito-Regular', 400);
+@include declare-font-face('nunito-bold', 'Nunito-Bold', 700);
+@include declare-font-face('nunito-light', 'Nunito-Light', 300);
+
+body{
+	color:dimgrey;
+}
+.bg-center{
+	background-position: center!important;
+}
+.cshow{
+	display:inherit!important;
+}
+.chide{
+	display:none;
+}
+.centered{
+	text-align:center;
+}
+.justify{
+	text-align: justify;
+}
+.bg-black{
+	background-color:rgba(32, 26, 22, 0.9);
+}
+.aftermargin{
+	margin-bottom: 2em;
+}
+.pull-right{
+	float:right;
+}
+.button-link{
+	cursor:pointer;
+	display:block;
+	border-radius:0;
+	button{
+		cursor:pointer;
+		border-radius:0;
+	}
+}
+.color-gold{
+	color:#c8ab2d;
+}
+*{
+	font-family:nunito-regular;
+}
+p{
+	font-family:nunito-regular;
+}
+h1,h2,h3,h4,h5{
+	font-family:nunito-light;
+}
+a{
+	font-family: nunito-regular;
+}
+main{
+	min-height:500px;
+}
+ul li{
+
+}
+.sqs-block {
+    position: relative;
+    height: auto;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    outline: none;
+    box-shadow: inset 0 0 0 1px rgba(128,128,128,0);
+    -webkit-transition: box-shadow .2s ease-in-out;
+    transition: box-shadow .2s ease-in-out;
+}
+
+.content-section{
+	padding: 3em 0 0 0;
+}
+
+.section-content .content-wrap{
+	padding: 3em 1em;
+}
+
+.content-basemargin{
+	margin-bottom:2em;
+}
+
+.jumptarget{
+    display: block;
+    height: 65px;
+    margin: -65px 0 0 0;
+    background-color: transparent;
+}
+@media (max-width: 767px) { 
+	.jumptarget{
+		height: 59px;
+    	margin: -59px 0 0 0;
+	}
+}
+
+.inside-link{
+	color:#332e2a;
+	
+	&:hover{
+		color: dimgrey;text-decoration: none;
+	}
+}
+.outside-link{
+	color:#332e2a;
+
+	&:hover{
+		color: dimgrey;text-decoration: none;
+	}
+}
+//
+////
