@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @event.title %>
+</p>
+
+<p>
+  <strong>Event begin:</strong>
+  <%= @event.event_begin %>
+</p>
+
+<p>
+  <strong>Event end:</strong>
+  <%= @event.event_end %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @event.place %>
+</p>
+
+<p>
+  <strong>Maplink:</strong>
+  <%= @event.maplink %>
+</p>
+
+<p>
+  <strong>Cover image:</strong>
+  <%= @event.cover_image %>
+</p>
+
+<p>
+  <strong>Event description:</strong>
+  <%= @event.event_description %>
+</p>
+
+<p>
+  <strong>Published at:</strong>
+  <%= @event.published_at %>
+</p>
+
+<%= link_to 'Edit', edit_admin_event_path(@event) %> |
+<%= link_to 'Back', admin_events_path %>

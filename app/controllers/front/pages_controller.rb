@@ -145,6 +145,7 @@ could always just send me a friendly hello.'
   end
 
   def events
+    @events = Event.where("published_at < ?", DateTime.current).where("event_begin > ?", DateTime.current).order('event_begin ASC')
     #meta gem -seo - generate metacontent
     @page_title = 'Workshops in Düsseldorf by Attila Gyömrei'
     @page_description = 'Do you want to learn something new? Give yourself
@@ -166,6 +167,7 @@ me to come and teach at your studio.'
   end
   
   def event
+    @events = Event.where("event_begin > ?", DateTime.current).find(params[:id])
   end
   
  #services

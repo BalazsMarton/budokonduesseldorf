@@ -190,6 +190,7 @@ ul li{
     		-ms-flex-align: center;
     		align-items: center;
     		.caption{
+    			text-transform: uppercase;
     			font-family: nunito-light;
     			width:100%;
     			text-align:center;
@@ -255,6 +256,7 @@ ul li{
 				padding: 5px;
 				margin:auto;
 				h3{
+					text-transform: uppercase;
 					color:white;
 					display: inline;
 					line-height: 1.4;
@@ -373,13 +375,16 @@ ul.contact-info{
 				top: 10px;
 				right: 10px;
 				height: auto;
-
+				text-transform: uppercase;
 				border:1px solid dimgrey;
 				background-color: rgba(255,255,255,0.8);
 			}
 		}
 	}
 	.events-card-content{
+		.events-card-title{
+			text-transform: uppercase;
+		}
 		.events-card-nav{
 			div{
 				&:nth-child(1){

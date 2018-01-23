@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  event_begin: 2018-01-23 20:44:44
+  event_end: 2018-01-23 20:44:44
+  place: MyString
+  maplink: MyString
+  cover_image: MyString
+  event_description: MyText
+  published_at: 2018-01-23 20:44:44
+
+two:
+  title: MyString
+  event_begin: 2018-01-23 20:44:44
+  event_end: 2018-01-23 20:44:44
+  place: MyString
+  maplink: MyString
+  cover_image: MyString
+  event_description: MyText
+  published_at: 2018-01-23 20:44:44

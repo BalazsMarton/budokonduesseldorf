@@ -22,7 +22,8 @@ Rails.application.routes.draw do
     end
 
     #demo events
-    get 'event', to: 'pages#event'
+    get '/event/:id' => 'pages#event', as: 'show_event'
+    #get 'event', to: 'pages#event'
     get 'event2', to: 'pages#event2'
     get 'event3', to: 'pages#event3'
     get 'event4', to: 'pages#event4'
@@ -35,6 +36,7 @@ Rails.application.routes.draw do
   #scope module: 'admin', path: 'admin' do
   namespace :admin do
     root 'pages#adminpaneldemo'
+    resources :events
   end
 
 end
