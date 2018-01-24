@@ -16,6 +16,10 @@ font-stretch: $font-stretch;
 @include declare-font-face('nunito-bold', 'Nunito-Bold', 700);
 @include declare-font-face('nunito-light', 'Nunito-Light', 300);
 
+main>.container{
+	padding: 2em 0;
+}
+
 body{
 	color:dimgrey;
 }

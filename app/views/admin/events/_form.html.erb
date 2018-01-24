@@ -11,47 +11,70 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :event_title %>
+  <div class="row">
+
+    <div class="col-sm-12">
+    <div class="form-group">
+      <%= form.label :title %><br>
+      <%= form.text_field :title, id: :event_title, class: 'form-control' %>
+    </div>
+    </div>
+
+    <div class="col-sm-6">
+    <div class="form-group">
+      <%= form.label :event_begin %><br>
+      <%= form.datetime_select :event_begin, id: :event_event_begin %>
+    </div>
+    </div>
+
+    <div class="col-sm-6">
+    <div class="form-group">
+      <%= form.label :event_end %><br>
+      <%= form.datetime_select :event_end, id: :event_event_end %>
+    </div>
+    </div>
+
+    <div class="col-sm-6">
+    <div class="form-group">
+      <%= form.label :place %><br>
+      <%= form.text_field :place, id: :event_place, class: 'form-control' %>
+    </div>
+    </div>
+
+    <div class="col-sm-6">
+    <div class="form-group">
+      <%= form.label :maplink %><br>
+      <%= form.text_field :maplink, id: :event_maplink, class: 'form-control' %>
+    </div>
+    </div>
+
+    <div class="col-sm-6">
+    <div class="form-group">
+      <%= form.label :cover_image %><br>
+      <%= form.file_field :cover_image, id: :event_cover_image %>
+    </div>
+    </div>
+
+    <div class="col-sm-6">
+    <div class="form-group">
+      <%= form.label :published_at %><br>
+      <%= form.datetime_select :published_at, id: :event_published_at %>
+    </div>
+    </div>
+
+    <div class="col-sm-12">
+    <div class="form-group">
+      <%= form.label :event_description %><br>
+      <%= form.text_area :event_description, id: :event_event_description,class: "form-control", rows: "6" %>
+    </div>
+    </div>
+
+    <div class="col-sm-12">
+    <div class="actions centered">
+      <%= form.submit %>
+    </div>
+    </div>
+
   </div>
 
-  <div class="field">
-    <%= form.label :event_begin %>
-    <%= form.datetime_select :event_begin, id: :event_event_begin %>
-  </div>
-
-  <div class="field">
-    <%= form.label :event_end %>
-    <%= form.datetime_select :event_end, id: :event_event_end %>
-  </div>
-
-  <div class="field">
-    <%= form.label :place %>
-    <%= form.text_field :place, id: :event_place %>
-  </div>
-
-  <div class="field">
-    <%= form.label :maplink %>
-    <%= form.text_field :maplink, id: :event_maplink %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cover_image %>
-    <%= form.text_field :cover_image, id: :event_cover_image %>
-  </div>
-
-  <div class="field">
-    <%= form.label :event_description %>
-    <%= form.text_area :event_description, id: :event_event_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :published_at %>
-    <%= form.datetime_select :published_at, id: :event_published_at %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

@@ -4,7 +4,7 @@ class Admin::EventsController < AdminController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.all.order('event_begin DESC')
   end
 
   # GET /events/1
@@ -56,7 +56,7 @@ class Admin::EventsController < AdminController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+      format.html { redirect_to [:admin, @event], notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

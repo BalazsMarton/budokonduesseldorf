@@ -11,7 +11,9 @@
   <body>
   	<%= render'layouts/admin/admin_navbar' %>
     <main>
-    <%= yield %>
+      <div class="container">
+        <%= yield %>
+      </div>
     </main>
     <%= render'layouts/admin/admin_footer' %>
   </body>

@@ -24,10 +24,10 @@ Rails.application.routes.draw do
     #demo events
     get '/event/:id' => 'pages#event', as: 'show_event'
     #get 'event', to: 'pages#event'
-    get 'event2', to: 'pages#event2'
-    get 'event3', to: 'pages#event3'
-    get 'event4', to: 'pages#event4'
-    get 'event5', to: 'pages#event5'
+    #get 'event2', to: 'pages#event2'
+    #get 'event3', to: 'pages#event3'
+    #get 'event4', to: 'pages#event4'
+    #get 'event5', to: 'pages#event5'
 
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

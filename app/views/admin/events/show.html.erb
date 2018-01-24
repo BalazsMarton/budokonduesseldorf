@@ -1,44 +1,69 @@
+<div class="row">
+  
+<div class="col-sm-12">
 <p id="notice"><%= notice %></p>
+</div>  
 
+<div class="col-sm-12 aftermargin">
+<%= link_to 'Back', admin_events_path, :class => "btn btn-primary" %>
+
+<%= link_to 'Edit', edit_admin_event_path(@event), :class => "btn btn-primary" %>
+</div>
+
+<div class="col-sm-12">  
+<p>
+  <strong>Cover image:</strong><br>
+  <%= image_tag @event.cover_image, class: 'eventlist-tmb img-fluid' %>
+</p>
+</div>
+
+<div class="col-sm-12">
 <p>
   <strong>Title:</strong>
   <%= @event.title %>
 </p>
+</div>
 
+<div class="col-sm-12">
 <p>
   <strong>Event begin:</strong>
   <%= @event.event_begin %>
 </p>
+</div>
 
+<div class="col-sm-12">
 <p>
   <strong>Event end:</strong>
   <%= @event.event_end %>
 </p>
+</div>
 
+<div class="col-sm-12">
 <p>
   <strong>Place:</strong>
   <%= @event.place %>
 </p>
+</div>
 
+<div class="col-sm-12">
 <p>
   <strong>Maplink:</strong>
   <%= @event.maplink %>
 </p>
+</div>
 
-<p>
-  <strong>Cover image:</strong>
-  <%= @event.cover_image %>
-</p>
-
+<div class="col-sm-12">
 <p>
   <strong>Event description:</strong>
   <%= @event.event_description %>
 </p>
+</div>
 
+<div class="col-sm-12">
 <p>
   <strong>Published at:</strong>
   <%= @event.published_at %>
 </p>
+</div>
 
-<%= link_to 'Edit', edit_admin_event_path(@event) %> |
-<%= link_to 'Back', admin_events_path %>
+</div>
