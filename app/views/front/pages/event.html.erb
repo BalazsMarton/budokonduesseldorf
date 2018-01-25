@@ -15,7 +15,7 @@
 		<div class="row">
 			<div class="col-sm-12 content-basemargin justify">
 			<h3 class="color-gold">COURSE DESCRIPTION</h3>
-				<p><%= @events.event_description %>
+				<p><%= @events.event_description.html_safe %>
 				</p>
 				<%= link_to contacts_path(anchor: 'content-jump'), class: 'button-link' do %>
 						<button type="button" class="btn btn-lg btn-outline-secondary pull-right">BOOK NOW</button>
