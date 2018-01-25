@@ -12,4 +12,4 @@ toolbar: code | styleselect | bold italic | undo redo | visualblocks | table | n
 content_css:  //fonts.googleapis.com/css?family=Indie+Flower,
               //fonts.googleapis.com/css?family=Nunito
 font_formats: Nunito=nunito; Indie Flower=indie flower, cursive;Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings,zapf dingbats
-fontsize_formats: 8pt 10pt 12pt 14pt 16pt 18pt 20pt 22pt 24pt 26pt 28pt 30pt 36pt 42pt
+fontsize_formats: 8px 10px 12px 14px 16px 18px 20px 22px 24px 26px 28px 30px 36px 42px
