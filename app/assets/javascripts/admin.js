@@ -15,4 +15,5 @@
 //= require jquery2
 //= require popper
 //= require bootstrap-sprockets
+//= require tinymce
 //= require_tree ./admin

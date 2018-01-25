@@ -65,7 +65,8 @@
     <div class="col-sm-12">
     <div class="form-group">
       <%= form.label :event_description %><br>
-      <%= form.text_area :event_description, id: :event_event_description,class: "form-control", rows: "6" %>
+      <%= form.text_area :event_description, id: :event_event_description, :class => "tinymce", :rows => 10 %>
+      <%= tinymce %>
     </div>
     </div>
 
