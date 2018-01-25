@@ -32,7 +32,7 @@
               <%= event.published_at.to_time.strftime('%a, %b %d, %Y %H:%M') %>
             </div>
             <div class="col-sm-12">
-              <%= image_tag event.cover_image, class: 'eventlist-tmb img-fluid' %>
+              <%= image_tag event.cover_image.thumb, class: 'eventlist-tmb img-fluid' %>
             </div>
             <div class="col-sm-12 centered">
               <%= link_to 'Show', [:admin, event], :class => "btn btn-primary" %>

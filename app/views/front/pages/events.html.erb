@@ -183,7 +183,7 @@
 		<div class="container section-content">
 			<div class="row events-card">
 
-				<div class="col-sm-4 events-card-thumb" style="background:url(<%= event.cover_image %>)" >
+				<div class="col-sm-4 events-card-thumb" style="background:url(<%= event.cover_image.thumb %>)" >
 					<div class="row">
 						<div class="events-card-date centered">
 							<%= event.event_begin.to_time.strftime('%b') %>
