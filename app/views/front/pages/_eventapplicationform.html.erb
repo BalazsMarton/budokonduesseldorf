@@ -1,0 +1,67 @@
+<%= form_for Applicant.new, html: { remote: true }, url: show_event_path do |form| %>
+  
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <%= form.text_field :first_name, id: :applicant_first_name, placeholder: "First Name*", class: "form-control" %>
+      </div>  
+    </div>
+
+    <div class="col-sm-12">
+      <div class="form-group">
+        <%= form.text_field :last_name, id: :applicant_last_name, placeholder: "Last Name*", class: "form-control" %>
+      </div>  
+    </div>
+
+    <div class="col-sm-12">
+      <div class="form-group">
+        <%= form.text_field :email, id: :applicant_email, placeholder: "E-mail*", class: "form-control" %>
+      </div>  
+    </div>
+
+    <div class="col-sm-12">
+      <div class="form-group">
+        <%= form.text_field :country, id: :applicant_country, placeholder: "Country*", class: "form-control" %>
+      </div>  
+    </div>
+
+    <div class="col-sm-12">
+      <div class="form-group">
+        <%= form.text_field :city, id: :applicant_city, placeholder: "City*", class: "form-control" %>
+      </div>  
+    </div>
+
+    <div class="col-sm-12">
+      <div class="form-group">
+        <%= form.text_area :mbackground, id: :applicant_mbackground, placeholder: "Movement Background", class: "form-control",rows: "5" %>
+      </div>  
+    </div>
+
+    <div class="col-sm-12">
+      <div class="form-group">
+        <%= form.text_area :howfind, id: :applicant_howfind, placeholder: "How did you find out about this event?", class: "form-control",rows: "5" %>
+      </div>  
+    </div>
+
+    <div class="col-sm-12">
+      <div class="form-group">
+        <%= form.text_area :certification, id: :applicant_certification, placeholder: "Do you have a Professional Teaching Certification?", class: "form-control",rows: "5" %>
+      </div>  
+    </div>
+
+    <div class="col-sm-12">
+      <div class="form-group">
+        <%= form.text_area :thoughts, id: :applicant_thoughts, placeholder: "Final Thoughts", class: "form-control",rows: "5" %>    
+      </div>  
+    </div>
+
+    <%#= form.label :event_id %>
+    <%= form.hidden_field :event_id, :value => @events.id %>
+    
+    <div class="col-sm-12">
+      <div class="actions">
+        <%= form.submit "BOOK NOW", class: "button-link pull-right btn btn-outline-secondary btn-lg" %>
+      </div>
+    </div>  
+  </div>
+<% end %>

@@ -1,0 +1,161 @@
+//notice
+<% if flash[:applicant_notice] %>
+$('#new_applicant').before('<div class="notice row"><p><%= flash[:applicant_notice] %></p></div>');
+$('#new_applicant').remove();
+$('.notice').click(function(){
+    $(this).remove();
+});
+<% end %>
+
+//firstname
+<% if @applicant.errors[:first_name].any? %>
+$('#applicant_first_name').parent('.form-group').removeClass('has-warning');
+$('#applicant_first_name').removeClass('form-control-warning');
+$('#applicant_first_nameFeedback').remove();
+$('#applicant_first_name').parent('.form-group').addClass('has-warning');
+$('#applicant_first_name').addClass('form-control-warning');
+$('#applicant_first_name').after('<div class="form-control-feedback" id="applicant_first_nameFeedback"><% @applicant.errors[:first_name].each do |msg| %><%= msg %><br><% end %></div>');
+$('#applicant_first_nameFeedback').click(function(){
+    $(this).remove();
+});
+<% else %>
+$('#applicant_first_name').parent('.form-group').removeClass('has-warning');
+$('#applicant_first_name').removeClass('form-control-warning');
+$('#applicant_first_nameFeedback').remove();
+<% end %>
+
+//lastname
+<% if @applicant.errors[:last_name].any? %>
+$('#applicant_last_name').parent('.form-group').removeClass('has-warning');
+$('#applicant_last_name').removeClass('form-control-warning');
+$('#applicant_last_nameFeedback').remove();
+$('#applicant_last_name').parent('.form-group').addClass('has-warning');
+$('#applicant_last_name').addClass('form-control-warning');
+$('#applicant_last_name').after('<div class="form-control-feedback" id="applicant_last_nameFeedback"><% @applicant.errors[:last_name].each do |msg| %><%= msg %><br><% end %></div>');
+$('#applicant_last_nameFeedback').click(function(){
+    $(this).remove();
+});
+<% else %>
+$('#applicant_last_name').parent('.form-group').removeClass('has-warning');
+$('#applicant_last_name').removeClass('form-control-warning');
+$('#applicant_last_nameFeedback').remove();
+<% end %>
+
+//email
+<% if @applicant.errors[:email].any? %>
+$('#applicant_email').parent('.form-group').removeClass('has-warning');
+$('#applicant_email').removeClass('form-control-warning');
+$('#applicant_emailFeedback').remove();
+$('#applicant_email').parent('.form-group').addClass('has-warning');
+$('#applicant_email').addClass('form-control-warning');
+$('#applicant_email').after('<div class="form-control-feedback" id="applicant_emailFeedback"><% @applicant.errors[:email].each do |msg| %><%= msg %><br><% end %></div>');
+$('#applicant_emailFeedback').click(function(){
+    $(this).remove();
+});
+<% else %>
+$('#applicant_email').parent('.form-group').removeClass('has-warning');
+$('#applicant_email').removeClass('form-control-warning');
+$('#applicant_emailFeedback').remove();
+<% end %>
+
+//country
+<% if @applicant.errors[:country].any? %>
+$('#applicant_country').parent('.form-group').removeClass('has-warning');
+$('#applicant_country').removeClass('form-control-warning');
+$('#applicant_countryFeedback').remove();
+$('#applicant_country').parent('.form-group').addClass('has-warning');
+$('#applicant_country').addClass('form-control-warning');
+$('#applicant_country').after('<div class="form-control-feedback" id="applicant_countryFeedback"><% @applicant.errors[:country].each do |msg| %><%= msg %><br><% end %></div>');
+$('#applicant_countryFeedback').click(function(){
+    $(this).remove();
+});
+<% else %>
+$('#applicant_country').parent('.form-group').removeClass('has-warning');
+$('#applicant_country').removeClass('form-control-warning');
+$('#applicant_countryFeedback').remove();
+<% end %>
+
+//city
+<% if @applicant.errors[:city].any? %>
+$('#applicant_city').parent('.form-group').removeClass('has-warning');
+$('#applicant_city').removeClass('form-control-warning');
+$('#applicant_cityFeedback').remove();
+$('#applicant_city').parent('.form-group').addClass('has-warning');
+$('#applicant_city').addClass('form-control-warning');
+$('#applicant_city').after('<div class="form-control-feedback" id="applicant_cityFeedback"><% @applicant.errors[:city].each do |msg| %><%= msg %><br><% end %></div>');
+$('#applicant_cityFeedback').click(function(){
+    $(this).remove();
+});
+<% else %>
+$('#applicant_city').parent('.form-group').removeClass('has-warning');
+$('#applicant_city').removeClass('form-control-warning');
+$('#applicant_cityFeedback').remove();
+<% end %>
+
+//mbackground
+<% if @applicant.errors[:mbackground].any? %>
+$('#applicant_mbackground').parent('.form-group').removeClass('has-warning');
+$('#applicant_mbackground').removeClass('form-control-warning');
+$('#applicant_mbackgroundFeedback').remove();
+$('#applicant_mbackground').parent('.form-group').addClass('has-warning');
+$('#applicant_mbackground').addClass('form-control-warning');
+$('#applicant_mbackground').after('<div class="form-control-feedback" id="applicant_mbackgroundFeedback"><% @applicant.errors[:mbackground].each do |msg| %><%= msg %><br><% end %></div>');
+$('#applicant_mbackgroundFeedback').click(function(){
+    $(this).remove();
+});
+<% else %>
+$('#applicant_mbackground').parent('.form-group').removeClass('has-warning');
+$('#applicant_mbackground').removeClass('form-control-warning');
+$('#applicant_mbackgroundFeedback').remove();
+<% end %>
+
+//howfind
+<% if @applicant.errors[:howfind].any? %>
+$('#applicant_howfind').parent('.form-group').removeClass('has-warning');
+$('#applicant_howfind').removeClass('form-control-warning');
+$('#applicant_howfindFeedback').remove();
+$('#applicant_howfind').parent('.form-group').addClass('has-warning');
+$('#applicant_howfind').addClass('form-control-warning');
+$('#applicant_howfind').after('<div class="form-control-feedback" id="applicant_howfindFeedback"><% @applicant.errors[:howfind].each do |msg| %><%= msg %><br><% end %></div>');
+$('#applicant_howfindFeedback').click(function(){
+    $(this).remove();
+});
+<% else %>
+$('#applicant_howfind').parent('.form-group').removeClass('has-warning');
+$('#applicant_howfind').removeClass('form-control-warning');
+$('#applicant_howfindFeedback').remove();
+<% end %>
+
+//certification
+<% if @applicant.errors[:certification].any? %>
+$('#applicant_certification').parent('.form-group').removeClass('has-warning');
+$('#applicant_certification').removeClass('form-control-warning');
+$('#applicant_certificationFeedback').remove();
+$('#applicant_certification').parent('.form-group').addClass('has-warning');
+$('#applicant_certification').addClass('form-control-warning');
+$('#applicant_certification').after('<div class="form-control-feedback" id="applicant_certificationFeedback"><% @applicant.errors[:certification].each do |msg| %><%= msg %><br><% end %></div>');
+$('#applicant_certificationFeedback').click(function(){
+    $(this).remove();
+});
+<% else %>
+$('#applicant_certification').parent('.form-group').removeClass('has-warning');
+$('#applicant_certification').removeClass('form-control-warning');
+$('#applicant_certificationFeedback').remove();
+<% end %>
+
+//thoughts
+<% if @applicant.errors[:thoughts].any? %>
+$('#applicant_thoughts').parent('.form-group').removeClass('has-warning');
+$('#applicant_thoughts').removeClass('form-control-warning');
+$('#applicant_thoughtsFeedback').remove();
+$('#applicant_thoughts').parent('.form-group').addClass('has-warning');
+$('#applicant_thoughts').addClass('form-control-warning');
+$('#applicant_thoughts').after('<div class="form-control-feedback" id="applicant_thoughtsFeedback"><% @applicant.errors[:thoughts].each do |msg| %><%= msg %><br><% end %></div>');
+$('#applicant_thoughtsFeedback').click(function(){
+    $(this).remove();
+});
+<% else %>
+$('#applicant_thoughts').parent('.form-group').removeClass('has-warning');
+$('#applicant_thoughts').removeClass('form-control-warning');
+$('#applicant_thoughtsFeedback').remove();
+<% end %>

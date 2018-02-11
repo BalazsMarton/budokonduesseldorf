@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
     #demo events
     get '/event/:id' => 'pages#event', as: 'show_event'
+    post '/event/:id', to: 'applicant#create'
     #get 'event', to: 'pages#event'
     #get 'event2', to: 'pages#event2'
     #get 'event3', to: 'pages#event3'
@@ -37,6 +38,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'pages#adminpaneldemo'
     resources :events
+    resources :applicants
   end
 
 end

@@ -1,0 +1,68 @@
+<%= form_with(model: [:admin,applicant], local: true) do |form| %>
+  <% if applicant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(applicant.errors.count, "error") %> prohibited this applicant from being saved:</h2>
+
+      <ul>
+      <% applicant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :applicant_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :applicant_last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :applicant_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country, id: :applicant_country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :applicant_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mbackground %>
+    <%= form.text_area :mbackground, id: :applicant_mbackground %>
+  </div>
+
+  <div class="field">
+    <%= form.label :howfind %>
+    <%= form.text_area :howfind, id: :applicant_howfind %>
+  </div>
+
+  <div class="field">
+    <%= form.label :certification %>
+    <%= form.text_area :certification, id: :applicant_certification %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thoughts %>
+    <%= form.text_area :thoughts, id: :applicant_thoughts %>
+  </div>
+
+  <div class="field">
+    <%= form.label :event_id %>
+    <%#= form.number_field :event_id, id: :applicant_event_id %>
+    <%= form.collection_select(:event_id, @events, :id, :title, :include_blank => "Please select") %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

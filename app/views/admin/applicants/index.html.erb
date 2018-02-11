@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Applicants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Email</th>
+      <th>Name</th>
+      <th>Country</th>
+      <th>City</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @applicants.each do |applicant| %>
+      <tr>
+        <td><%= applicant.event && applicant.event.title %></td>
+        <td><%= applicant.email %></td>
+        <td><%= applicant.last_name %> <%= applicant.first_name %></td>
+        <td><%= applicant.country %></td>
+        <td><%= applicant.city %></td>
+        <td><%= link_to 'Show', [:admin, applicant], :class => "btn btn-primary" %></td>
+        <td><%= link_to 'Edit', edit_admin_applicant_path(applicant), :class => "btn btn-primary" %></td>
+        <td><%= link_to 'Destroy', [:admin, applicant], method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Applicant', new_admin_applicant_path, :class => "btn btn-primary" %>

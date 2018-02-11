@@ -13,15 +13,25 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-12 content-basemargin justify">
-			<h3 class="color-gold">COURSE DESCRIPTION</h3>
-				<p><%= @events.event_description.html_safe %>
-				</p>
-				<%= link_to contacts_path(anchor: 'content-jump'), class: 'button-link' do %>
-						<button type="button" class="btn btn-lg btn-outline-secondary pull-right">BOOK NOW</button>
-					<% end %>
+			<div class="col-md-7 col-sm-12">
+				<div class="row">
+					<div class="col-sm-12 content-basemargin justify">
+					<h3 class="color-gold">COURSE DESCRIPTION</h3>
+						<p><%= @events.event_description.html_safe %>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 offset-md-1 col-sm-8 content-basemargin">
+				<div class="row">
+					<div class="jumptarget" id="courseapplication-jump"></div>
+
+					<div class="col-sm-12 justify">
+						<h3 class="color-gold">COURSE APPLICATION</h3>
+					</div>
+				</div>
+				<%= render 'eventapplicationform' %>			
 			</div>
 		</div>
 	</div>
-	
 </div>
