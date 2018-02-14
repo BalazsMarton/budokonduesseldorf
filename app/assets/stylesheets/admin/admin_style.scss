@@ -24,6 +24,9 @@ main>.container{
 body{
 	color:dimgrey;
 }
+.uppercase{
+	text-transform: uppercase;
+}
 .bg-center{
 	background-position: center!important;
 }
@@ -127,6 +130,10 @@ ul li{
 	&:hover{
 		color: dimgrey;text-decoration: none;
 	}
+}
+
+.tbl-responsive{
+    overflow-x: auto;
 }
 //
 ////

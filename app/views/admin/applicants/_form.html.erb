@@ -11,58 +11,133 @@
     </div>
   <% end %>
 
+  <div class="row">
+
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label :event_id %><br>
+        <%#= form.number_field :event_id, id: :applicant_event_id %>
+        <%= form.collection_select(:event_id, @actual_events, :id, :title,{:include_blank => "Please select"}, {:class => "form-control"}) %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label :email %><br>
+        <%= form.text_field :email, id: :applicant_email, class: 'form-control' %>
+      </div>
+    </div>
+  
+  </div>   
+
+  <div class="row">
+
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label :first_name %><br>
+        <%= form.text_field :first_name, id: :applicant_first_name, class: 'form-control' %>
+      </div>
+    </div>  
+
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label :last_name %><br>
+        <%= form.text_field :last_name, id: :applicant_last_name, class: 'form-control' %>
+      </div>
+    </div>   
+  
+  </div>
+
+  <div class="row">
+  
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label :country %><br>
+        <%= form.text_field :country, id: :applicant_country, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label :city %><br>
+        <%= form.text_field :city, id: :applicant_city, class: 'form-control' %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+  
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= form.label :mbackground %><br>
+        <%= form.text_area :mbackground, id: :applicant_mbackground, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= form.label :howfind %><br>
+        <%= form.text_area :howfind, id: :applicant_howfind, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= form.label :certification %><br>
+        <%= form.text_area :certification, id: :applicant_certification, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= form.label :thoughts %><br>
+        <%= form.text_area :thoughts, id: :applicant_thoughts, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-sm-12">
+      <div class="actions centered">
+        <%= form.submit class: "btn btn-primary" %>
+      </div>
+    </div>
+
+  </div>
+  
   <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name, id: :applicant_first_name %>
   </div>
 
   <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name, id: :applicant_last_name %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :applicant_email %>
   </div>
 
   <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country, id: :applicant_country %>
   </div>
 
   <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city, id: :applicant_city %>
   </div>
 
   <div class="field">
-    <%= form.label :mbackground %>
-    <%= form.text_area :mbackground, id: :applicant_mbackground %>
   </div>
 
   <div class="field">
-    <%= form.label :howfind %>
-    <%= form.text_area :howfind, id: :applicant_howfind %>
   </div>
 
   <div class="field">
-    <%= form.label :certification %>
-    <%= form.text_area :certification, id: :applicant_certification %>
   </div>
 
   <div class="field">
-    <%= form.label :thoughts %>
-    <%= form.text_area :thoughts, id: :applicant_thoughts %>
   </div>
 
   <div class="field">
-    <%= form.label :event_id %>
-    <%#= form.number_field :event_id, id: :applicant_event_id %>
-    <%= form.collection_select(:event_id, @events, :id, :title, :include_blank => "Please select") %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
   </div>
 <% end %>

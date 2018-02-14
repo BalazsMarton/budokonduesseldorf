@@ -1,64 +1,88 @@
 <div class="row">
   
-<% if notice %>
+  <% if notice %>
   <div class="col-sm-12">
     <p id="notice"><%= notice %></p>
   </div>  
-<% end %>
+  <% end %>
 
-<div class="col-sm-12 aftermargin">
-<%= link_to 'Back', admin_events_path, :class => "btn btn-primary" %>
+  <div class="col-sm-12 aftermargin">
+    <%= link_to 'Back', admin_events_path, :class => "btn btn-primary" %>
 
-<%= link_to 'Edit', edit_admin_event_path(@event), :class => "btn btn-primary" %>
+    <%= link_to 'Edit', edit_admin_event_path(@event), :class => "btn btn-primary" %>
+  </div>
+
 </div>
 
-<div class="col-sm-12">  
-<p>
-  <strong>Cover image:</strong><br>
-  <%= image_tag @event.cover_image.cover, class: 'eventlist-tmb img-fluid' %>
-</p>
-</div>
+<div class="row">
 
-<div class="col-sm-4">
-<p>
-  <strong>Title:</strong><br>
-  <%= @event.title %>
-</p>
-</div>
+  <div class="col-sm-8">
+    <div class="row">
+      <div class="col-sm-12">  
+        <p>
+          <strong>Cover image:</strong><br>
+          <%= image_tag @event.cover_image.cover, class: 'eventlist-tmb img-fluid' %>
+        </p>
+      </div>
 
-<div class="col-sm-8">
-<p>
-  <strong>Place:</strong><br>
-  <%= link_to @event.place, @event.maplink, :'data-toggle' => 'tooltip', :'placement'=>'right', :'title'=>@event.maplink, :target => "_blank" %>
-</p>
-</div>
+      <div class="col-sm-4">
+        <p>
+          <strong>Title:</strong><br>
+          <%= @event.title %>
+        </p>
+      </div>
 
-<div class="col-sm-4">
-<p>
-  <strong>Event begin:</strong><br>
-  <%= @event.event_begin %>
-</p>
-</div>
+      <div class="col-sm-8">
+        <p>
+          <strong>Place:</strong><br>
+          <%= link_to @event.place, @event.maplink, :'data-toggle' => 'tooltip', :'placement'=>'right', :'title'=>@event.maplink, :target => "_blank" %>
+        </p>
+      </div>
 
-<div class="col-sm-4">
-<p>
-  <strong>Event end:</strong><br>
-  <%= @event.event_end %>
-</p>
-</div>
+      <div class="col-sm-4">
+        <p>
+          <strong>Event begin:</strong><br>
+          <%= @event.event_begin %>
+        </p>
+      </div>
 
-<div class="col-sm-4">
-<p>
-  <strong>Published at:</strong><br>
-  <%= @event.published_at %>
-</p>
-</div>
+      <div class="col-sm-4">
+        <p>
+          <strong>Event end:</strong><br>
+          <%= @event.event_end %>
+        </p>
+      </div>
 
-<div class="col-sm-12">
-<p>
-  <strong>Event description:</strong><br>
-  <%= @event.event_description.html_safe %>
-</p>
-</div>
+      <div class="col-sm-4">
+        <p>
+          <strong>Published at:</strong><br>
+          <%= @event.published_at %>
+        </p>
+      </div>
+
+      <div class="col-sm-12">
+        <p>
+          <strong>Event description:</strong><br>
+          <%= @event.event_description.html_safe %>
+        </p>
+      </div>
+      
+    </div>  
+  </div>
+
+  <div class="col-sm-4">
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>Applicants</h3>
+        <ul>
+          <% @applicants.each do |applicant| %>
+          <li><%= applicant.first_name %> <%= applicant.last_name %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
 
 </div>

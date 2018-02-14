@@ -4,7 +4,7 @@ class Admin::ApplicantsController < AdminController
   # GET /applicants
   # GET /applicants.json
   def index
-    @applicants = Applicant.all.order('event_id DESC')
+    @applicants = Applicant.all.order('event_id DESC').order('created_at ASC')
   end
 
   # GET /applicants/1
@@ -64,7 +64,7 @@ class Admin::ApplicantsController < AdminController
   private
 
     def prepare_events
-      @events = Event.all
+      @actual_events = Event.where("published_at < ?", DateTime.current).where("event_begin > ?", DateTime.current).order('event_begin ASC')
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_applicant

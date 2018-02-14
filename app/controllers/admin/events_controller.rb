@@ -1,6 +1,6 @@
 class Admin::EventsController < AdminController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-
+  before_action :prepare_applicants, only:[:show]
   # GET /events
   # GET /events.json
   def index
@@ -62,6 +62,10 @@ class Admin::EventsController < AdminController
   end
 
   private
+
+    def prepare_applicants
+      @applicants = Applicant.where("event_id = ?", @event)
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])
