@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <td id="mcontenttitle">
+      Application from website
+    </td>
+  </tr>
+  <tr>
+    <td id="mfrom">
+      Sender: <%= @applicant.first_name %> <%= @applicant.last_name %> <span id="msender">< <%= @applicant.email %> ></span>, Application at: <%= @applicant.created_at %>
+    </td>
+  </tr>
+  <tr>
+    <td id="mmessage">
+    Name: <%= @applicant.first_name %> <%= @applicant.last_name %><br>
+    Event: <%= @applicant.event && @applicant.event.title %> - <%= @applicant.event && @applicant.event.event_begin.strftime('%a, %b %d, %Y %H:%M') %><br>
+    Place: <%= @applicant.event && @applicant.event.place %>
+    </td>
+  </tr>
+</table>

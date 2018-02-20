@@ -1,0 +1,31 @@
+<table>
+  <tr>
+    <td id="mcontenttitle">
+      EVENT APPLICATION
+    </td>
+  </tr>
+  <tr>
+    <td id="mfrom">
+      Application at:<%= @applicant.created_at %><br>
+      with the following datas:<br>
+      Name: <%= @applicant.first_name %>
+      <%= @applicant.last_name %><br>
+      Mail: <%= @applicant.email %><br>
+    </td>
+  </tr>
+  <tr>
+    <td id="mmessage">
+    Dear <%= @applicant.first_name %> <%= @applicant.last_name %>, <br><br>
+    Thank you for your application! <br>
+    You have succesfully registered for <%= @applicant.event && @applicant.event.title %> - <%= @applicant.event && @applicant.event.event_begin.strftime('%a, %b %d, %Y %H:%M') %>, <%= @applicant.event && @applicant.event.place %>. <br><br>
+    In case you have any questions please don’t hesitate to contact me. <br>
+    Very much looking forward to seeing you soon! It will be a wonderful experience! <br><br>
+    With Love &amp; Gratitude, <br><br>
+    Attila Gyömrei<br>
+    Personal Training &amp; Massage in Düsseldorf<br>
+    <%= link_to "www.attilapt.com", "http://www.attilapt.com", :target => "_blank" %><br>
+    Mixed Movement Artist<br>
+    <%= link_to "@attisurf", "https://www.instagram.com/attisurf/", :target => "_blank" %><br>
+    </td>
+  </tr>
+</table>
