@@ -15,7 +15,8 @@ class Front::ApplicantController < FrontController
       format.html do
         if @applicant.valid?
           @applicant.save!
-          #MessageMailer.new_message(@message).deliver_now
+          ApplicantMailer.new_applicant(@applicant).deliver_now
+          ApplicantMailer.applicant_notif(@applicant).deliver_now
           redirect_to events_path
         else
           redirect_to events_path
@@ -25,7 +26,8 @@ class Front::ApplicantController < FrontController
       format.js do
         if @applicant.valid?
           @applicant.save!
-          #MessageMailer.new_message(@message).deliver_now
+          ApplicantMailer.new_applicant(@applicant).deliver_now
+          ApplicantMailer.applicant_notif(@applicant).deliver_now
           flash.now[:applicant_notice] = "Your application has been sent!"
         else
           flash.now[:error]
