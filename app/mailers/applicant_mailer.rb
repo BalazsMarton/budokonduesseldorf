@@ -1,6 +1,6 @@
 class ApplicantMailer < ApplicationMailer
 	default from: "<info@attilapt.com>"
-	default to: "info@builditgroup.hu" #"AttilaPT <info@attilapt.com>, "
+	default to: "AttilaPT <info@attilapt.com>, "
  
 	def new_applicant(applicant)
 		@applicant = applicant
