@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 aftermargin customer-review-section">
+			<div class="centered quote-box"><i class="fa fa-quote-left"></i></div>
+			<div id="carouselCustomerReviews" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<% @creviews.each_with_index do |review, index| %>
+					<li data-target="#carouselCustomerReviews" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
+					<% end %>
+				</ol>
+				<div class="carousel-inner">
+					<% @creviews.each_with_index do |review, index| %>
+						<div class="customer-review carousel-item centered <%= 'active' if index == 0 %>">
+							<p class="review-content"><%= review.content %></p>
+							<p class="customer-name"><%= review.name %></p>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

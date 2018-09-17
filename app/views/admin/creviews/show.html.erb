@@ -1,0 +1,29 @@
+<div class="row">
+	<% if notice %>
+    <div class="col-sm-12">
+      <p id="notice"><%= notice %></p>
+    </div>  
+  <% end %>
+  
+  <div class="col-sm-12 aftermargin">
+    <%= link_to 'Edit', edit_admin_creview_path(@creview), :class => "btn btn-primary" %>
+    <%= link_to 'Back', admin_creviews_path, :class => "btn btn-primary" %>
+  </div>
+
+  <div class="col-sm-4">
+  	<p>
+  <strong>Pos nr:</strong><br>
+  <%= @creview.pos_nr %>
+</p>
+<p>
+  <strong>Name:</strong><br>
+  <%= @creview.name %>
+</p>
+  </div>
+  <div class="col-sm-8">
+  	<p>
+  <strong>Content:</strong><br>
+  <%= @creview.content %>
+</p>
+  </div>
+</div>

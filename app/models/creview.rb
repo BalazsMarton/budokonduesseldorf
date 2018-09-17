@@ -1,0 +1,2 @@
+class Creview < ApplicationRecord
+end

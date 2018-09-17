@@ -407,3 +407,39 @@ ul.contact-info{
 //
 //event//
 //
+
+//
+//customer review//
+//
+.customer-review-section{
+	.quote-box{
+		margin-bottom:1.5em;
+		i{
+			padding:0.5em;
+			border-radius: 100%;
+			border: 3px solid grey;
+			font-size: 2em;
+		}
+	}
+
+	.customer-review{
+		margin-bottom: 3em;
+		.review-content{
+			font-size: 1.5em
+		}
+		.customer-name{
+			font-size:1em;
+
+		}
+	}
+
+	.carousel-indicators{
+		bottom:0;
+		li{
+			background-color:rgba(0,0,0,0.4);
+		}
+		.active{
+			background-color:rgba(0,0,0,0.8);
+		}
+	}
+}

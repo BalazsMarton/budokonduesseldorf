@@ -39,6 +39,7 @@ Rails.application.routes.draw do
     root 'pages#adminpaneldemo'
     resources :events
     resources :applicants
+    resources :creviews
   end
 
 end

@@ -48,7 +48,10 @@ document.addEventListener("turbolinks:load", function() {
        		$(this).find(".service-tab-caption").removeClass('cshow')
        		$(this).find(".service-tab-background-caption").removeClass('chide') 
        	}
-	)
+	);
+
+	$('#carouselCustomerReviews').carousel({
+	});
 
 });
 
