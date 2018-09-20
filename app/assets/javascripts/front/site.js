@@ -51,6 +51,8 @@ document.addEventListener("turbolinks:load", function() {
 	);
 
 	$('#carouselCustomerReviews').carousel({
+		interval: 15000,
+		pause: 'hover',
 	});
 
 });
