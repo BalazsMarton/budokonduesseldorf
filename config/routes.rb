@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     get 'budokon', to: 'pages#budokon'
     get 'attila', to: 'pages#attila'
     get 'services', to: 'pages#services'
-    get 'schedule', to: 'pages#schedule'
-    get 'events', to: 'pages#events'
+    get 'classes', to: 'pages#classes'
+    get 'workshops', to: 'pages#workshops'
     get 'contacts', to: 'pages#contact'
     post 'contact', to: 'message#create'
     get 'contact_error', to: 'message#contact_error', as: 'contact_error'
@@ -22,8 +22,8 @@ Rails.application.routes.draw do
     end
 
     #demo events
-    get '/event/:id' => 'pages#event', as: 'show_event'
-    post '/event/:id', to: 'applicant#create'
+    get '/workshop/:id' => 'pages#workshop', as: 'show_workshop'
+    post '/workshop/:id', to: 'applicant#create'
     #get 'event', to: 'pages#event'
     #get 'event2', to: 'pages#event2'
     #get 'event3', to: 'pages#event3'

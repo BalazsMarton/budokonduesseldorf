@@ -104,7 +104,7 @@ how I work with you as you develop and meet your goals.'
     }
   end
 
-  def schedule
+  def classes
     #meta gem -seo - generate metacontent
     @page_title = 'Düsseldorf - Fitness Studio – Classes'
     @page_description = 'Currently I am teaching Budokon and Fitness
@@ -120,8 +120,8 @@ international (more info at “events” page).'
     set_meta_tags og: {
         title: @page_title,
         type:     'website',
-        url:  'http://www.attilapt.com/schedule',
-        image:    'http://www.attilapt.com/images/meta/schedule_mini.jpg',
+        url:  'http://www.attilapt.com/classes',
+        image:    'http://www.attilapt.com/images/meta/classes_mini.jpg',
         description: @page_description,
     }
   end
@@ -146,7 +146,7 @@ could always just send me a friendly hello.'
     }
   end
 
-  def events
+  def workshops
     @events = Event.where("published_at < ?", DateTime.current).where("event_begin > ?", DateTime.current).order('event_begin ASC')
     #meta gem -seo - generate metacontent
     @page_title = 'Workshops in Düsseldorf by Attila Gyömrei'
@@ -162,13 +162,13 @@ me to come and teach at your studio.'
     set_meta_tags og: {
         title: @page_title,
         type:     'website',
-        url:  'http://www.attilapt.com/events',
-        image:    'http://www.attilapt.com/images/meta/events_mini.jpg',
+        url:  'http://www.attilapt.com/workshops',
+        image:    'http://www.attilapt.com/images/meta/workshops_mini.jpg',
         description: @page_description,
     }
   end
   
-  def event
+  def workshop
     @events = Event.where("event_begin > ?", DateTime.current).find(params[:id])
   end
   

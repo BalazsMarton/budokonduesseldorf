@@ -16,16 +16,15 @@
             work with me
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to 'workshops', events_path, class: 'dropdown-item' %>
+            <%= link_to 'workshops', workshops_path, class: 'dropdown-item' %>
             <%= link_to 'private training', personal_training_path, class: 'dropdown-item' %>
             <%= link_to 'massage', massage_path, class: 'dropdown-item' %>
           </div>
         </li>
         <li class=" nav-item <%= 'active' if current_page?(attila_path) %>"><%= link_to 'attila', attila_path, class: 'nav-link' %></li>
         <li class=" nav-item <%= 'active' if current_page?(services_path) %>"><%= link_to 'services', services_path, class: 'nav-link' %></li>
-        <li class=" nav-item <%= 'active' if current_page?(schedule_path) %>"><%= link_to 'schedule', schedule_path, class: 'nav-link' %></li>
+        <li class=" nav-item <%= 'active' if current_page?(classes_path) %>"><%= link_to 'classes', classes_path, class: 'nav-link' %></li>
         <li class=" nav-item <%= 'active' if current_page?(contacts_path) %>"><%= link_to 'contact', contacts_path, class: 'nav-link' %></li>
-        <li class=" nav-item bordered <%= 'active' if current_page?(events_path) %>"><%= link_to 'events', events_path, class: 'nav-link' %></li>
       </ul>
     </div>
   </nav>
