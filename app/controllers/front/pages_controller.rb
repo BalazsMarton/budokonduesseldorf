@@ -72,37 +72,7 @@ healthy eating a solid part of their daily routine and lifestyle.'
     }
   end
 
-  def services
-    #meta gem -seo - generate metacontent
-    @page_title = 'Personal Training – Massage – Nutrition Coaching'
-    @page_description = 'What does living well mean to you?  For me, living
-well is about allowing our bodies to be the creative, active and
-powerful animals they were designed to be.  Let me show you
-
-how to engage in a lifestyle that supports health and
-wellbeing by showing you the tools, techniques and exercises
-I have learnt over many years of personal study, ones I
-believe have transformed my life and will do yours. Whether
-you require weight loss, to build strength or learn about
-creating a healthier lifestyle, these are all common services
-people come to me for and receive the results they were
-looking for. To find out more about each of these services,
-just click on the links below. I combine these services to
-create the right program for you and are constantly reviewing
-how I work with you as you develop and meet your goals.'
-    set_meta_tags(
-        title: @page_title,
-        description: @page_description,
-    )
-    
-    set_meta_tags og: {
-        title: @page_title,
-        type:     'website',
-        url:  'http://www.attilapt.com/services',
-        image:    'http://www.attilapt.com/images/meta/services_mini.jpg',
-        description: @page_description,
-    }
-  end
+  
 
   def classes
     #meta gem -seo - generate metacontent
@@ -237,5 +207,42 @@ communication and trust between members of a team!'
         description: @page_description,
     }
   end
+
+#LEGACY
+
+=begin
+    def services
+    #meta gem -seo - generate metacontent
+    @page_title = 'Personal Training – Massage – Nutrition Coaching'
+    @page_description = 'What does living well mean to you?  For me, living
+well is about allowing our bodies to be the creative, active and
+powerful animals they were designed to be.  Let me show you
+
+how to engage in a lifestyle that supports health and
+wellbeing by showing you the tools, techniques and exercises
+I have learnt over many years of personal study, ones I
+believe have transformed my life and will do yours. Whether
+you require weight loss, to build strength or learn about
+creating a healthier lifestyle, these are all common services
+people come to me for and receive the results they were
+looking for. To find out more about each of these services,
+just click on the links below. I combine these services to
+create the right program for you and are constantly reviewing
+how I work with you as you develop and meet your goals.'
+    set_meta_tags(
+        title: @page_title,
+        description: @page_description,
+    )
+    
+    set_meta_tags og: {
+        title: @page_title,
+        type:     'website',
+        url:  'http://www.attilapt.com/services',
+        image:    'http://www.attilapt.com/images/meta/services_mini.jpg',
+        description: @page_description,
+    }
+  end
+
+=end
 
 end

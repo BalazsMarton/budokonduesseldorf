@@ -1,16 +1,15 @@
 <div class="navbar-wrap">
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-transparent navontop">
-      <%= link_to root_path, class: 'navbar-brand' do %>
-        <p class="logo-text">BDK ATTILA</p>
-        <img class="nav-logo" src="/images/bdkllogo.svg">
-      <% end %>
+    <%= link_to root_path, class: 'navbar-brand' do %>
+    <p class="logo-text">BDK ATTILA</p>
+    <img class="nav-logo" src="/images/bdkllogo.svg">
+    <% end %>
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-collapse collapse" id="navbarCollapse" style="">
       <ul class="navbar-nav ml-auto">
-        <li class=" nav-item <%= 'active' if current_page?(root_path) %>"><%= link_to 'home', root_path, class: 'nav-link' %></li>
-        <li class=" nav-item <%= 'active' if current_page?(budokon_path) %>"><%= link_to 'budokon', budokon_path, class: 'nav-link' %></li>
+        <li class=" nav-item <%= 'active' if current_page?(attila_path) %>"><%= link_to 'attila', attila_path, class: 'nav-link' %></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             work with me
@@ -21,10 +20,13 @@
             <%= link_to 'massage', massage_path, class: 'dropdown-item' %>
           </div>
         </li>
-        <li class=" nav-item <%= 'active' if current_page?(attila_path) %>"><%= link_to 'attila', attila_path, class: 'nav-link' %></li>
-        <li class=" nav-item <%= 'active' if current_page?(services_path) %>"><%= link_to 'services', services_path, class: 'nav-link' %></li>
+        <li class=" nav-item <%= 'active' if current_page?(budokon_path) %>"><%= link_to 'budokon', budokon_path, class: 'nav-link' %></li>
         <li class=" nav-item <%= 'active' if current_page?(classes_path) %>"><%= link_to 'classes', classes_path, class: 'nav-link' %></li>
         <li class=" nav-item <%= 'active' if current_page?(contacts_path) %>"><%= link_to 'contact', contacts_path, class: 'nav-link' %></li>
+        <!--LEGACY-->
+        <!--li class=" nav-item <%#= 'active' if current_page?(root_path) %>"><%#= link_to 'home', root_path, class: 'nav-link' %></li-->
+        <!--li class=" nav-item <%#= 'active' if current_page?(services_path) %>"><%#= link_to 'services', services_path, class: 'nav-link' %></li-->
+        <!--LEGACY END-->
       </ul>
     </div>
   </nav>

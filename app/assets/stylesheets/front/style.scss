@@ -99,8 +99,8 @@ ul li{
 
 .jumptarget{
     display: block;
-    height: 65px;
-    margin: -65px 0 0 0;
+    height: 49px;
+    margin: -49px 0 0 0;
     background-color: transparent;
 }
 @media (max-width: 767px) { 
@@ -142,9 +142,6 @@ ul li{
 .attila{
 	background: url(/images/attila/attila.jpg);
 
-}
-.services{
-	background: url(/images/services/service.jpg);
 }
 .contacts{
 	background: url(/images/contacts/contacts.jpg);
@@ -443,3 +440,12 @@ ul.contact-info{
 		}
 	}
 }
+
+//
+//LEGACY//
+//
+/*
+.services{
+	background: url(/images/services/service.jpg);
+}
+*/

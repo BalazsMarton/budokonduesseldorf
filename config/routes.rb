@@ -3,10 +3,8 @@ Rails.application.routes.draw do
   scope module: 'front' do
     root 'pages#home'
 
-    get 'home', to: 'pages#home'
     get 'budokon', to: 'pages#budokon'
     get 'attila', to: 'pages#attila'
-    get 'services', to: 'pages#services'
     get 'classes', to: 'pages#classes'
     get 'workshops', to: 'pages#workshops'
     get 'contacts', to: 'pages#contact'
@@ -21,9 +19,13 @@ Rails.application.routes.draw do
       get 'group_training', to: 'pages#group'
     end
 
-    #demo events
     get '/workshop/:id' => 'pages#workshop', as: 'show_workshop'
     post '/workshop/:id', to: 'applicant#create'
+    
+    #LEGACY
+    #get 'home', to: 'pages#home'
+    #get 'services', to: 'pages#services'
+    #demo events
     #get 'event', to: 'pages#event'
     #get 'event2', to: 'pages#event2'
     #get 'event3', to: 'pages#event3'
