@@ -19,7 +19,7 @@ about my practice and work.'
     set_meta_tags og: {
         title: @page_title,
         type:     'website',
-        url:  'http://www.attilapt.com/home',
+        url:  'http://www.attilapt.com/',
         image:    'http://www.attilapt.com/images/meta/home_mini.jpg',
         description: @page_description,
     }
@@ -187,27 +187,7 @@ and renew your skin.'
     }
   end 
 
-  def group
-  #meta gem -seo - generate metacontent
-    @page_title = 'Group Training – Motivation and Fun'
-    @page_description = 'Do you prefer to workout with a small group of other
-motivated individuals? Train in group &amp; share the cost, all
-while having fun with your session partners and build better
-communication and trust between members of a team!'
-    set_meta_tags(
-        title: @page_title,
-        description: @page_description,
-    )
-    
-    set_meta_tags og: {
-        title: @page_title,
-        type:     'website',
-        url:  'http://www.attilapt.com/services/group_training',
-        image:    'http://www.attilapt.com/images/meta/grouptr_mini.jpg',
-        description: @page_description,
-    }
-  end
-
+  
 #LEGACY
 
 =begin
@@ -239,6 +219,27 @@ how I work with you as you develop and meet your goals.'
         type:     'website',
         url:  'http://www.attilapt.com/services',
         image:    'http://www.attilapt.com/images/meta/services_mini.jpg',
+        description: @page_description,
+    }
+  end
+
+  def group
+  #meta gem -seo - generate metacontent
+    @page_title = 'Group Training – Motivation and Fun'
+    @page_description = 'Do you prefer to workout with a small group of other
+motivated individuals? Train in group &amp; share the cost, all
+while having fun with your session partners and build better
+communication and trust between members of a team!'
+    set_meta_tags(
+        title: @page_title,
+        description: @page_description,
+    )
+    
+    set_meta_tags og: {
+        title: @page_title,
+        type:     'website',
+        url:  'http://www.attilapt.com/services/group_training',
+        image:    'http://www.attilapt.com/images/meta/grouptr_mini.jpg',
         description: @page_description,
     }
   end

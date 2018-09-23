@@ -2,6 +2,29 @@
 		<div class="row service-select">
 
 			<div class="service-tab col-sm-4">
+				<div class="service-tab-background" style="background-image: url(images/services/grouptr.jpg);">
+					<div class="service-tab-background-caption">
+						<h3>workshops & retreats</h3>
+					</div>
+				</div>
+				<div class="service-tab-caption">
+					<div class="service-card-content">
+							<p>Do you want to learn something new? Give yourself
+this unique opportunity to move, grow, play and learn with an
+epic bunch of people. Find out where I will be next or request
+me to come and teach at your studio.</p>
+					</div>
+					<div class="service-card-footer">
+						<div class="pull-right">
+						<%= link_to workshops_path, class: 'button-link' do %>
+						<button type="button" class="btn btn-outline-secondary">more</button>
+						<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="service-tab col-sm-4">
 				<div class="service-tab-background" style="background-image: url(images/services/oneonone.jpg);">
 					<div class="service-tab-background-caption">
 						<h3>one on one personal training</h3>
@@ -53,28 +76,6 @@ relieved through massage.</p>
 					<div class="service-card-footer">
 						<div class="pull-right">
 						<%= link_to massage_path, class: 'button-link' do %>
-						<button type="button" class="btn btn-outline-secondary">more</button>
-						<% end %>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="service-tab col-sm-4">
-				<div class="service-tab-background" style="background-image: url(images/services/grouptr.jpg);">
-					<div class="service-tab-background-caption">
-						<h3>group training</h3>
-					</div>
-				</div>
-				<div class="service-tab-caption">
-					<div class="service-card-content">
-							<p>Are you a social person, a team player? Do you prefer to workout with a small group of other
-motivated individuals? Train in group &amp; share the cost, all while having fun with your session
-partners and build better communication and trust between members of a team!</p>
-					</div>
-					<div class="service-card-footer">
-						<div class="pull-right">
-						<%= link_to group_training_path, class: 'button-link' do %>
 						<button type="button" class="btn btn-outline-secondary">more</button>
 						<% end %>
 						</div>

@@ -16,13 +16,15 @@ Rails.application.routes.draw do
     scope "/services" do
       get 'personal_training', to: 'pages#oneonone'
       get 'massage', to: 'pages#massage'
-      get 'group_training', to: 'pages#group'
     end
 
     get '/workshop/:id' => 'pages#workshop', as: 'show_workshop'
     post '/workshop/:id', to: 'applicant#create'
     
     #LEGACY
+    #scope "/services" do
+    #  get 'group_training', to: 'pages#group'
+    #end
     #get 'home', to: 'pages#home'
     #get 'services', to: 'pages#services'
     #demo events
