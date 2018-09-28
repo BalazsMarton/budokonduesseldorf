@@ -231,7 +231,6 @@ video {
 }
 
 .home-bio{
-	margin-bottom: 2em;
 }
 //
 //attila//
@@ -243,6 +242,7 @@ video {
 //
 //service
 //
+
 .service-select{
 	.service-tab{
 		padding: 0;
@@ -450,6 +450,68 @@ ul.contact-info{
 		}
 	}
 }
+
+//
+//HOME/SECOND SCREEN//
+//
+
+
+.second-screen{
+	background-color: black;
+
+	.home-service-btn-wrap{
+		padding-top:2em;
+		.home-service-btn-h{
+			color: white;
+		}
+		.col-sm-4{
+			text-align:center;
+			margin-bottom:2em;
+
+			.home-service-btn{
+				padding:0.5em;
+				color: white;
+				background-color: rgba(255,255,255,0.2);
+				border:1px solid white;
+				text-transform: uppercase;
+				&:hover{
+					transition:1s;
+					background-color: rgba(255,255,255,1);
+					color: black;
+				}
+			}
+		}
+		
+	}
+
+	.hw-widget-wrap{
+		color:white;
+		.hw-widget-middle{
+			padding: 2em 1em;
+			margin-top:auto;
+			margin-bottom:auto;
+				p{
+					text-align: center;
+
+				}	
+		}
+		.hw-widget{
+			height:350px;
+			background-size: cover;
+			background-position: center;
+		}
+	}
+}
+
+@media screen and (min-width: 992px)  and (orientation: landscape) {
+	.home-service-btn-wrap{
+		padding-top:2em;
+		height:30vh;
+	}
+	.hw-widget{
+		height:70vh !important;
+	}
+}	
 
 //
 //LEGACY//

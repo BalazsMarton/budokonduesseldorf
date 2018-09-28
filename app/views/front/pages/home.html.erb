@@ -13,11 +13,7 @@
 </div>
 
 <div class="opening-video d-none d-xl-block">
-
-	<video  autoplay loop muted>
-		<source src="images/home/Atti - Final.mp4" type="video/mp4" >
-	</video>
-
+	<%= video_tag(["Atti - Final.mp4"],:autoplay=>'true', :loop=>'true', :muted=>'true',:type=>'video/mp4' ) %>
 </div>
 
 <div class="content-section">
@@ -25,7 +21,7 @@
 	<div class="container home-bio">
 		<div class="row">
 			<div class="col-lg-6 col-md-12 col-sm-12">
-			<%= image_tag ( "pngavatar.png"), class: "img-fluid aftermargin" %>
+			<%= image_tag ( "pngavatar.png"), class: "img-fluid" %>
 			</div>
 			<div class="col-lg-6 col-md-12 col-sm-12"><p>My name is Attila Gyömrei. I&#39;m a mixed mover, personal trainer,
 massage therapist and a genuine waterman from Hungary.
@@ -43,33 +39,56 @@ looking for.</p>
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 centered aftermargin">
-				<h3>GET STARTED TODAY</h3>
-			</div>	
-		</div>
-	</div>
-
-	<div class="aftermargin">
-		<%= render'front/pages/serviceselect' %>
-	</div>
-	
-	<div class="container-fluid">
-
-		<div class="col-sm-4">
-			
-		</div>
-
-		<div class="col-sm-4">
-			
-		</div>
-
-		<div class="col-sm-4">
-			
-		</div>
+	<div class="second-screen aftermargin">
 		
+		<div class="container">
+			<div class="row home-service-btn-wrap">
+				<div class="home-service-btn-h col-sm-12 centered aftermargin">
+					<h3>GET STARTED TODAY</h3>
+				</div>	
+				<div class="col-sm-4">
+					<%= link_to workshops_path do %>
+					<button class="home-service-btn">
+						workshops & retreats
+					</button>
+					<% end %>
+				</div>
+				<div class="col-sm-4">
+					<%= link_to personal_training_path do %>
+					<button class="home-service-btn">
+						personal training
+					</button>
+					<%end%>
+				</div>
+				<div class="col-sm-4">
+					<%= link_to massage_path do %>
+					<button class="home-service-btn">
+						therapeutic massage
+					</button>
+					<%end%>
+				</div>
+			</div>
+		</div>
+
+		
+	
+		<div class="container-fluid">
+			<div class="row hw-widget-wrap">
+				<div class="col-sm-4 hw-widget" style="background-image:url(images/home/widget-left.jpg)">
+				</div>
+
+				<div class="col-sm-4 hw-widget-middle">
+						<p>I BELIEVE IN HARD WORK, PUSHING OURSELVES BEYOND EXPEXTATIONS, AND THROUGH THIS BECOMING BETTER EVERY DAY.</p>
+				</div>
+
+				<div class="col-sm-4 hw-widget" style="background-image:url(images/home/widget-right.jpg)">
+				</div>
+			</div>
+		</div>	
+
 	</div>
+
+	
 
 	<%= render'front/pages/customer_reviews' %>
 
