@@ -511,7 +511,34 @@ ul.contact-info{
 	.hw-widget{
 		height:70vh !important;
 	}
-}	
+}
+
+//
+//BUDOKON//
+//
+@media (min-width: 992px){
+
+	.modal-dialog {
+		max-width: 100%;
+		margin:5% 10%;
+	}
+}
+
+.budokoncard-modal{
+	padding: 1em;
+}
+
+.budokoncard-modal-description{
+	padding: 1em;
+}
+
+.budokoncard-modal-cover{
+	height:400px;
+	width:100%;
+	background-image:url(/images/budokon/movement.jpg);
+	background-size:cover;
+	background-position: top center;
+}
 
 //
 //LEGACY//

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Budokoncards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Posnr</th>
+      <th>Cover</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @budokoncards.each do |budokoncard| %>
+      <tr>
+        <td><%= budokoncard.posnr %></td>
+        <td><%= budokoncard.cover %></td>
+        <td><%= budokoncard.title %></td>
+        <td><%= budokoncard.description %></td>
+        <td><%= link_to 'Show', budokoncard %></td>
+        <td><%= link_to 'Edit', edit_budokoncard_path(budokoncard) %></td>
+        <td><%= link_to 'Destroy', budokoncard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Budokoncard', new_admin_budokoncard_path %>

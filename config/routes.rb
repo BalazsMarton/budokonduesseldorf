@@ -44,6 +44,7 @@ Rails.application.routes.draw do
     resources :events
     resources :applicants
     resources :creviews
+    resources :budokoncards
   end
 
 end
