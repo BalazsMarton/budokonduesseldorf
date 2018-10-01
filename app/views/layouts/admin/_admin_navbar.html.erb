@@ -11,6 +11,7 @@
           <li class=" nav-item <%= 'active' if current_page?(admin_events_path) %>"><%= link_to 'Events', admin_events_path, class: 'nav-link' %></li>
           <li class=" nav-item <%= 'active' if current_page?(admin_applicants_path) %>"><%= link_to 'Applicants', admin_applicants_path, class: 'nav-link' %></li>
           <li class=" nav-item <%= 'active' if current_page?(admin_creviews_path) %>"><%= link_to 'Reviews', admin_creviews_path, class: 'nav-link' %></li>
+          <li class=" nav-item <%= 'active' if current_page?(admin_budokoncards_path) %>"><%= link_to 'BudokonCards', admin_budokoncards_path, class: 'nav-link' %></li>
           <% if admin_signed_in? %>
             <li class="nav-item"><%= link_to 'Sign out', destroy_admin_session_path, method: :delete, class: 'nav-link' %></li>
           <% else %>

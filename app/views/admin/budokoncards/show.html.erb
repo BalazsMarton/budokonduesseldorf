@@ -1,8 +1,9 @@
 <div class="row">
+
 	<% if notice %>
-	    <div class="col-sm-12">
-	      <p id="notice"><%= notice %></p>
-	    </div>  
+		<div class="col-sm-12">
+			<p id="notice"><%= notice %></p>
+		</div>  
 	<% end %>
 	
 	<div class="col-sm-12 aftermargin">
@@ -12,24 +13,31 @@
 
 </div>
 
+<div class="row">
+	
+	<div class="col-sm-12">
+		<%= image_tag @budokoncard.cover.cover, :class => "img-fluid" %>
+	</div>
 
+	<div class="col-sm-1">
+		<p>
+			<strong>Posnr:</strong><br>
+			<%= @budokoncard.posnr %>
+		</p>
+	</div>
 
-<p>
-  <strong>Posnr:</strong>
-  <%= @budokoncard.posnr %>
-</p>
+	<div class="col-sm-11">
+		<p>
+			<strong>Title:</strong><br>
+			<%= @budokoncard.title %>
+		</p>
+	</div>
 
-<p>
-  <strong>Cover:</strong>
-  <%= @budokoncard.cover %>
-</p>
+	<div class="col-sm-12">
+		<p>
+			<strong>Description:</strong><br>
+			<%= @budokoncard.description %>
+		</p>
+	</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @budokoncard.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @budokoncard.description %>
-</p>
+</div>
