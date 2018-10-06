@@ -20,10 +20,7 @@
 
 	<div class="container home-bio">
 		<div class="row">
-			<div class="col-lg-6 col-md-12 col-sm-12">
-			<%= image_tag ( "pngavatar.png"), class: "img-fluid" %>
-			</div>
-			<div class="col-lg-6 col-md-12 col-sm-12"><p>My name is Attila Gyömrei. I&#39;m a mixed mover, personal trainer,
+			<div class="col-lg-6 col-md-12 col-sm-12 justify"><p>My name is Attila Gyömrei. I&#39;m a mixed mover, personal trainer,
 massage therapist and a genuine waterman from Hungary.
 Currently living in Düsseldorf sharing my practice and love for
 Budokon. Thank you for taking the time to visit my website.
@@ -35,6 +32,9 @@ work. If you are looking to learn from me directly, check out my services. You c
 you want me to come and teach at your studio, or have any
 further questions, <%= link_to 'contact me', contacts_path(anchor: 'content-jump'), class: 'inside-link' %>. I hope you find what you&#39;re
 looking for.</p>
+			</div>
+			<div class="col-lg-6 col-md-12 col-sm-12 home-bio-avatar">
+			<%= image_tag ( "pngavatar.png"), class: " img-fluid" %>
 			</div>
 		</div>
 	</div>

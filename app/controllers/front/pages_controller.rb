@@ -26,6 +26,7 @@ about my practice and work.'
   end
   
   def budokon
+    @budokoncard = Budokoncard.all.order('posnr ASC')
     #meta gem -seo - generate metacontent
     @page_title = 'What is Budokon – Mixed Movement Arts in Düsseldorf'
     @page_description = 'The name Budokon was created by its founder, Kancho
@@ -48,6 +49,10 @@ WARRIOR&#39;s service, protection, and courage.'
         image:    'http://www.attilapt.com/images/meta/budokon_mini.jpg',
         description: @page_description,
     }
+  end
+
+  def budokon_show
+    @budokoncard = Budokoncard.find(params[:id])
   end
 
   def attila

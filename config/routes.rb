@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     root 'pages#home'
 
     get 'budokon', to: 'pages#budokon'
+    get 'budokon/:id' => 'pages#budokon_show', as:'show_budokon'
+    
     get 'attila', to: 'pages#attila'
     get 'classes', to: 'pages#classes'
     get 'workshops', to: 'pages#workshops'

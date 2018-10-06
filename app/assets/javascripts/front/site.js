@@ -8,10 +8,10 @@ document.addEventListener("turbolinks:load", function() {
     // Initialize the media query
 	  var mediaQuery = window.matchMedia('(min-width: 1280px)');
 	  // Add a listen event
-	  mediaQuery.addListener(doSomething);
+	  mediaQuery.addListener(reponsiveParallax);
 	  
 	  // Function to do something with the media query
-	  function doSomething(mediaQuery) {    
+	  function reponsiveParallax(mediaQuery) {    
 	    if (mediaQuery.matches) {
 	    	$('.parallax-section').attr("data-stellar-background-ratio", "0.5");
 	    	$('.parallax-section').removeClass('bg-center');
@@ -21,7 +21,7 @@ document.addEventListener("turbolinks:load", function() {
 	  }
 	  
 	  // On load
-	  doSomething(mediaQuery);
+	  reponsiveParallax(mediaQuery);
 
 	  // Modernizr
 	  //window.addEventListener('resize', function() {
@@ -54,6 +54,20 @@ document.addEventListener("turbolinks:load", function() {
 		interval: 15000,
 		pause: 'hover',
 	});
+
+	function showBudokonModal(){
+	    $('body').on('click', '.budokonModalButton', function(){
+	    	$('#budokonModal').modal('show');
+	    });
+		$('#budokonModal').on('hidden.bs.modal', function (e) {
+  			$('#budkoncardModal').html("LOADING...");
+		})
+	};
+
+	showBudokonModal();
+
+	
+
 
 });
 
