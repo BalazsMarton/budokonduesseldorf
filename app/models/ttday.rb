@@ -1,0 +1,2 @@
+class Ttday < ApplicationRecord
+end
