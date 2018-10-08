@@ -1,0 +1,39 @@
+<div class="row">
+
+	<% if notice %>
+    	<div class="col-sm-12">
+    	  	<p id="notice"><%= notice %></p>
+    	</div>  
+  	<% end %>
+
+    <div class="col-sm-12 aftermargin">
+    	<%= link_to 'Edit', edit_admin_lesson_path(@lesson), :class => "btn btn-primary" %>
+	    <%= link_to 'Back', admin_lessons_path, :class => "btn btn-primary" %>
+      <%= render 'admin/lessons/actual_day' %>
+  	</div>
+
+  	<div class="col-sm-3">
+		<p>
+  			<strong>Title:</strong><br>
+  			<%= @lesson.title %>
+		</p>
+
+	  	<p>
+	  		<strong>Place:</strong><br>
+	  		<%= @lesson.place %>
+		</p>
+	</div> 
+  	<div class="col-sm-3">
+		<p>
+  			<strong>Day:</strong><br>
+  			<%= @lesson.ttday_id && @lesson.ttday.name %>
+		</p>
+
+  		<p>
+  			<strong>Time:</strong><br>
+  			<%= @lesson.time_begin.to_time.strftime('%H:%M') %>-
+  			<%= @lesson.time_end.to_time.strftime('%H:%M') %>
+		</p>	
+  	</div>
+
+</div>

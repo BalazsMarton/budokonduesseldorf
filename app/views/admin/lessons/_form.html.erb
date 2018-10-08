@@ -1,0 +1,60 @@
+<%= form_with(model: [:admin,lesson], local: true) do |form| %>
+  <% if lesson.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
+
+      <ul>
+      <% lesson.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label :title %><br>
+        <%= form.text_field :title, id: :lesson_title, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label :place %><br>
+        <%= form.text_field :place, id: :lesson_place, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label :time_begin %><br>
+        <%= form.time_select :time_begin, id: :lesson_time_begin, class: 'form-control' %>
+      </div>
+    </div>    
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label :time_end %><br>
+        <%= form.time_select :time_end, id: :lesson_time_end, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label :day_id %>
+        <%= form.collection_select(:ttday_id, @ttdays, :id, :name,{:include_blank => "Please select"}, {:class => "form-control"}) %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 actions centered">
+      <%= form.submit class: "btn btn-primary" %>
+    </div> 
+  </div>
+  
+<% end %>

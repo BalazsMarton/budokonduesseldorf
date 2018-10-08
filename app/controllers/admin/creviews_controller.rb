@@ -4,7 +4,7 @@ class Admin::CreviewsController < AdminController
   # GET /creviews
   # GET /creviews.json
   def index
-    @creviews = Creview.all
+    @creviews = Creview.all.order('pos_nr ASC')
   end
 
   # GET /creviews/1

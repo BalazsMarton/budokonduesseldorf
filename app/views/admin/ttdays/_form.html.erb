@@ -11,12 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :ttday_name %>
-  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="form-group">
+      <%= form.label :pos_nr %><br>
+        <%= form.number_field :pos_nr, id: :ttday_pos_nr, class: "form-control" %>  
+        <%= form.label :name %><br>
+        <%= form.text_field :name, id: :ttday_name, class: "form-control" %>    
+      </div>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="col-sm-12 actions centered">
+      <%= form.submit class: "btn btn-primary" %>    
+    </div>
   </div>
 <% end %>

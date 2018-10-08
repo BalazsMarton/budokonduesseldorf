@@ -1,9 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
 
-<p>
-  <strong>Name:</strong>
-  <%= @ttday.name %>
-</p>
+	<% if notice %>
+    	<div class="col-sm-12">
+    	  	<p id="notice"><%= notice %></p>
+    	</div>  
+  	<% end %>
 
-<%= link_to 'Edit', edit_admin_ttday_path(@ttday) %> |
-<%= link_to 'Back', admin_ttdays_path %>
+	<div class="col-sm-12 aftermargin">
+    	<%= link_to 'Edit', edit_admin_ttday_path(@ttday), :class => "btn btn-primary" %>
+	    <%= link_to 'Back', admin_ttdays_path, :class => "btn btn-primary" %>
+  	</div>
+
+  <div class="col-sm-3">
+		<h3>
+  			<%= @ttday.pos_nr %>.<%= @ttday.name %>
+		</h3>
+	</div>
+
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>Lessons</h3>
+        <ul class="list-group">
+          <% @lessons.each do |lesson| %>
+          <li class="list-group-item">
+            <%= link_to edit_admin_lesson_path(lesson) do %>
+            <%= lesson.time_begin.to_time.strftime('%H:%M') %>
+            -
+            <%= lesson.time_end.to_time.strftime('%H:%M') %>
+            |
+            <%= lesson.title %> 
+            - 
+            <%= lesson.place %>
+            <% end %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+</div>

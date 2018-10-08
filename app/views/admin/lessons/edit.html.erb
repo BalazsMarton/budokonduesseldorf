@@ -1,0 +1,12 @@
+<div class="row">
+	<div class="col-sm-12 aftermargin">
+		<%= link_to 'Show', [:admin, @lesson], :class => "btn btn-primary" %>
+		<%= link_to 'Back', admin_lessons_path, :class => "btn btn-primary" %>
+		<%= render 'admin/lessons/actual_day' %>
+	</div>
+	<div class="col-sm-12">
+		<h3>Editing Lesson</h3>	
+	</div>
+</div>
+
+<%= render 'form', lesson: @lesson %>

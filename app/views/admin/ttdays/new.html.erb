@@ -1,5 +1,11 @@
-<h1>New Ttday</h1>
+<div class="row">
+	<div class="col-sm-12 aftermargin">
+		<%= link_to 'Back', admin_ttdays_path, :class => "btn btn-primary" %>
+	</div>
+	<div class="col-sm-12">
+		<h3>New Timetable Day</h3>		
+	</div>	
+</div>
 
 <%= render 'form', ttday: @ttday %>
 
-<%= link_to 'Back', admin_ttdays_path %>

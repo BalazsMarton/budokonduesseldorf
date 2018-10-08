@@ -12,6 +12,17 @@
           <li class=" nav-item <%= 'active' if current_page?(admin_applicants_path) %>"><%= link_to 'Applicants', admin_applicants_path, class: 'nav-link' %></li>
           <li class=" nav-item <%= 'active' if current_page?(admin_creviews_path) %>"><%= link_to 'Reviews', admin_creviews_path, class: 'nav-link' %></li>
           <li class=" nav-item <%= 'active' if current_page?(admin_budokoncards_path) %>"><%= link_to 'BudokonCards', admin_budokoncards_path, class: 'nav-link' %></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Classes
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to 'Days', admin_ttdays_path, class: 'dropdown-item' %>
+              <%= link_to 'Lessons', admin_lessons_path, class: 'dropdown-item' %>
+            </div>
+          </li>
+
           <% if admin_signed_in? %>
             <li class="nav-item"><%= link_to 'Sign out', destroy_admin_session_path, method: :delete, class: 'nav-link' %></li>
           <% else %>

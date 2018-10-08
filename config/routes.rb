@@ -48,6 +48,7 @@ Rails.application.routes.draw do
     resources :creviews
     resources :budokoncards
     resources :ttdays
+    resources :lessons
   end
 
 end

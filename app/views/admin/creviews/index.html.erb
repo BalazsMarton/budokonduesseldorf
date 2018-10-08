@@ -33,7 +33,7 @@
         <td><%= link_to 'Show', [:admin, creview], :class => "btn btn-primary" %> <%= link_to 'Edit', edit_admin_creview_path(creview), :class => "btn btn-primary" %> <%= link_to 'Destroy', [:admin, creview], method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary" %></td>
         <td><%= creview.pos_nr %></td>
         <td><%= creview.name %></td>
-        <td><%= creview.content %></td>
+        <td><%= truncate creview.content, :length => 60 %></td>
       </tr>
     <% end %>
   </tbody>

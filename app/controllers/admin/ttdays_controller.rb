@@ -4,12 +4,13 @@ class Admin::TtdaysController < AdminController
   # GET /ttdays
   # GET /ttdays.json
   def index
-    @ttdays = Ttday.all
+    @ttdays = Ttday.all.order('pos_nr ASC')
   end
 
   # GET /ttdays/1
   # GET /ttdays/1.json
   def show
+    prepare_lessons
   end
 
   # GET /ttdays/new
@@ -62,6 +63,9 @@ class Admin::TtdaysController < AdminController
   end
 
   private
+    def prepare_lessons
+      @lessons = Lesson.where("ttday_id = ?", @ttday)
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_ttday
       @ttday = Ttday.find(params[:id])
@@ -69,6 +73,6 @@ class Admin::TtdaysController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ttday_params
-      params.require(:ttday).permit(:name)
+      params.require(:ttday).permit(:pos_nr, :name)
     end
 end
