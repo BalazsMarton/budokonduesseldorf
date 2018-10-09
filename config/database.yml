@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: admin1234
+  password: <%= ENV['LOCAL_DATABASE_PASS'] %>
   socket: /var/run/mysqld/mysqld.sock
 
 development:
