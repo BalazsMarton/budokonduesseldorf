@@ -17,28 +17,28 @@
 		</h3>
 	</div>
 
-  <div class="col-sm-6">
+  <div class="col-sm-9">
     <div class="row">
       <div class="col-sm-12">
-        <h3>Lessons</h3>
+        <div class="lesson-list-heading">
+          <h3>Lessons</h3>
+          <%= link_to "Add", new_admin_lesson_path(ttday_value: @ttday.id), remote: true, class: 'lessonModalButton btn btn-warning pull-right','data-toggle':"modal", 'data-target':"#lessonModal"%>
+        </div>
         <ul class="list-group">
-          <% @lessons.each do |lesson| %>
-          <li class="list-group-item">
-            <%= link_to edit_admin_lesson_path(lesson) do %>
-            <%= lesson.time_begin.to_time.strftime('%H:%M') %>
-            -
-            <%= lesson.time_end.to_time.strftime('%H:%M') %>
-            |
-            <%= lesson.title %> 
-            - 
-            <%= lesson.place %>
-            <% end %>
-          </li>
-          <% end %>
+          <%= render 'admin/lessons/lesson_list' %>
         </ul>
       </div>
     </div>
   </div>
 
 
+</div>
+
+<!-- MODAL -->
+<div id="lessonModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg ">
+    <div id="lessonModalContent" class="modal-content lesson-modal container">
+      LOADING...
+    </div>
+  </div>
 </div>

@@ -1,0 +1,14 @@
+<% @lessons.each do |lesson| %>
+  <li class="list-group-item" id="lesson_<%= lesson.id %>">
+    <%= link_to edit_admin_lesson_path(lesson), remote: true, class: 'lessonModalButton' do %>
+      <%= lesson.time_begin.to_time.strftime('%H:%M') %>
+      -
+      <%= lesson.time_end.to_time.strftime('%H:%M') %>
+      |
+      <%= lesson.title %> 
+      - 
+      <%= lesson.place %>
+    <% end %>
+    <%= link_to 'delete',[:admin,lesson], method: :delete, data: { confirm: 'Are you sure?' },remote: true,  :class => "btn btn-danger pull-right"  %>
+  </li>
+<% end %>

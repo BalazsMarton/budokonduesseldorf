@@ -9,63 +9,42 @@
 
 <div class="jumptarget" id="content-jump"></div>
 
-<div class="content-section">
+<div class="content-section <%= 'timetable' if current_page?(classes_path) %>">
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 content-basemargin">
-				<p>Currently I am teaching Budokon and Fitness classes at Agoge Athletic Club in Heerdt, Rundum Yoga in Unterbilk, and in Karmakarma Studio as well as private classes and workshops international <%= link_to '(more info at “workshops” page)', workshops_path(anchor: 'content-jump'), class: 'inside-link'  %>.</p>
-			</div>
+      
+      <% @ttdays.each do |ttday| %>
 
-			<div class="col-sm-12 aftermargin schedule-card">
-				<h3>BDK YOGA</h3>
-				<p>This class covers the bdk yoga primary
-					series and is suitable for all. I provide a
-					range of adjustments and modifications for
-					everybody attending, giveing easier and
-					more challenging variations to suit each
-					individuals level of practice.
-				</p>
-				<ul class="pull-right">
-					<li>Wednesday / 7:45pm <%= link_to "Rundum Yoga", "https://www.rundumyoga.de/", :target => "_blank", class: 'outside-link' %>
-					</li>
-					<li>Thursday / 8pm <%= link_to "Agoge Athletic Club", "http://www.agoge.de/", :target => "_blank", class: 'outside-link' %>
-					</li>
-				</ul>
-			</div>
-			<div class="col-sm-12 aftermargin schedule-card">
-			<h3>CARDIO &amp; FUNCTIONAL TRAINING</h3>
-				<p>This class uses calisthenic &amp; light weight
-exercises including bars, rings, dumbbells,
-and animal locomotion to help build a solid
-foundation of strength, agility and cardio.
+        <div class="row timetable-day">
+          <div class="col-sm-3 col-md-3 col-lg-2 timetable-day-wraps timetable-day-title-wrap centered">
+            <%= ttday.name %>
+          </div>
+        </div>
 
-This one hour class will give you a full body
-workout and energize you for your day. It is
-appropriate for all levels.
-				</p>
-				<ul class="pull-right">
-					<li>Monday / 5 & 6pm <%= link_to "Agoge Athletic Club", "http://www.agoge.de/", :target => "_blank", class: 'outside-link' %>
-					</li>
-					<li>Thursday / 6 & 7pm <%= link_to "Agoge Athletic Club", "http://www.agoge.de/", :target => "_blank", class: 'outside-link' %>
-					</li>
-				</ul>
-			</div>
-			<div class="col-sm-12 aftermargin schedule-card">
-			<h3>YOGA BOARD CLASS</h3>
-				<p>Yogaboard Class is a full body approach inspired by one of the world’s most athletic sports,
-and the benefits are not limited to one field of fitness. This practice draw from the real
-movements of surfing to create workouts that build balance, core strength, stability, agility,
-aerobic conditioning, power, lean muscle &amp; coordination.  Yogaboard classes are structured
-for optimal fat burn, muscle build &amp; improved balance. 90 minutes of surf-inspired
-movements structured in intervals to push past plateaus. Now throw in some waves &amp; make
-it fun!
-				</p>
-				<ul class="pull-right">
-					<li>Friday / 6pm <%= link_to "Karmakarma", "http://www.karmakarma.de/", :target => "_blank", class: 'outside-link' %>
-					</li>
-				</ul>
-			</div>
+        <div class="row timetable-day">
+        <% @lessons.each do |lesson| %>
+            <% if ttday.id == lesson.ttday_id %>          
+            <div class="row col-sm-12 timetable-day-class">
+            
+            <div class="col-sm-3 col-md-3 col-lg-2 timetable-day-wraps timetable-day-time-wrap centered">
+              <div class="timetable-day-time">
+                <%= lesson.time_begin.to_time.strftime('%H:%M') %>
+                -
+                <%= lesson.time_end.to_time.strftime('%H:%M') %>
+              </div>
+            </div>
+            
+            <div class="col-sm-9 col-md-9 col-lg-10 timetable-day-wraps timetable-day-info-wrap">
+              <div class="timetable-day-info">
+              <%= lesson.title %> - <%= lesson.place %>
+              </div>
+            </div>
 
-		</div>
+            </div>
+            <%end%>
+        <%end%>
+        </div>      
+      
+      <%end%>
+      
 	</div>
 </div>

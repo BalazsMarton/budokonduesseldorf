@@ -80,6 +80,8 @@ healthy eating a solid part of their daily routine and lifestyle.'
   
 
   def classes
+    @lessons = Lesson.order('time_begin ASC')
+    @ttdays = Ttday.all.order('pos_nr ASC')
     #meta gem -seo - generate metacontent
     @page_title = 'Düsseldorf - Fitness Studio – Classes'
     @page_description = 'Currently I am teaching Budokon and Fitness

@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20181007155830) do
 
-  create_table "admins", force: :cascade do |t|
+  create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20181007155830) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "applicants", force: :cascade do |t|
+  create_table "applicants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20181007155830) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "budokoncards", force: :cascade do |t|
+  create_table "budokoncards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "posnr"
     t.string "cover"
     t.string "title"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20181007155830) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "creviews", force: :cascade do |t|
+  create_table "creviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "pos_nr"
     t.string "name"
     t.text "content"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20181007155830) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "events", force: :cascade do |t|
+  create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.datetime "event_begin"
     t.datetime "event_end"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20181007155830) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "lessons", force: :cascade do |t|
+  create_table "lessons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.string "place"
     t.time "time_begin"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20181007155830) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "ttdays", force: :cascade do |t|
+  create_table "ttdays", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "pos_nr"
     t.string "name"
     t.datetime "created_at", null: false

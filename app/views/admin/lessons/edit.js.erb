@@ -1,0 +1,10 @@
+$('#lessonModalContent').html(`
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-body"></div>
+`);
+$('.modal-body').html("<%= j render("/admin/lessons/ajax_form", lesson: @lesson)%>");
+$('.actions').addClass('aftermargin');

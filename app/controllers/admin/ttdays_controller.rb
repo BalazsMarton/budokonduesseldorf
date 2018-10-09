@@ -64,7 +64,7 @@ class Admin::TtdaysController < AdminController
 
   private
     def prepare_lessons
-      @lessons = Lesson.where("ttday_id = ?", @ttday)
+      @lessons = Lesson.all.where("ttday_id = ?", @ttday.id).order('time_begin ASC')
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_ttday
