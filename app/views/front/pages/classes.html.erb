@@ -1,7 +1,7 @@
 <div id="" class="classes hero container-fluid" data-stellar-background-ratio="0" >
 	<div class="row">
 		<div class="col-sm-12 caption-wrap">
-		<div class="caption"><h1>CLASSES</h1></div>
+		<div class="caption container"><h1>CLASSES</h1></div>
 			
 		</div>
 	</div>
@@ -15,17 +15,18 @@
       <% @ttdays.each do |ttday| %>
 
         <div class="row timetable-day">
-          <div class="col-sm-3 col-md-3 col-lg-2 timetable-day-wraps timetable-day-title-wrap centered">
-            <%= ttday.name %>
+          <div class="col-sm-12 col-md-3 col-lg-3 timetable-day-wraps timetable-day-title-wrap centered">
+            <div class="timetable-day-title">
+              <%= ttday.name %>
+            </div>
           </div>
         </div>
 
         <div class="row timetable-day">
         <% @lessons.each do |lesson| %>
-            <% if ttday.id == lesson.ttday_id %>          
-            <div class="row col-sm-12 timetable-day-class">
+            <% if ttday.id == lesson.ttday_id %>
             
-            <div class="col-sm-3 col-md-3 col-lg-2 timetable-day-wraps timetable-day-time-wrap centered">
+            <div class="col-sm-3 col-md-3 col-lg-3 timetable-day-wraps timetable-day-time-wrap centered">
               <div class="timetable-day-time">
                 <%= lesson.time_begin.to_time.strftime('%H:%M') %>
                 -
@@ -33,13 +34,12 @@
               </div>
             </div>
             
-            <div class="col-sm-9 col-md-9 col-lg-10 timetable-day-wraps timetable-day-info-wrap">
+            <div class="col-sm-9 col-md-9 col-lg-9 timetable-day-wraps timetable-day-info-wrap">
               <div class="timetable-day-info">
               <%= lesson.title %> - <%= lesson.place %>
               </div>
             </div>
 
-            </div>
             <%end%>
         <%end%>
         </div>      
