@@ -166,7 +166,7 @@ alongside your own, will deliver results … fast.'
     set_meta_tags og: {
         title: @page_title,
         type:     'website',
-        url:  'http://www.attilapt.com/services/personal_training',
+        url:  'http://www.attilapt.com/services/private_training',
         image:    'http://www.attilapt.com/images/meta/oneonone_mini.jpg',
         description: @page_description,
     }

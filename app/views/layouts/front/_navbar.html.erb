@@ -15,8 +15,10 @@
             work with me
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to 'workshops', workshops_path, class: 'dropdown-item' %>
-            <%= link_to 'private training', personal_training_path, class: 'dropdown-item' %>
+            <%= link_to workshops_path, class: 'dropdown-item' do %>
+              workshops &<br>retreats 
+            <%end%>
+            <%= link_to 'private training', private_training_path, class: 'dropdown-item' %>
             <%= link_to 'massage', massage_path, class: 'dropdown-item' %>
           </div>
         </li>
