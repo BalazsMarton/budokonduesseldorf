@@ -9,6 +9,8 @@
   <div class="col-sm-12 aftermargin">
     <%= link_to 'New Timetable Day', new_admin_ttday_path, :class => "btn btn-primary" %>
   </div>
+
+  <% if @ttdays.present? %>
   <div class="col-sm-12">
     <h3>Timetable Days</h3>
   </div>
@@ -38,5 +40,6 @@
       </tbody>
     </table>
   </div>
+  <%end%>
 
 </div>

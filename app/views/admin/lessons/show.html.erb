@@ -26,7 +26,11 @@
   	<div class="col-sm-3">
 		<p>
   			<strong>Day:</strong><br>
-  			<%= @lesson.ttday_id && @lesson.ttday.name %>
+  			<% if @lesson.ttday.nil? %>
+          <span class="upscale">DELETED DAY(<%= @lesson.ttday_id %>)</span>
+        <%else%>
+          <%= @lesson.ttday.name %>
+        <% end %>
 		</p>
 
   		<p>

@@ -57,7 +57,7 @@ class Admin::TtdaysController < AdminController
   def destroy
     @ttday.destroy
     respond_to do |format|
-      format.html { redirect_to [:admin,ttdays_url], notice: 'Ttday was successfully destroyed.' }
+      format.html { redirect_to [:admin,@ttday], notice: 'Ttday was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

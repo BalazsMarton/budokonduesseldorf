@@ -46,7 +46,7 @@
     <div class="col-sm-4">
       <div class="form-group">
         <%= form.label :ttday_id %>
-        <%= form.collection_select(:ttday_id, @ttdays, :id, :name,{:include_blank => "Please select"}, {:class => "form-control"}) %>
+        <%= form.collection_select(:ttday_id, @ttdays_collection, :id, :name,{:include_blank => "Please select"}, {:class => "form-control"}) %>
       </div>
     </div>
   </div>

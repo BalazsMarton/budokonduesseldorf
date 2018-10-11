@@ -1,10 +1,11 @@
 class Admin::LessonsController < AdminController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
-  before_action :prepare_days
+
   # GET /lessons
   # GET /lessons.json
   def index
-    @lessons = Lesson.order('ttday_id ASC, time_begin ASC')
+    @lessons = Lesson.joins(:ttday).order('pos_nr ASC, time_begin ASC')
+    @lessonswnil = Lesson.joins("LEFT JOIN ttdays ON lessons.ttday_id = ttdays.id").where("ttdays.id IS NULL").order('ttday_id ASC')
   end
 
   # GET /lessons/1
@@ -14,6 +15,8 @@ class Admin::LessonsController < AdminController
 
   # GET /lessons/new
   def new
+    prepare_days
+    
     @lesson = Lesson.new(ttday_id: params[:ttday_value])
 
     respond_to do |format|
@@ -25,6 +28,8 @@ class Admin::LessonsController < AdminController
 
   # GET /lessons/1/edit
   def edit
+    prepare_days
+
     respond_to do |format|
       format.html
       format.js
@@ -82,8 +87,10 @@ class Admin::LessonsController < AdminController
     end
 
     def prepare_days
-      @ttdays = Ttday.all
+      @ttdays_collection = Ttday.all.order('pos_nr ASC')
     end
+
+
     # Use callbacks to share common setup or constraints between actions.
     def set_lesson
       @lesson = Lesson.find(params[:id])

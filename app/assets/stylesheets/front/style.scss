@@ -359,7 +359,11 @@ video {
 	background-color: rgba(32, 26, 22, 0.9);
 }
 
-@media (max-width: 575px) { 
+@media (max-width: 575px) {
+	.timetable{
+		background-size:cover;
+		background-position: left top;
+	}
 	.timetable-day{
 		color:white;
 		font-size: 1em;
@@ -380,6 +384,7 @@ video {
 		font-size: 1em;
 	}
 	.timetable-day .timetable-day-title{
+		padding:0.6em;
 		background-color:rgba(255,255,255,0.7);
 	}
 	.timetable-day .timetable-day-title-wrap{

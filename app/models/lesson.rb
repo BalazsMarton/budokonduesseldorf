@@ -1,3 +1,3 @@
 class Lesson < ApplicationRecord
-	belongs_to :ttday
+	belongs_to :ttday, optional: true
 end

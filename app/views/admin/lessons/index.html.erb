@@ -9,6 +9,8 @@
   <div class="col-sm-12 aftermargin">
     <%= link_to 'New Lesson', new_admin_lesson_path, :class => "btn btn-primary" %>
   </div>
+
+  <% if @lessons.present? %>
   <div class="col-sm-12">
     <h3>Lessons</h3>
   </div>
@@ -35,14 +37,70 @@
           </td>
           <td><%= lesson.title %></td>
           <td><%= lesson.place %></td>
-          <td><%= lesson.time_begin.to_time.strftime('%H:%M') %>
-  -
-    <%= lesson.time_end.to_time.strftime('%H:%M') %></td>
-          <td><%= lesson.ttday_id && lesson.ttday.name %></td>
+          <td>
+            <%= lesson.time_begin.to_time.strftime('%H:%M') %>
+            -
+            <%= lesson.time_end.to_time.strftime('%H:%M') %>
+          </td>
+          
+          <td>
+            <% if lesson.ttday.nil? %>
+              <span class="upscale">DELETED DAY(<%= lesson.ttday_id %>)</span>
+            <%else%>
+              <%= lesson.ttday.name %>
+            <% end %>
+          </td>
           
         </tr>
       <% end %>
     </tbody>
     </table>
   </div>
+  <%end%>
+
+  <% if @lessonswnil.present? %>
+  <div class="col-sm-12">
+    <h3>InProgress Lessons</h3>
+  </div>
+  <div class="col-sm-12">
+
+    <table class="table table-hover table-responsive table-bordered">
+    <thead>
+      <tr>
+        <th colspan="1"></th>
+        <th>Title</th>
+        <th>Place</th>
+        <th>Time</th>
+        <th>Day</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @lessonswnil.each do |lesson| %>
+        <tr>
+          <td>
+            <%= link_to 'Show', [:admin,lesson], :class => "btn btn-primary" %>
+            <%= link_to 'Edit', edit_admin_lesson_path(lesson), :class => "btn btn-primary" %>
+            <%= link_to 'Destroy', [:admin,lesson], method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary" %>    
+          </td>
+          <td><%= lesson.title %></td>
+          <td><%= lesson.place %></td>
+          <td>
+            <%= lesson.time_begin.to_time.strftime('%H:%M') %>
+            -
+            <%= lesson.time_end.to_time.strftime('%H:%M') %>
+          </td>
+          
+          <td>
+              <span class="upscale">DELETED DAY(<%= lesson.ttday_id %>)</span>
+          </td>
+          
+        </tr>
+      <% end %>
+    </tbody>
+    </table>
+  </div>
+  <% end %>
+
+
 </div>

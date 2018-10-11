@@ -9,6 +9,7 @@
   <div class="col-sm-12 aftermargin">
     <%= link_to 'New Event', new_admin_event_path, :class => "btn btn-primary" %>
   </div>
+  <% if @events.present? %>
   <div class="col-sm-12">
     <h3>Events</h3>
   </div>
@@ -47,5 +48,6 @@
       <% end %>
     </div>
   </div>
-
+  <% end %>
+  
 </div>

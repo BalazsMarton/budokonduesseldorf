@@ -1,0 +1,9 @@
+<div class="col-sm-12">
+	<div class="lesson-list-heading">
+	  <h3>Lessons</h3>
+	  <%= link_to "Add", new_admin_lesson_path(ttday_value: @ttday.id), remote: true, class: 'lessonModalButton btn btn-warning pull-right','data-toggle':"modal", 'data-target':"#lessonModal"%>
+	</div>
+	<ul class="list-group">
+	  <%= render 'admin/lessons/lesson_list' %>
+	</ul>
+</div>

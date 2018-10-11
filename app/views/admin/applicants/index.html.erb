@@ -9,6 +9,8 @@
   <div class="col-sm-12 aftermargin">
     <%= link_to 'New Applicant', new_admin_applicant_path, :class => "btn btn-primary" %>
   </div>
+
+  <% if @applicants.present? %>
   <div class="col-sm-12">
     <h3>Applicants</h3>
   </div>
@@ -33,7 +35,18 @@
           <%= link_to 'Edit', edit_admin_applicant_path(applicant), :class => "btn btn-primary" %>
           <%= link_to 'Destroy', [:admin, applicant], method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary" %>
           </td>
-          <td><%= applicant.event && applicant.event.title %></td>
+          <td>
+            <% if applicant.event.nil? %>
+          <span class="uppercase">
+            deleted event(
+            <%= applicant.event_id %>
+            )
+          </span>
+        <%else%>
+          <span class="uppercase">
+           <%= applicant.event && applicant.event.title %>
+        <%end%> 
+          </td>
           <td><%= applicant.email %></td>
           <td><%= applicant.last_name %> <%= applicant.first_name %></td>
           <td><%= applicant.country %></td>
@@ -44,5 +57,6 @@
     </table>
     
   </div>
-
+  <% end %>
+  
 </div>

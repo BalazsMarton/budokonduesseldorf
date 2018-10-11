@@ -10,6 +10,7 @@
     <%= link_to 'New Budokoncard', new_admin_budokoncard_path, :class => "btn btn-primary" %>
   </div>
 
+  <% if @budokoncards.present? %>
   <div class="col-sm-12">
     <h3>Budokoncards</h3>
   </div>
@@ -45,5 +46,6 @@
     </table>
 
   </div>
+  <%end%>
 
 </div>

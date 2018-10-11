@@ -14,12 +14,21 @@
   <div class="col-sm-12">
       <p>
         <strong>Event:</strong><br>
-        <span class="uppercase">
-         <%= @applicant.event && @applicant.event.title %>
-        </span><br>
-        <%= @applicant.event.event_begin %>
-      </p>
+        
+        <% if @applicant.event.nil? %>
+          <span class="uppercase">
+            deleted event(
+            <%= @applicant.event_id %>
+            )
+          </span>
+        <%else%>
+          <span class="uppercase">
+           <%= @applicant.event.title %>
+          </span><br>
+          <%= @applicant.event.event_begin %>
+        <%end%>
 
+      </p>
   </div>
 
   <div class="col-sm-4">
