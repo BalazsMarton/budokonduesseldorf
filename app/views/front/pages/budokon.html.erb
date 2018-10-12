@@ -11,38 +11,6 @@
 
 <div class="content-section">
 	<div class="container">
-		<div class="row">
-
-			<% @budokoncard.each do |budokoncard| %>
-
-				<div class="col-lg-4 aftermargin">
-					<div class="card">
-						<%= image_tag budokoncard.cover.thumb, :class => "card-img-top" %>
-						<div class="card-body">
-							<h5 class="card-title centered">
-								<%= budokoncard.title %>
-							</h5>
-							<p class="card-text">
-								<%= truncate budokoncard.description, :length => 130 %>
-							</p>
-						</div>
-						<div class="card-footer">
-							<%= link_to "view", show_budokon_path(budokoncard), remote: true, class: 'budokonModalButton btn btn-primary pull-right','data-toggle':"modal", 'data-target':"#budokonModal"%>
-						</div>
-					</div>
-				</div>		
-				
-			<% end %>
-
-		</div>
-	</div>
-</div>
-
-<!-- MODAL -->
-<div id="budokonModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-lg ">
-		<div id="budkoncardModal" class="modal-content budokoncard-modal">
-			LOADING...
-		</div>
+		<%= render'front/pages/budokoncard_collection' %>
 	</div>
 </div>

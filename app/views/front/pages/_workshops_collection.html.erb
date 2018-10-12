@@ -1,0 +1,43 @@
+<% @events.each do |event| %>  
+<div class="container section-content">
+	<div class="row events-card">
+
+		<div class="col-sm-4 events-card-thumb" style="background:url(<%= event.cover_image.thumb %>)" >
+			<div class="row">
+				<div class="events-card-date centered">
+					<%= event.event_begin.to_time.strftime('%b') %>
+					<br>
+					<%= event.event_begin.to_time.strftime('%d') %>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-8 events-card-content">
+
+			<div class="events-card-title color-gold">
+				<h3><%= event.title %></h3>
+			</div>
+			<div class="events-card-p">
+				<p>
+					<%= event.event_begin.to_time.strftime('%a, %b %d, %Y %H:%M') %>-<%= event.event_end.to_time.strftime('%H:%M') %> <br>
+					<%= event.place %> <%= link_to "(map)", event.maplink, :target => "_blank" %>
+				</p>
+			</div>
+			<div class="events-card-nav">
+				<div>
+					<%= link_to show_workshop_path(event), class: 'button-link' do %>
+					<button type="button" class="btn btn-lg btn-outline-secondary">COURSE DESCRIPTION</button>
+					<% end %>
+				</div>
+				<div>
+					<%= link_to show_workshop_path(event, anchor: 'courseapplication-jump'), class: 'button-link' do %>
+					<button type="button" class="btn btn-lg btn-outline-secondary">COURSE APPLICATION</button>
+					<% end %>
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+</div>
+<% end %>
