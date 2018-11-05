@@ -5,9 +5,16 @@
 		<div class="col-sm-4 events-card-thumb" style="background:url(<%= event.cover_image.thumb %>)" >
 			<div class="row">
 				<div class="events-card-date centered">
-					<%= event.event_begin.to_time.strftime('%b') %>
-					<br>
-					<%= event.event_begin.to_time.strftime('%d') %>
+					<% if event.event_begin.to_time.strftime('%a') != event.event_end.to_time.strftime('%a') %>
+
+						<%= event.event_begin.to_time.strftime('%b') %><br>
+						<%= event.event_begin.to_time.strftime('%d') %>-<%= event.event_end.to_time.strftime('%d') %>
+
+					<%else%>
+						<%= event.event_begin.to_time.strftime('%b') %><br>
+						<%= event.event_begin.to_time.strftime('%d') %>
+					<%end%>
+					
 				</div>
 			</div>
 		</div>
@@ -18,8 +25,13 @@
 				<h3><%= event.title %></h3>
 			</div>
 			<div class="events-card-p">
-				<p>
+				<p><% if event.event_begin.to_time.strftime('%a') != event.event_end.to_time.strftime('%a') %>
+					<%= event.event_begin.to_time.strftime('%a, %b %d, %Y %H:%M') %>-<br><%= event.event_end.to_time.strftime('%a, %b %d, %Y %H:%M') %>
+					<br>
+					<% else %>
 					<%= event.event_begin.to_time.strftime('%a, %b %d, %Y %H:%M') %>-<%= event.event_end.to_time.strftime('%H:%M') %> <br>
+					<% end %>
+
 					<%= event.place %> <%= link_to "(map)", event.maplink, :target => "_blank" %>
 				</p>
 			</div>
