@@ -4,18 +4,23 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?&libraries=places", defer: true %>
     <%= javascript_include_tag 'admin', defer: Rails.env.production?, 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
+  <%= content_tag :body, id: 'app', data: {action: action_name, controller: controller_name} do %>
+
   	<%= render'layouts/admin/admin_navbar' %>
+
     <main>
       <div class="container">
         <%= yield %>
       </div>
     </main>
+
     <%= render'layouts/admin/admin_footer' %>
-  </body>
+
+  <%end%>
 
 </html>
