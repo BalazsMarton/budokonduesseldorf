@@ -5,13 +5,13 @@ document.addEventListener("turbolinks:load", function() {
 
 	//jQuery to collapse the navbar on scroll
 	$(window).scroll(function() {
-	    if ($(".navbar").offset().top > 100) {
-	    	$(".navbar").removeClass("navontop");
-	        $(".navbar").addClass("top-nav-collapse");
-	    } else {
-	        $(".navbar").removeClass("top-nav-collapse");
-	        $(".navbar").addClass("navontop");
-	    }
+		if ($(".navbar").offset().top > 100) {
+			$(".navbar").removeClass("navontop");
+			$(".navbar").addClass("top-nav-collapse");
+		} else {
+			$(".navbar").removeClass("top-nav-collapse");
+			$(".navbar").addClass("navontop");
+		}
 	});
 
 });
