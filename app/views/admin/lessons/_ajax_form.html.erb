@@ -43,6 +43,10 @@
   </div>
   <%= form.hidden_field :ttday_id, :value => @lesson.ttday_id %>
 
+
+  <%= form.hidden_field :place_lng, :value => @lesson.place_lng.present? ? @lesson.place_lng : 0, id: 'place_lng' %>
+  <%= form.hidden_field :place_lat, :value =>  @lesson.place_lat.present? ? @lesson.place_lat : 0, id: 'place_lat' %>
+
   <div class="row">
     <div class="col-sm-12 actions centered">
       <%= form.submit class: "btn btn-primary" %>

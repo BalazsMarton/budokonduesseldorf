@@ -2,10 +2,16 @@ document.addEventListener("turbolinks:load", function() {
 
 	var app = document.getElementById('app');
 
-	function initAutocompleteMap() {
+	const initAutocompleteMap=()=>{
+	function initMap() {
+		let storedLat = document.getElementById('place_lat').value;
+		let storedLng = document.getElementById('place_lng').value;
+		function currentLatStart(){ if(storedLat == 0) {return 51.22} else {return storedLat} };
+		function currentLngStart(){ if(storedLng == 0) {return 6.78} else {return storedLng} };
+
 	  var map = new google.maps.Map(document.getElementById('map'), {
-	    center: {lat: 51.22, lng: 6.78},
-	    zoom: 10
+	    center: { lat: Number(currentLatStart()), lng: Number(currentLngStart()) },
+	    zoom: 17
 	  });
 	  var card = document.getElementById('pac-card');
 	  var input = document.getElementById('pac-input');
@@ -99,6 +105,74 @@ document.addEventListener("turbolinks:load", function() {
 	        autocomplete.setOptions({strictBounds: this.checked});
 	      });
 	}
+	initMap()
+	};
+
+	////////////////////////////////////////////////////////////////////////////////////////
+
+	const initShowMap=()=>{
+	var placeLat = document.getElementById('map').dataset.placeLat,
+			placeLng = document.getElementById('map').dataset.placeLng,
+			placeName = document.getElementById('map').dataset.placeName;
+
+	function initMap() {
+		
+        var place = new google.maps.LatLng(placeLat, placeLng);
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: place,
+          zoom: 17
+        });
+
+        var coordInfoWindow = new google.maps.InfoWindow();
+        coordInfoWindow.setContent(createInfoWindowContent(place, map.getZoom()));
+        coordInfoWindow.setPosition(place);
+        coordInfoWindow.open(map);
+
+        map.addListener('zoom_changed', function() {
+          coordInfoWindow.setContent(createInfoWindowContent(place, map.getZoom()));
+          coordInfoWindow.open(map);
+        });
+      }
+
+      var TILE_SIZE = 256;
+
+      function createInfoWindowContent(latLng, zoom) {
+        var scale = 1 << zoom;
+
+        var worldCoordinate = project(latLng);
+
+        var pixelCoordinate = new google.maps.Point(
+            Math.floor(worldCoordinate.x * scale),
+            Math.floor(worldCoordinate.y * scale));
+
+        var tileCoordinate = new google.maps.Point(
+            Math.floor(worldCoordinate.x * scale / TILE_SIZE),
+            Math.floor(worldCoordinate.y * scale / TILE_SIZE));
+
+        return [
+          `<p class="text-uppercase m-0">${placeName}</p>`
+        ].join('<br>');
+      }
+
+      // The mapping between latitude, longitude and pixels is defined by the web
+      // mercator projection.
+      function project(latLng) {
+        var siny = Math.sin(latLng.lat() * Math.PI / 180);
+
+        // Truncating to 0.9999 effectively limits latitude to 89.189. This is
+        // about a third of a tile past the edge of the world tile.
+        siny = Math.min(Math.max(siny, -0.9999), 0.9999);
+
+        return new google.maps.Point(
+            TILE_SIZE * (0.5 + latLng.lng() / 360),
+            TILE_SIZE * (0.5 - Math.log((1 + siny) / (1 - siny)) / (4 * Math.PI)));
+      }
+
+      initMap()
+      };
+
+      ////////////////////////////////////////////////////////////////////////
 
 	if (app.dataset.controller == 'ttdays' && app.dataset.action == 'show'){
 		function showLessonModal(){
@@ -120,6 +194,11 @@ document.addEventListener("turbolinks:load", function() {
 	if (app.dataset.controller == 'lessons' && app.dataset.action == 'edit'){
 		
 		initAutocompleteMap();
+	}
+
+	if (app.dataset.controller == 'lessons' && app.dataset.action == 'show'){
+		
+		initShowMap();
 	}
 
 });

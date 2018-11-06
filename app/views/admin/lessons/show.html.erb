@@ -41,3 +41,8 @@
   	</div>
 
 </div>
+<div class="row">
+  <div class="col-sm-12 form-group">
+    <%= content_tag :div,'', id: 'map', data: {'place-lat': @lesson.place_lat, 'place-lng': @lesson.place_lng, 'place-name': @lesson.place}%>
+  </div>
+</div>

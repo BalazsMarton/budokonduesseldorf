@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181007155830) do
+ActiveRecord::Schema.define(version: 20181106172220) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -82,6 +82,8 @@ ActiveRecord::Schema.define(version: 20181007155830) do
     t.integer "ttday_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "place_lat", precision: 15, scale: 13
+    t.decimal "place_lng", precision: 15, scale: 13
   end
 
   create_table "ttdays", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

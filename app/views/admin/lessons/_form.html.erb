@@ -50,6 +50,9 @@
       </div>
     </div>
   </div>
+  
+  <%= form.hidden_field :place_lng, :value => @lesson.place_lng.present? ? @lesson.place_lng : 0, id: 'place_lng' %>
+  <%= form.hidden_field :place_lat, :value =>  @lesson.place_lat.present? ? @lesson.place_lat : 0, id: 'place_lat' %>
 
   <div class="row">
       <div class="col-sm-12 form-group">

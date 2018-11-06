@@ -98,6 +98,6 @@ class Admin::LessonsController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:title, :place, :time_begin, :time_end, :ttday_id)
+      params.require(:lesson).permit(:title, :place, :time_begin, :time_end, :ttday_id, :place_lng, :place_lat)
     end
 end
