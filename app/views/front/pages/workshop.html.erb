@@ -34,4 +34,17 @@
 			</div>
 		</div>
 	</div>
+
+	
+	<%if @events.place_lat != 0 && @events.place_lng != 0%>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12 workshop-map-wrap">
+				<%= content_tag :div,'', id: 'map', data: {'place-lat': @events.place_lat, 'place-lng': @events.place_lng, 'place-name': @events.place}%>
+				</div>
+			</div>
+		</div>
+	<%end%>	
+	
+
 </div>

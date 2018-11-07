@@ -174,6 +174,7 @@ document.addEventListener("turbolinks:load", function() {
 
       ////////////////////////////////////////////////////////////////////////
 
+    //TTDAYS
 	if (app.dataset.controller == 'ttdays' && app.dataset.action == 'show'){
 		function showLessonModal(){
 			$('body').on('click', '.lessonModalButton', function(){
@@ -185,7 +186,7 @@ document.addEventListener("turbolinks:load", function() {
 		};
 		showLessonModal();
 	}
-
+	//LESSONS
 	if (app.dataset.controller == 'lessons' && app.dataset.action == 'new'){
 		
 		initAutocompleteMap();
@@ -197,6 +198,21 @@ document.addEventListener("turbolinks:load", function() {
 	}
 
 	if (app.dataset.controller == 'lessons' && app.dataset.action == 'show'){
+		
+		initShowMap();
+	}
+	//EVENTS
+	if (app.dataset.controller == 'events' && app.dataset.action == 'new'){
+		
+		initAutocompleteMap();
+	}
+
+	if (app.dataset.controller == 'events' && app.dataset.action == 'edit'){
+		
+		initAutocompleteMap();
+	}
+
+	if (app.dataset.controller == 'events' && app.dataset.action == 'show'){
 		
 		initShowMap();
 	}

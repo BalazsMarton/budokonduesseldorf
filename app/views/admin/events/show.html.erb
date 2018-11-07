@@ -66,6 +66,13 @@
           <%= @event.event_description.html_safe %>
         </p>
       </div>
+
+      <%if @event.place_lat != 0 && @event.place_lng != 0%>
+      <div class="col-sm-12">
+        <%= content_tag :div,'', id: 'map', data: {'place-lat': @event.place_lat, 'place-lng': @event.place_lng, 'place-name': @event.place}%>
+      </div>
+      <%end%>
+
       
     </div>  
   </div>

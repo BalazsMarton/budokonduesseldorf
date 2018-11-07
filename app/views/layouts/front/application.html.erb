@@ -11,7 +11,7 @@
     <%= analytics_init if GoogleAnalytics.valid_tracker? %>
   </head>
 
-  <body>
+  <%= content_tag :body, id: 'app', data: {action: action_name, controller: controller_name} do %>
   	<%= render'layouts/front/navbar' %>
     <main>
     <%= yield %>
@@ -20,6 +20,6 @@
       <%= render'front/pages/serviceselect' %>
     <% end %>
     <%= render'layouts/front/footer' %>
-  </body>
+  <%end%>
 
 </html>
