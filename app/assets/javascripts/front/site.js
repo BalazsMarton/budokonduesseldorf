@@ -57,8 +57,29 @@ document.addEventListener("turbolinks:load", function() {
 
 	showBudokonModal();
 
-	
+	$('.classesCollapseButton').click(
+		function(){
 
+		$('.collapse-example-wrap').remove()
+		$('.close').remove()
+		$('.classesCollapseButton').removeClass('chide')
+
+		$(this).addClass("chide")
+		$(this).after(`<i class="close fa fa-times" aria-hidden="true"></i>`)
+		$(this).parents('.lesson-box').after(`
+			<div class="col-sm-12 col-md-12 col-lg-12 collapse-example-wrap" id="">
+				<div class="collapse" id="collapseExample">
+				  <div class="card card-body">
+				    LOADING...
+				  </div>
+				</div>
+			</div>
+		`)
+
+		$("#collapseExample").collapse('show');
+
+		},
+	);
 
 });
 

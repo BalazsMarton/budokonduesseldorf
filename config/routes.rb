@@ -6,8 +6,10 @@ Rails.application.routes.draw do
     get 'budokon', to: 'pages#budokon'
     get 'budokon/:id' => 'pages#budokon_show', as:'show_budokon'
     
-    get 'attila', to: 'pages#attila'
     get 'classes', to: 'pages#classes'
+    get 'classes/:id', to: 'pages#class_show', as:'show_class'
+
+    get 'attila', to: 'pages#attila'
     get 'workshops', to: 'pages#workshops'
     get 'contacts', to: 'pages#contact'
     post 'contact', to: 'message#create'

@@ -1,0 +1,31 @@
+
+<% if @lesson.place_lng === 0 && @lesson.place_lat === 0 %>
+document.querySelector('.card-body').innerHTML = (`
+	<div class="row">
+	  <div class="col-sm-12">
+	  	MAP NOT FOUND
+	  </div>
+	</div>
+`);
+
+<% else %>
+document.querySelector('.card-body').innerHTML = (`
+	<div class="row">
+	  <div class="col-sm-12">
+	    <%= content_tag :div,'', id: 'map', data: {'place-lat': @lesson.place_lat, 'place-lng': @lesson.place_lng, 'place-name': @lesson.place}%>
+	  </div>
+	</div>
+`);
+<%= render "gmaps_show_init" %>
+
+<%end%>
+
+$('.close').click(
+	function(){
+
+		$('.collapse-example-wrap').remove()
+		$('.chide').removeClass('chide')
+		$(this).remove()
+
+	},
+);

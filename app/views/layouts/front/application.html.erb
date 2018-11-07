@@ -5,6 +5,7 @@
     <%= display_meta_tags site: 'attilapt.com', reverse: true %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?&libraries=places", defer: true %>
     <%= javascript_include_tag 'application', defer: Rails.env.production?, 'data-turbolinks-track': 'reload' %>
     <%= csrf_meta_tags %>
     <%= analytics_init if GoogleAnalytics.valid_tracker? %>

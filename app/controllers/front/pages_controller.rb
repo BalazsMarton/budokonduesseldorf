@@ -103,6 +103,10 @@ international (more info at “events” page).'
     }
   end
 
+  def class_show
+    @lesson = Lesson.find(params[:id])
+  end
+
   def contact
     #meta gem -seo - generate metacontent
     @page_title = 'Let’s have a chat with Attila – Contact information'

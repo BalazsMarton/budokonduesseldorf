@@ -12,19 +12,27 @@
     <% @lessons.each do |lesson| %>
     <% if ttday.id == lesson.ttday_id %>
 
-      <div class="col-sm-3 col-md-3 col-lg-3 timetable-day-wraps timetable-day-time-wrap centered">
-        <div class="timetable-day-time">
-          <%= lesson.time_begin.to_time.strftime('%H:%M') %>
-          -
-          <%= lesson.time_end.to_time.strftime('%H:%M') %>
-        </div>
-      </div>
+      <div class="col-sm-12 col-md-12 col-lg-12 lesson-box" id="lesson<%= lesson.id %>_box">
+        <div class="row">
+          <div class="col-sm-3 col-md-3 col-lg-3 timetable-day-wraps timetable-day-time-wrap centered">
+            <div class="timetable-day-time">
+              <%= lesson.time_begin.to_time.strftime('%H:%M') %>
+              -
+              <%= lesson.time_end.to_time.strftime('%H:%M') %>
+            </div>
+          </div>
 
-      <div class="col-sm-9 col-md-9 col-lg-9 timetable-day-wraps timetable-day-info-wrap">
-        <div class="timetable-day-info">
-          <%= lesson.title %> - <%= lesson.place %>
+          <div class="col-sm-9 col-md-9 col-lg-9 timetable-day-wraps timetable-day-info-wrap">
+            <div class="timetable-day-info">
+              <%= lesson.title %> - <%= lesson.place %> 
+              <span class="pull-right">
+                <%= link_to "MAP", show_class_path(lesson), remote: true, id:"lesson_#{lesson.id}_button", class: 'classesCollapseButton pull-right'%>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
+      
 
     <%end%>
     <%end%>
