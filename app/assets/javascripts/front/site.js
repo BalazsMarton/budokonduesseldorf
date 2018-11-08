@@ -141,18 +141,18 @@ document.addEventListener("turbolinks:load", function() {
 
 	if (app.dataset.controller == 'pages' && app.dataset.action == 'classes'){
 		
-		document.querySelector('.classesCollapseButton').addEventListener('click', function (event) {
+		$('.classesCollapseButton').on('click', function (event) {
 			$('.collapse-example-wrap').remove()
 			$('.close').remove()
 			$('.classesCollapseButton').removeClass('chide')
 
-			$(event.target).addClass("chide")
-			$(event.target).after('<i class="close fa fa-times" aria-hidden="true"></i>')
-			$(event.target).parents('.lesson-box').after('<div class="col-sm-12 col-md-12 col-lg-12 collapse-example-wrap" id=""><div class="collapse" id="collapseExample"><div class="card card-body">LOADING...</div></div></div>')
+			$(this).addClass("chide")
+			$(this).after('<i class="close fa fa-times" aria-hidden="true"></i>')
+			$(this).parents('.lesson-box').after('<div class="col-sm-12 col-md-12 col-lg-12 collapse-example-wrap" id=""><div class="collapse" id="collapseExample"><div class="card card-body">LOADING...</div></div></div>')
 
 			$("#collapseExample").collapse('show');
-			
-		}, false);
+
+		});
 		
 	}
 
