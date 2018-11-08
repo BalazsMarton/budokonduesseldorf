@@ -45,10 +45,10 @@ document.addEventListener("turbolinks:load", function() {
 
 	////////////////////////////////////////////////////////////////////////////////////////
 
-	const initShowMap=()=>{
-	var placeLat = document.getElementById('map').dataset.placeLat,
-			placeLng = document.getElementById('map').dataset.placeLng,
-			placeName = document.getElementById('map').dataset.placeName;
+	function initShowMap(){
+	var placeLat = document.getElementById('map').dataset.placeLat;
+	var placeLng = document.getElementById('map').dataset.placeLng;
+	var placeName = document.getElementById('map').dataset.placeName;
 
 	function initMap() {
 		
@@ -86,7 +86,7 @@ document.addEventListener("turbolinks:load", function() {
             Math.floor(worldCoordinate.y * scale / TILE_SIZE));
 
         return [
-          `<p class="text-uppercase m-0 color-gold">${placeName}</p>`
+          '<p class="text-uppercase m-0 color-gold">'+placeName+'</p>'
         ].join('<br>');
       }
 
@@ -141,29 +141,18 @@ document.addEventListener("turbolinks:load", function() {
 
 	if (app.dataset.controller == 'pages' && app.dataset.action == 'classes'){
 		
-		$('.classesCollapseButton').click(
-		function(){
-
+		document.querySelector('.classesCollapseButton').addEventListener('click', function (event) {
 			$('.collapse-example-wrap').remove()
 			$('.close').remove()
 			$('.classesCollapseButton').removeClass('chide')
 
-			$(this).addClass("chide")
-			$(this).after(`<i class="close fa fa-times" aria-hidden="true"></i>`)
-			$(this).parents('.lesson-box').after(`
-				<div class="col-sm-12 col-md-12 col-lg-12 collapse-example-wrap" id="">
-					<div class="collapse" id="collapseExample">
-					  <div class="card card-body">
-					    LOADING...
-					  </div>
-					</div>
-				</div>
-			`)
+			$(event.target).addClass("chide")
+			$(event.target).after('<i class="close fa fa-times" aria-hidden="true"></i>')
+			$(event.target).parents('.lesson-box').after('<div class="col-sm-12 col-md-12 col-lg-12 collapse-example-wrap" id=""><div class="collapse" id="collapseExample"><div class="card card-body">LOADING...</div></div></div>')
 
 			$("#collapseExample").collapse('show');
-
-			},
-		);
+			
+		}, false);
 		
 	}
 

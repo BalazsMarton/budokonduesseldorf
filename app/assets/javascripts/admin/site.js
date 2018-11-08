@@ -2,10 +2,10 @@ document.addEventListener("turbolinks:load", function() {
 
 	var app = document.getElementById('app');
 
-	const initAutocompleteMap=()=>{
+	function initAutocompleteMap(){
 	function initMap() {
-		let storedLat = document.getElementById('place_lat').value;
-		let storedLng = document.getElementById('place_lng').value;
+		var storedLat = document.getElementById('place_lat').value;
+		var storedLng = document.getElementById('place_lng').value;
 		function currentLatStart(){ if(storedLat == 0) {return 51.22} else {return storedLat} };
 		function currentLngStart(){ if(storedLng == 0) {return 6.78} else {return storedLng} };
 
@@ -110,10 +110,10 @@ document.addEventListener("turbolinks:load", function() {
 
 	////////////////////////////////////////////////////////////////////////////////////////
 
-	const initShowMap=()=>{
-	var placeLat = document.getElementById('map').dataset.placeLat,
-			placeLng = document.getElementById('map').dataset.placeLng,
-			placeName = document.getElementById('map').dataset.placeName;
+	function initShowMap(){
+	var placeLat = document.getElementById('map').dataset.placeLat;
+	var placeLng = document.getElementById('map').dataset.placeLng;
+	var placeName = document.getElementById('map').dataset.placeName;
 
 	function initMap() {
 		
@@ -151,7 +151,7 @@ document.addEventListener("turbolinks:load", function() {
             Math.floor(worldCoordinate.y * scale / TILE_SIZE));
 
         return [
-          `<p class="text-uppercase m-0">${placeName}</p>`
+          '<p class="text-uppercase m-0">'+placeName+'</p>'
         ].join('<br>');
       }
 
