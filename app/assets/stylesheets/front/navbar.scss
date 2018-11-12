@@ -1,3 +1,7 @@
+.dropdown-menu{
+	padding:0;
+}
+
 @media screen and (max-width:767px){
 .navontop #navbarCollapse.show, .navontop #navbarCollapse.collapsing{
 	background-color:rgba(32, 26, 22, 0.9);
@@ -10,9 +14,15 @@
 		background-color:rgba(0,0,0,0);
 		border:none;
 		.dropdown-item{
-		color: rgba(255, 255, 255, 0.5);
-			&:hover{
-				color: rgba(0, 0, 0, 0.5)
+			background-color:transparent;
+			color: rgba(255, 255, 255, 0.5);
+			&:hover, &:focus{
+				background-color:transparent;
+				color: rgba(255, 255, 255, 0.75)
+			}
+			&.active,&:active{
+				background-color:transparent;
+				color: rgba(255, 255, 255, 1)
 			}
 		}
 
@@ -37,8 +47,13 @@ span.navbar-toggler-icon{
 		border-radius: 0;
 		.dropdown-item{
 			color: rgba(255, 255, 255, 0.5);
-			&:hover{
+			&:hover, &:focus{
+				background-color:rgba(255,255,255,1);
 				color: rgba(0, 0, 0, 0.5)
+			}
+			&.active,&:active{
+				background-color:transparent;
+				color: rgba(255, 255, 255, 1)
 			}
 		}
 	}

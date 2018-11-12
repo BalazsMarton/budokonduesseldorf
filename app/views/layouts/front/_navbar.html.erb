@@ -15,11 +15,11 @@
             work with me
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to workshops_path, class: 'dropdown-item' do %>
+            <%= link_to workshops_path, class: "dropdown-item #{'active' if current_page?(workshops_path)}" do %>
               workshops &<br>retreats 
             <%end%>
-            <%= link_to 'private training', private_training_path, class: 'dropdown-item' %>
-            <%= link_to 'massage', massage_path, class: 'dropdown-item' %>
+            <%= link_to 'private training', private_training_path, class: "dropdown-item #{'active' if current_page?(private_training_path)}" %>
+            <%= link_to 'massage', massage_path, class: "dropdown-item #{'active' if current_page?(massage_path)}" %>
           </div>
         </li>
         <li class=" nav-item <%= 'active' if current_page?(budokon_path) %>"><%= link_to 'budokon', budokon_path, class: 'nav-link' %></li>
