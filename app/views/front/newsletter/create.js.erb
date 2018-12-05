@@ -1,0 +1,20 @@
+<% if flash[:newsletter_notice] %>
+
+$('#new_newsletter').after('<div class="notice row"><%= flash[:newsletter_notice] %></div>');
+$('#newsletterErrors').remove();
+$('#new_newsletter').remove();
+$('.notice').click(function(){
+    $(this).remove();
+});
+
+<% end %>
+
+<% if @newsletter.errors.any? %>
+
+$('#newsletterErrors').remove();
+$('#newsletter_email').after('<div class="form-control-feedback" id="newsletterErrors"><% @newsletter.errors.each do |attr,msg| %><%= msg %><br><% end %></div>');
+$('#newsletterErrors').click(function(){
+    $(this).remove();
+});
+
+<% end %>

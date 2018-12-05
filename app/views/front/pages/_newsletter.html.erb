@@ -1,0 +1,7 @@
+<%= form_for Newsletter.new, html: { remote: true }, url: newsletter_path do |newsletter_form| %>
+
+	<%= newsletter_form.text_field :email, placeholder: "E-mail*", class: "form-control" %>
+	</br>
+	<%= newsletter_form.submit "SIGN UP", class: "button-link btn btn-outline-secondary btn-block" %>
+
+<% end %>

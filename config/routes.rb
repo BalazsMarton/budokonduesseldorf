@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   scope module: 'front' do
     root 'pages#home'
 
+    post 'newsletter', to: 'newsletter#create', as: 'newsletter'
+
     get 'budokon', to: 'pages#budokon'
     get 'budokon/:id' => 'pages#budokon_show', as:'show_budokon'
     

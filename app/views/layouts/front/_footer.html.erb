@@ -1,6 +1,6 @@
 <footer>
 <div class="container-fluid">
-	<div class="row footer-wrap">
+	<div class="row">
 		<div class="col-sm-12 footer-pre centered">
 			<div class="footer-pre-content">
 				<h3>LET’S SOCIALIZE</h3>
@@ -19,10 +19,20 @@
 				
 			</div>	
 		</div>
-		<div class="col-sm-12 footer centered">
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4 footer centered">
+			<div class="footer-content">
+				<p>newsletter signup</p>
+				<%= render'front/pages/newsletter' %>
+			</div>
+		</div>
+		<div class="col-sm-4  footer centered">
 			<div class="footer-content">
 				<p>info@attilapt.com</p>
-				<p>Proud member of <%= link_to "Budokon", "http://budokon.com/", :target => "_blank" %> // <%= link_to "Cameron", "http://www.cameronshayne.com/", :target => "_blank" %> &amp; <%= link_to "Melayne Shayne", "https://www.instagram.com/melayneshayne/", :target => "_blank" %>
+				<p>Proud member of <%= link_to "Budokon", "http://budokon.com/", :target => "_blank" %><br> <%= link_to "Cameron", "http://www.cameronshayne.com/", :target => "_blank" %> &amp; <%= link_to "Melayne Shayne", "https://www.instagram.com/melayneshayne/", :target => "_blank" %>
 				</p>
 				<%= link_to policy_path do %>
 					<p>Terms & Policy</p>
@@ -30,5 +40,7 @@
 			</div>
 		</div>
 	</div>
-	</div>
+</div>
+		
+	
 </footer>
