@@ -20,18 +20,10 @@
 
 	<div class="container home-bio">
 		<div class="row">
-			<div class="col-lg-6 col-md-12 col-sm-12 justify"><p>My name is Attila Gyömrei. I&#39;m a mixed mover, personal trainer,
-massage therapist and a genuine waterman from Hungary.
-Currently living in Düsseldorf sharing my practice and love for
-Budokon. Thank you for taking the time to visit my website.
-Below you can find more information about my practice and
-work. If you are looking to learn from me directly, check out my services. You can also join me for a 
-<%= link_to 'class', classes_path(anchor: 'content-jump'), class: 'inside-link' %> or a 
-<%= link_to 'workshop', workshops_path(anchor: 'content-jump'), class: 'inside-link' %>
-, where you will experience to sweat, work, play and have fun. If
-you want me to come and teach at your studio, or have any
-further questions, <%= link_to 'contact me', contacts_path(anchor: 'content-jump'), class: 'inside-link' %>. I hope you find what you&#39;re
-looking for.</p>
+			<div class="col-lg-6 col-md-12 col-sm-12 justify mb-3">
+				<p>
+					My name is Attila Gyömrei. I'm a mixed movement athlete, personal trainer, massage therapist and a genuine waterman from Hungary. Currently living in Germany sharing my practice and love for Budokon. Thank you for taking the time to visit my website. Below you can find more information about my practice and work. If you are looking to learn from me directly and start your first step to a new you click ¨<%= link_to 'here', private_training_path, class: 'inside-link' %>. You can also join me for regular ¨<%= link_to 'classes', classes_path(anchor: 'content-jump'), class: 'inside-link' %> in Düsseldorf or international ¨<%= link_to 'workshops', workshops_path(anchor: 'content-jump'), class: 'inside-link' %>, where you will experience to sweat, work, play and have fun. If you want me to come and teach at your studio, or have any further questions, ¨<%= link_to 'contact me', contacts_path(anchor: 'content-jump'), class: 'inside-link' %>. I hope you find what you're looking for.
+				</p>
 			</div>
 			<div class="col-lg-6 col-md-12 col-sm-12 home-bio-avatar">
 			<%= image_tag ( "pngavatar.png"), class: " img-fluid" %>
