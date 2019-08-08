@@ -1,6 +1,9 @@
-<div id="" class="home hero container-fluid d-xl-none" data-stellar-background-ratio="0" >
+<div id="" class="hero container-fluid">
 	
-	<div class="row">
+	<div class="home bg row d-xl-none">
+
+	</div>
+	<div class="row d-xl-none">
 		<div class="col-sm-12 caption-wrap">
 		
 			<div class="caption container">
@@ -9,12 +12,12 @@
 			
 		</div>
 	</div>
-
+	<div class="row opening-video d-none d-xl-block">
+		<%= video_tag(["Atti - Final.mp4"],:autoplay=>'true', :loop=>'true', :muted=>'true',:type=>'video/mp4' ) %>
+	</div>
 </div>
 
-<div class="opening-video d-none d-xl-block">
-	<%= video_tag(["Atti - Final.mp4"],:autoplay=>'true', :loop=>'true', :muted=>'true',:type=>'video/mp4' ) %>
-</div>
+
 
 <div class="content-section">
 

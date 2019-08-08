@@ -86,6 +86,7 @@ ul li{
 }
 
 .content-section{
+	background-color:#FFF;
 	padding: 3em 0 0 0;
 }
 
@@ -153,29 +154,41 @@ ul li{
 }
 .hero{
 	height: 100vh;
-	background-position: top center;
+	.bg{
+		width: 100%;
+		position: fixed;
+		z-index: -10;
+		background-position: center!important;
+		background-size: cover !important;
+    	background-repeat: no-repeat !important;
+	}
+	.opening-video{
+		width: 100%;
+		position: fixed;
+		z-index: -10;
+	}
 }
 .parallax-section{
 	height: 400px;
 	background-position:top center;
 }
-.service-hero{
+.service-hero, .event-hero {
 	height:50vh;
-    background-position:top center;
+	.bg{
+		background-position:center!important;
+		background-size: cover !important;
+    	background-repeat: no-repeat !important;
+		width: 100%;
+		position: fixed;
+		z-index: -10;
+	}
 }
-.event-hero{
-	height:50vh;
-    background-position:top center;
-}
+
 .event-hero.container-fluid, .service-hero.container-fluid, .hero.container-fluid, .parallax-section.container-fluid {
-	background-size: cover!important;
-	background-repeat: no-repeat !important;
-	overflow-x: hidden;
-	width:100%;
 	.row{
 		height:100%;
-		background-color: rgba(0,0,0,0.2);
 		.caption-wrap{
+			background-color: rgba(0,0,0,0.2);
 			color: #fff;
     		height: 100%;
     		display: -webkit-box;
@@ -262,7 +275,7 @@ video {
 		height:250px;
 		.service-tab-background{
 			position: absolute;
-			z-index: -1;
+			z-index: 0;
 			display:flex;
 			height:100%;
 			width:100%;
@@ -289,6 +302,8 @@ video {
 			display:none;
 			height:100%;
 			width:100%;
+			position: absolute;
+    		z-index: 1;
 			background-color: rgba(0,0,0,0.8);
 			.service-card-content{
 			padding:5px;
@@ -457,6 +472,9 @@ ul.contact-info{
 //
 //events
 //
+.events-collection{
+	padding-bottom:3em;
+}
 
 .events-card{
 	margin-bottom:2em;
@@ -563,6 +581,7 @@ ul.contact-info{
 			margin-bottom:2em;
 
 			.home-service-btn{
+				cursor: pointer;
 				padding:0.5em;
 				color: white;
 				background-color: rgba(255,255,255,0.2);
