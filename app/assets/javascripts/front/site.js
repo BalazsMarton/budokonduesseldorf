@@ -111,8 +111,9 @@ document.addEventListener("turbolinks:load", function() {
     const app = document.getElementById('app');
 
 	if (app.dataset.controller == 'pages' && app.dataset.action == 'workshop'){
-		
-		initShowMap();
+		if (document.getElementById('map')){
+			initShowMap();
+		}
 	}
 
 	if (app.dataset.controller == 'pages' && app.dataset.action == 'home'){
