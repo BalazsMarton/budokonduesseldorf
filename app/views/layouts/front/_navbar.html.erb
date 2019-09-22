@@ -1,7 +1,7 @@
 <div class="navbar-wrap">
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-transparent navontop">
     <%= link_to root_path, class: 'navbar-brand' do %>
-    <p class="logo-text">ATTILA THE HUN</p>
+    <p class="logo-text">ATTILA</p>
     <img class="nav-logo" src="/images/bdklogo_a.svg">
     <% end %>
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,11 +15,11 @@
             work with me
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'personal training', personal_training_path, class: "dropdown-item #{'active' if current_page?(personal_training_path)}" %>
+            <%= link_to 'massage', massage_path, class: "dropdown-item #{'active' if current_page?(massage_path)}" %>
             <%= link_to workshops_path, class: "dropdown-item #{'active' if current_page?(workshops_path)}" do %>
               workshops &<br>retreats 
             <%end%>
-            <%= link_to 'private training', private_training_path, class: "dropdown-item #{'active' if current_page?(private_training_path)}" %>
-            <%= link_to 'massage', massage_path, class: "dropdown-item #{'active' if current_page?(massage_path)}" %>
           </div>
         </li>
         <li class=" nav-item <%= 'active' if current_page?(budokon_path) %>"><%= link_to 'budokon', budokon_path, class: 'nav-link' %></li>

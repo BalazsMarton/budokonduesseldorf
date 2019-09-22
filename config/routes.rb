@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     get 'policy', to: 'pages#policy'
 
     scope "/services" do
-      get 'private_training', to: 'pages#oneonone'
+      get 'personal_training', to: 'pages#oneonone'
       get 'massage', to: 'pages#massage'
     end
 
