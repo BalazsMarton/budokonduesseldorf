@@ -24,7 +24,57 @@ about my practice and work.'
         description: @page_description,
     }
   end
+
+  def home
+    @creviews = Creview.all.order('pos_nr ASC')
+    
+    #meta gem -seo - generate metacontent
+    @page_title = 'Personal Trainer in Düsseldorf by Attila Gyömrei'
+    @page_description = 'My name is Attila Gyömrei. I&#39;m a mixed mover,
+personal trainer, massage therapist and a genuine waterman
+from Hungary. Currently living in Düsseldorf sharing my
+practice and love for Budokon. Thank you for taking the time
+to visit my website. Below you can find more information
+about my practice and work.'
+    set_meta_tags(
+        title: @page_title,
+        description: @page_description,
+    )
+    
+    set_meta_tags og: {
+        title: @page_title,
+        type:     'website',
+        url:  'http://www.attilapt.com/',
+        image:    'http://www.attilapt.com/images/meta/home_mini.jpg',
+        description: @page_description,
+    }
+  end
   
+  def new_home
+    @creviews = Creview.all.order('pos_nr ASC')
+    
+    #meta gem -seo - generate metacontent
+    @page_title = 'Personal Trainer in Düsseldorf by Attila Gyömrei'
+    @page_description = 'My name is Attila Gyömrei. I&#39;m a mixed mover,
+personal trainer, massage therapist and a genuine waterman
+from Hungary. Currently living in Düsseldorf sharing my
+practice and love for Budokon. Thank you for taking the time
+to visit my website. Below you can find more information
+about my practice and work.'
+    set_meta_tags(
+        title: @page_title,
+        description: @page_description,
+    )
+    
+    set_meta_tags og: {
+        title: @page_title,
+        type:     'website',
+        url:  'http://www.attilapt.com/',
+        image:    'http://www.attilapt.com/images/meta/home_mini.jpg',
+        description: @page_description,
+    }
+  end
+
   def budokon
     @budokoncard = Budokoncard.all.order('posnr ASC')
     #meta gem -seo - generate metacontent

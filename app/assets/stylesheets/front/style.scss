@@ -190,7 +190,8 @@ ul li{
 		.caption-wrap{
 			background-color: rgba(0,0,0,0.2);
 			color: #fff;
-    		height: 100%;
+				height: 100%;
+				width: 100%;
     		display: -webkit-box;
 		    display: -webkit-flex;
 		    display: -ms-flexbox;
@@ -228,7 +229,41 @@ ul li{
 	}
 }
 
+//
+//new home//
+//
+.bottom-line{
+	background-color: rgba(0, 0, 0, 0.3);
+	width: 100%;
+	bottom: 0;
+	position: absolute;
+	text-align: center;
+	padding: 1em 0 1em 0;
+	h3{
+		margin-bottom:0;
+	}
+}
 
+.events-add{
+	padding-top: 2em;
+	padding-bottom: 2em;
+	background-image: url(/images/services/workshopretreats_service_select.jpg);
+	background-size: cover;
+	background-position: center;
+	.button-link{
+		text-decoration: none;
+		display: inline-flex;
+	}
+}
+
+//icon section
+.icon-section{
+	img{
+		max-height: 150px;
+		-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  	filter: grayscale(100%);
+	}
+}
 
 //
 //home//
@@ -243,6 +278,16 @@ video {
 	object-fit: cover;
 }
 
+.caption-zindex{
+	width: 100%;
+	position: absolute;
+	a.button-link{
+		display: inline-block;
+		background-color: rgba(0,0,0,0.3);
+		.btn-outline-secondary{color: #fff;}
+	}
+}
+
 .home-bio{
 	.home-bio-avatar{
 		margin-top: auto;
@@ -250,9 +295,6 @@ video {
 		margin-left: 0px;
 		margin-bottom: 0px;
 		img{
-
-   
-
 
 		}
 	}
