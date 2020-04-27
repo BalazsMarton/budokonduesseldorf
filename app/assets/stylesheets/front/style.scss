@@ -87,7 +87,7 @@ ul li{
 
 .content-section{
 	background-color:#FFF;
-	padding: 3em 0 0 0;
+	padding: 2em 0 0 0;
 }
 
 .section-content .content-wrap{
@@ -250,9 +250,88 @@ ul li{
 	background-image: url(/images/services/workshopretreats_service_select.jpg);
 	background-size: cover;
 	background-position: center;
+	.events-card-thumb{
+		margin-bottom:0;
+	}
 	.button-link{
 		text-decoration: none;
 		display: inline-flex;
+	}
+
+}
+
+//owl carousel
+.owl-carousel{
+	position: relative;
+}
+.owl-carousel .owl-stage {
+	display: flex;
+}
+
+.owl-carousel .owl-item img {
+	width: auto;
+}
+.owl-nav{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+}
+.owl-prev, .owl-next {
+	position: absolute;
+	transform: translateY(-50%);
+	i {
+			color: #cecece;
+	}
+}
+.owl-prev {
+	left: 0;
+}
+
+.owl-next {
+	right: 0;
+}
+//eventsadd owl
+.events-add-carousel{
+	.owl-prev, .owl-next {
+		i {
+			font-size: 3em;
+		}
+	}
+
+}
+//sponsors owl carousel
+.sponsors{
+	.owl-prev, .owl-next {
+		i {
+			font-size: 5vw;
+		}
+	}
+
+}
+//sponsors
+
+.sponsors{
+	.item{height:100%;
+		.logo-wrap{
+			height:100%;
+			display:flex;
+			align-items: center;
+			justify-content: center;
+			padding:1em;
+			filter: grayscale(100%);
+			p{text-transform: uppercase;margin-bottom: unset;font-size: 3vw;text-align: center;line-height:1}
+		}
+	}
+}
+@media (max-width: 575px) {
+	.sponsors {
+		.logo-wrap{
+			padding:unset;
+			p{
+
+			}
+		}
 	}
 }
 
@@ -521,40 +600,41 @@ ul.contact-info{
 .events-card{
 	margin-bottom:2em;
 	padding: 0 20px;
-	.events-card-thumb{
-		min-height:250px;
-		background-size: cover !important;
-		background-position: center !important;
-		.row{
-			padding:15px;
-			.events-card-date{
-				padding:3px;
-				position: absolute;
-				top: 10px;
-				right: 10px;
-				height: auto;
-				text-transform: uppercase;
-				border:1px solid dimgrey;
-				background-color: rgba(255,255,255,0.8);
-			}
-		}
+}
+.events-card-thumb{
+	min-height:250px;
+	background-size: cover !important;
+	background-position: center !important;
+	.row{
+		padding:15px;
 	}
-	.events-card-content{
-		.events-card-title{
-			text-transform: uppercase;
-		}
-		.events-card-nav{
-			div{
-				&:nth-child(1){
-					margin-bottom:1em;
-				}
-				a{
-				display:inline-block;
-				}
+	.events-card-date{
+		padding:3px;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		height: auto;
+		text-transform: uppercase;
+		border:1px solid dimgrey;
+		background-color: rgba(255,255,255,0.8);
+	}
+}
+.events-card-content{
+	.events-card-title{
+		text-transform: uppercase;
+	}
+	.events-card-nav{
+		div{
+			&:nth-child(1){
+				margin-bottom:1em;
+			}
+			a{
+			display:inline-block;
 			}
 		}
 	}
 }
+
 
 @media (max-width: 575px) { 
 	.events-card-thumb{

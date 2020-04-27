@@ -36,37 +36,28 @@
 <div class="content-section">
 
 
-    <div class="container sponsors">
-		<div class="row">
-			<div class="col-lg-3 col-md-4 col-sm-4 justify mb-3">
-				rundum
-			</div>
-			<div class="col-lg-3 col-md-4 col-sm-4 justify mb-3">
-                agoge
-			</div>
-            <div class="col-lg-3 col-md-4 col-sm-4 justify mb-3">
-                laura's deli
-			</div>
-            <div class="col-lg-3 col-md-4 col-sm-4 justify mb-3">
-                cjj
-			</div>
-            <div class="col-lg-3 col-md-4 col-sm-4 justify mb-3">
-                cfd
-			</div>
-            <div class="col-lg-3 col-md-4 col-sm-4 justify mb-3">
-                green trees
-			</div>
-            <div class="col-lg-3 col-md-4 col-sm-4 justify mb-3">
-                karma
-			</div>
-            <div class="col-lg-3 col-md-4 col-sm-4 justify mb-3">
-                hd
-			</div>
+    <div class="container-fluid sponsors">
+		<div class="row aftermargin">
+		<div class="owl-carousel sponsors-carousel">
+				<% @sponsors.each_with_index do |sponsor, index| %>
+				<div class="item">
+					<div class="logo-wrap">
+					<% if sponsor.logo.present? %>
+					<%= image_tag sponsor.logo.thumb, class: "logo-thumb img-fluid" %>
+					<% else %>
+					<p><%= sponsor.name %></p>
+					<% end %>
+					
+					</div>
+					
+				</div>
+			<% end %>
 		</div>
+	</div>
 	</div>
 
     <div class="container icon-section">
-		<div class="row">
+		<div class="row aftermargin">
 			
 			<div class="col-lg-4 col-md-4 col-sm-4 text-center mb-3">
                 <%= image_tag ( "Move.png"), class: " img-fluid mb-3" %>
@@ -92,6 +83,26 @@
 		<div class="row text-center">
 				<div class="col-sm-12">
 					<h1>MOVE RIGHT<br>MOVEMENT IS FREEDOM</h1>
+					<div class="row aftermargin">
+						<div class="events-add-carousel owl-carousel">
+								<% @events.each do |event| %>
+								<div class="item events-card-thumb" style="background:url(<%= event.cover_image.thumb %>)" >
+										<div class="events-card-date centered">
+											<% if event.event_begin.to_time.strftime('%a') != event.event_end.to_time.strftime('%a') %>
+		
+												<%= event.event_begin.to_time.strftime('%b') %><br>
+												<%= event.event_begin.to_time.strftime('%d') %>-<%= event.event_end.to_time.strftime('%d') %>
+		
+											<%else%>
+												<%= event.event_begin.to_time.strftime('%b') %><br>
+												<%= event.event_begin.to_time.strftime('%d') %>
+											<%end%>
+											
+										</div>
+								</div>
+							<% end %>
+						</div>
+					</div>
 					<%= link_to workshops_path(anchor: 'content-jump'), class: 'button-link' do %>
 						<button type="button" class="btn btn-lg btn-outline-secondary pull-right">FIND OUT MORE</button>
 					<% end %>
@@ -106,7 +117,20 @@
 	<div class="container-fluid insta-add">
 		<div class="row text-center">
 				<div class="col-sm-12">
-			
+					<div class="owl-carousel owl-theme">
+						<div class="item"><h4>1</h4></div>
+						<div class="item"><h4>2</h4></div>
+						<div class="item"><h4>3</h4></div>
+						<div class="item"><h4>4</h4></div>
+						<div class="item"><h4>5</h4></div>
+						<div class="item"><h4>6</h4></div>
+						<div class="item"><h4>7</h4></div>
+						<div class="item"><h4>8</h4></div>
+						<div class="item"><h4>9</h4></div>
+						<div class="item"><h4>10</h4></div>
+						<div class="item"><h4>11</h4></div>
+						<div class="item"><h4>12</h4></div>
+					</div>
 				</div>
 		</div>
 	</div>

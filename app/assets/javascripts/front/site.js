@@ -41,6 +41,44 @@ document.addEventListener("turbolinks:load", function() {
 		}
 	);
 
+	$('.sponsors-carousel').owlCarousel({
+		loop:true,
+		autoplay:true,
+		autoplayTimeout:5000,
+		autoplayHoverPause:true,
+		dots: false,
+    nav:true,
+		navText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+	});
+
+	$('.events-add-carousel').owlCarousel({
+		loop:true,
+		autoplay:true,
+		autoplayTimeout:5000,
+		autoplayHoverPause:true,
+		dots: false,
+    nav:true,
+		navText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+		responsive:{
+			0:{
+					items:1,
+			},
+			576:{
+					items:3,
+			},
+		}
+	});
+
+	var owl = $('.owl-carousel');
+	owl.on('mousewheel', '.owl-stage', function (e) {
+    if (e.deltaY>0) {
+        owl.trigger('next.owl');
+    } else {
+        owl.trigger('prev.owl');
+    }
+    e.preventDefault();
+	});
+
 	
 
 	////////////////////////////////////////////////////////////////////////////////////////
@@ -169,6 +207,9 @@ document.addEventListener("turbolinks:before-cache", function() {
 	
 	//remove parallax effect before navigate
 	$.stellar('destroy')
+
+	//owl carousel destroy
+	$('.owl-carousel').owlCarousel('destroy'); 
 
 	if (app.dataset.controller == 'pages' && app.dataset.action == 'classes'){
 		

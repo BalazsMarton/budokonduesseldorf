@@ -1,0 +1,30 @@
+<div class="row">
+  <% if notice %>
+  <div class="col-sm-12">
+    <p id="notice"><%= notice %></p>
+  </div>  
+  <% end %>
+  <div class="col-sm-12 aftermargin">
+      <%= link_to 'Edit', edit_admin_sponsor_path(@sponsor), :class => "btn btn-primary" %>
+      <%= link_to 'Back', admin_sponsors_path, :class => "btn btn-primary" %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-1">
+    <p>
+      <strong>Posnr:</strong><br>
+      <%= @sponsor.posnr %>
+    </p>
+  </div>
+  <div class="col-sm-11">
+    <strong>Name:</strong><br>
+    <%= @sponsor.name %>
+  </div>
+  <div class="col-sm-1">
+    <strong>Visible:</strong><br>
+    <%= @sponsor.visible %>
+  </div>
+  <div class="col-sm-12">
+    <%= image_tag @sponsor.logo, class: 'img-fluid' %>
+  </div>
+</div>

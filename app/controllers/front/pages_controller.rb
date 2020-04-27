@@ -52,7 +52,9 @@ about my practice and work.'
   
   def new_home
     @creviews = Creview.all.order('pos_nr ASC')
-    
+    @sponsors = Sponsor.where(:visible =>  true).order('posnr ASC')
+    @events = Event.where("event_begin > ?", DateTime.current).order('event_begin ASC').limit(3)
+
     #meta gem -seo - generate metacontent
     @page_title = 'Personal Trainer in Düsseldorf by Attila Gyömrei'
     @page_description = 'My name is Attila Gyömrei. I&#39;m a mixed mover,

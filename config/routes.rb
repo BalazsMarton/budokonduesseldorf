@@ -55,6 +55,7 @@ Rails.application.routes.draw do
     resources :budokoncards
     resources :ttdays
     resources :lessons
+    resources :sponsors
   end
 
 end

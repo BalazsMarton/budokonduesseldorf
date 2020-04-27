@@ -1,0 +1,42 @@
+<%= form_with(model: [:admin, sponsor], local: true) do |form| %>
+  <% if sponsor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sponsor.errors.count, "error") %> prohibited this sponsor from being saved:</h2>
+
+      <ul>
+      <% sponsor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+          <%= form.label :posnr %><br>  
+          <%= form.number_field :posnr, id: :sponsor_posnr, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= form.label :name %> <br>
+        <%= form.text_field :name, id: :sponsor_name, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label :logo %> <br>
+        <%= form.file_field :logo, id: :sponsor_logo_image %>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="form-group">
+        <%= form.label :visible %> <br>
+        <%= form.check_box :visible, id: :sponsor_visible %>
+      </div>      
+    </div>
+    <div class="col-sm-12">
+        <div class="actions centered">
+          <%= form.submit class: "btn btn-primary" %>
+        </div>
+    </div>
+  </div>
+<% end %>

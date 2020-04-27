@@ -1,0 +1,43 @@
+<div class="row">
+  <% if notice %>
+  <div class="col-sm-12">
+    <p id="notice"><%= notice %></p>
+  </div>
+  <% end %>
+  <div class="col-sm-12 aftermargin">
+    <%= link_to 'New Sponsor', new_admin_sponsor_path, :class => "btn btn-primary" %>
+  </div>
+  <% if @sponsors.present? %>
+    <div class="col-sm-12">
+      <h3>Sponsors</h3>
+    </div>
+    <div class="col-sm-12">
+        <table class="table table-hover table-responsive table-bordered">
+          <thead>
+              <tr>
+                <th colspan="1"></th>
+                <th>Posnr</th>
+                <th>Name</th>
+                <th>Logo</th>
+                <th>Visible</th>
+              </tr>
+            </thead>
+          
+            <tbody>
+              <% @sponsors.each do |sponsor| %>
+                <tr>
+                  <td><%= link_to 'Show', [:admin, sponsor], :class => "btn btn-primary" %>
+                  <%= link_to 'Edit', edit_admin_sponsor_path(sponsor), :class => "btn btn-primary" %>
+                  <%= link_to 'Destroy', [:admin, sponsor], method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary" %></td>
+                  <td><%= sponsor.posnr %></td>
+                  <td><%= sponsor.name %></td>
+                  <td><%= image_tag sponsor.logo.thumb %></td>
+                  <td><%= sponsor.visible %></td>
+                </tr>
+              <% end %>
+            </tbody>
+        </table>
+    </div>
+  <% end %>
+</div>
+

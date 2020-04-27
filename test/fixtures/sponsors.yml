@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  posnr: 1
+  name: MyString
+  logo: MyString
+  visible: false
+
+two:
+  posnr: 1
+  name: MyString
+  logo: MyString
+  visible: false
