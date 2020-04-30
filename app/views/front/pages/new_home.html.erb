@@ -36,8 +36,8 @@
 <div class="content-section">
 
 
-    <div class="container-fluid sponsors">
-		<div class="row aftermargin">
+    <div class="container-fluid section sponsors">
+		<div class="row">
 		<div class="owl-carousel sponsors-carousel">
 				<% @sponsors.each_with_index do |sponsor, index| %>
 				<div class="item">
@@ -56,8 +56,8 @@
 	</div>
 	</div>
 
-    <div class="container icon-section">
-		<div class="row aftermargin">
+    <div class="container section icon-section">
+		<div class="row">
 			
 			<div class="col-lg-4 col-md-4 col-sm-4 text-center mb-3">
                 <%= image_tag ( "Move.png"), class: " img-fluid mb-3" %>
@@ -79,7 +79,7 @@
 
 	<%= render'front/pages/customer_reviews' %>
 
-	<div class="container-fluid events-add">
+	<div class="container-fluid section events-add">
 		<div class="row text-center">
 				<div class="col-sm-12">
 					<h1>MOVE RIGHT<br>MOVEMENT IS FREEDOM</h1>
@@ -114,25 +114,46 @@
 		
 
 	</div>
-	<div class="container-fluid insta-add">
-		<div class="row text-center">
-				<div class="col-sm-12">
-					<div class="owl-carousel owl-theme">
-						<div class="item"><h4>1</h4></div>
-						<div class="item"><h4>2</h4></div>
-						<div class="item"><h4>3</h4></div>
-						<div class="item"><h4>4</h4></div>
-						<div class="item"><h4>5</h4></div>
-						<div class="item"><h4>6</h4></div>
-						<div class="item"><h4>7</h4></div>
-						<div class="item"><h4>8</h4></div>
-						<div class="item"><h4>9</h4></div>
-						<div class="item"><h4>10</h4></div>
-						<div class="item"><h4>11</h4></div>
-						<div class="item"><h4>12</h4></div>
+
+	<div class="container-fluid section insta-add">
+		<div class="row">
+			<div class="col-sm-12 text-center aftermargin">
+
+				<h1><i class="fa fa-instagram"></i> ATTILAPT</h1>
+				<p>Follow us on Instagram for regular guidance, tips, recipes and so much more…</p>
+				<%= link_to 'https://www.instagram.com/attilapt/', target: "_blank", class: 'button-link' do %>
+					<button type="button" class="btn btn-lg btn-outline-secondary pull-right"><i class="fa fa-instagram"></i> FOLLOW US ON INSTAGRAM</button>
+				<% end %>
+			</div>
+		</div>
+		<div class="row">
+			
+		</div>
+		<div class="row">
+			<div class="owl-carousel insta-carousel">
+				
+			</div>
+		</div>
+	  
+		<!-- Modal -->
+		<div class="modal fade" id="instaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<script async src="//www.instagram.com/embed.js"></script>
+					</div>
+					<div class="modal-footer">
+
 					</div>
 				</div>
+			</div>
 		</div>
+		<!-- Modal -->
 	</div>
 	
 </div>

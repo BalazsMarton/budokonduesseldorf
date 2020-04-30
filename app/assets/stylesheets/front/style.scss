@@ -45,7 +45,7 @@ body{
 }
 .button-link{
 	cursor:pointer;
-	display:block;
+	display:inline-block;
 	border-radius:0;
 	button{
 		cursor:pointer;
@@ -88,7 +88,12 @@ ul li{
 .content-section{
 	background-color:#FFF;
 	padding: 2em 0 0 0;
+	.section{
+		padding-top: 2em;
+		padding-bottom: 2em;
+	}
 }
+
 
 .section-content .content-wrap{
 	padding: 3em 1em;
@@ -255,7 +260,7 @@ ul li{
 	}
 	.button-link{
 		text-decoration: none;
-		display: inline-flex;
+		display: inline-block;
 	}
 
 }
@@ -269,7 +274,7 @@ ul li{
 }
 
 .owl-carousel .owl-item img {
-	width: auto;
+
 }
 .owl-nav{
 	position: absolute;
@@ -312,6 +317,7 @@ ul li{
 //sponsors
 
 .sponsors{
+	
 	.item{height:100%;
 		.logo-wrap{
 			height:100%;
@@ -321,6 +327,7 @@ ul li{
 			padding:1em;
 			filter: grayscale(100%);
 			p{text-transform: uppercase;margin-bottom: unset;font-size: 3vw;text-align: center;line-height:1}
+			img{width:auto}
 		}
 	}
 }
@@ -341,6 +348,14 @@ ul li{
 		max-height: 150px;
 		-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   	filter: grayscale(100%);
+	}
+}
+
+//insta modal
+#instaModal{
+	.modal-dialog{
+		max-width:540px !important;
+		margin:auto!important
 	}
 }
 
@@ -654,7 +669,6 @@ ul.contact-info{
 //
 .customer-review-section{
 	.quote-box{
-		margin-bottom:1.5em;
 		i{
 			padding:0.5em;
 			border-radius: 100%;

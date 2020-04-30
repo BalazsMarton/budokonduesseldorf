@@ -75,6 +75,7 @@ about my practice and work.'
         image:    'http://www.attilapt.com/images/meta/home_mini.jpg',
         description: @page_description,
     }
+    
   end
 
   def budokon
