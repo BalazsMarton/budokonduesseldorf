@@ -119,15 +119,10 @@ document.addEventListener("turbolinks:load", function() {
 			}
 			
 			if (app.dataset.controller == 'pages' && app.dataset.action == 'home'){
-				
 				$('#carouselCustomerReviews').carousel({
 					interval: 15000,
 					pause: 'hover',
 				});
-				
-			}
-			
-			if (app.dataset.controller == 'pages' && app.dataset.action == 'new_home'){
 
 				$.get('https://www.instagram.com/attilapt/?__a=1', function(data) {
 					const edges = data.graphql.user.edge_owner_to_timeline_media.edges;
