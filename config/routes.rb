@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   scope module: 'front' do
     root 'pages#home'
 
-    get 'new_home', to: 'pages#new_home'
+    get 'booking', to: 'pages#booking'
 
     post 'newsletter', to: 'newsletter#create', as: 'newsletter'
 

@@ -296,6 +296,9 @@ document.addEventListener("turbolinks:load", function() {
 		});
 		
 	}
+	if (app.dataset.controller == 'pages' && app.dataset.action == 'booking'){
+		console.log('lefut')
+	}
 
 });
 
@@ -319,6 +322,11 @@ document.addEventListener("turbolinks:before-cache", function() {
 		$('.chide').removeClass('chide')
 		$('.close').remove()
 	}
+
+	if (app.dataset.controller == 'pages' && app.dataset.action == 'booking'){
+
+	}
+
 
 });
 

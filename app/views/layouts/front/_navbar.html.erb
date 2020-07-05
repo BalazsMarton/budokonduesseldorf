@@ -25,10 +25,7 @@
         <li class=" nav-item <%= 'active' if current_page?(budokon_path) %>"><%= link_to 'budokon', budokon_path, class: 'nav-link' %></li>
         <li class=" nav-item <%= 'active' if current_page?(classes_path) %>"><%= link_to 'classes', classes_path, class: 'nav-link' %></li>
         <li class=" nav-item <%= 'active' if current_page?(contacts_path) %>"><%= link_to 'contact', contacts_path, class: 'nav-link' %></li>
-        <!--LEGACY-->
-        <!--li class=" nav-item <%#= 'active' if current_page?(root_path) %>"><%#= link_to 'home', root_path, class: 'nav-link' %></li-->
-        <!--li class=" nav-item <%#= 'active' if current_page?(services_path) %>"><%#= link_to 'services', services_path, class: 'nav-link' %></li-->
-        <!--LEGACY END-->
+        <li class=" nav-item <%= 'active' if current_page?(booking_path) %>"><%= link_to 'booking', booking_path, class: 'nav-link' %></li>
       </ul>
     </div>
   </nav>
