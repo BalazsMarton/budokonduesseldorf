@@ -331,7 +331,7 @@ document.addEventListener("turbolinks:before-cache", function() {
 
   document.addEventListener('turbolinks:before-cache', function () {
     var autoplayElements = document.querySelectorAll('[autoplay]')
-    each.call(autoplayElements, function (element) {
+		each.call(autoplayElements, function (element) {
       if (!element.id) throw 'autoplay elements need an ID attribute'
       autoplayIds.push(element.id)
       element.removeAttribute('autoplay')
