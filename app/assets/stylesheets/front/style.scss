@@ -298,6 +298,9 @@ ul li{
 }
 //eventsadd owl
 .events-add-carousel{
+	.owl-stage{
+		margin: 0 auto;
+	}
 	.owl-prev, .owl-next {
 		i {
 			font-size: 3em;

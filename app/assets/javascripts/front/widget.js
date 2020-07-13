@@ -394,33 +394,7 @@ document.addEventListener("turbolinks:load", function() {
             return this.frame;
         };
         
-        var widget = new SimplybookWidget({
-            "widget_type":"iframe",
-            "url":"https:\/\/tesztelo.simplybook.it",
-            "theme":"simple_beauty_theme",
-            "theme_settings":{
-                "sb_base_color":"#c8ab2d",
-                "header_color":"#ffffff",
-                "timeline_hide_unavailable":"0",
-                "timeline_show_end_time":"0",
-                "timeline_modern_display":"as_slots",
-                "display_item_mode":"block",
-                "body_bg_color":"#ffffff",
-                "dark_font_color":"#474747",
-                "light_font_color":"#ffffff",
-                "sb_company_label_color":"#333333",
-                "hide_img_mode":"1",
-                "show_sidebar":"1","sb_busy":"#dad2ce",
-                "sb_available":"#d3e0f1"
-            },
-            "timeline":"flexible",
-            "datepicker":"top_calendar",
-            "is_rtl":false,
-            "app_config":{
-                "predefined":{
-                    "provider":"1"
-                }
-            }
-        });
+        var widget = new SimplybookWidget({"widget_type":"iframe","url":"https:\/\/attilapt.simplybook.it","theme":"dainty","theme_settings":{"timeline_show_end_time":"1","timeline_hide_unavailable":"0","sb_base_color":"#c8ab2d","secondary_color":"#e4ebf5","sb_text_color":"#a1a1a1","display_item_mode":"list","body_bg_color":"#ffffff","sb_background_image":"2","dark_font_color":"#293b36","light_font_color":"#ffffff","sb_company_label_color":"#ffffff","sb_cancellation_color":"#ff7a93","hide_img_mode":"1"},"timeline":"modern","datepicker":"top_calendar","is_rtl":false,"app_config":{"predefined":{"provider":"2"}}});
     }
 })
+

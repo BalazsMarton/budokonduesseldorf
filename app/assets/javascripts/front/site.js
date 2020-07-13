@@ -205,11 +205,6 @@ document.addEventListener("turbolinks:load", function() {
 					$('#instaModal .modal-body').html(``);
 				});
 
-				$('#carouselCustomerReviews').carousel({
-					interval: 15000,
-					pause: 'hover',
-				});
-
 				(function initSponsorsCarousel(){
 					let owl = $('.sponsors-carousel')
 					owl.owlCarousel({
@@ -227,7 +222,7 @@ document.addEventListener("turbolinks:load", function() {
 				(function initEventsAddCarousel(){
 					let owl = $('.events-add-carousel')
 					owl.owlCarousel({
-						loop:true,
+						loop:false,
 						autoplay:true,
 						autoplayTimeout:5000,
 						autoplayHoverPause:true,
@@ -292,7 +287,6 @@ document.addEventListener("turbolinks:load", function() {
 		
 	}
 	if (app.dataset.controller == 'pages' && app.dataset.action == 'booking'){
-		console.log('lefut')
 	}
 
 });
