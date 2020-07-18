@@ -1,0 +1,23 @@
+version: '3.6'
+
+services:
+  app:
+    build: docker/
+    volumes:
+      - ./:/app:delegated
+      - ./tmp/bundle:/usr/local/bundle:delegated
+    environment:
+      LOCAL_DATABASE_PASS: 'root'
+      DB_HOST: 'mysql'
+    ports:
+      - 3000:3000
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:5.6
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+
+
+
