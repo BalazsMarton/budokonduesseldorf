@@ -22,3 +22,17 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+# Installation
+
+```
+make build
+make install
+make migrate-db
+```
+
+# Run the application
+```
+make upd
+```
