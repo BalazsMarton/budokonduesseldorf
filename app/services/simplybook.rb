@@ -23,7 +23,7 @@ class Simplybook
 
     def self.get_eventlist
         
-        token = Simplybook.get_token
+        token = Simplybook.bearer_token
         url = URI("https://user-api.simplybook.me/")
 
         http = Net::HTTP.new(url.host, url.port)
@@ -39,6 +39,11 @@ class Simplybook
         request.body = "{\"jsonrpc\":\"2.0\",\"method\":\"getEventList\",\"params\":[],\"id\":1}"
 
         response = http.request(request)
-        puts response.read_body
+    end
+
+    def self.bearer_token
+        pattern = /^Bearer /
+        header  = request.headers['X-Auth-Token']
+        header.gsub(pattern, '') if header && header.match(pattern)
     end
 end

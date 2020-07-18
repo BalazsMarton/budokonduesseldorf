@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
     get 'booking', to: 'pages#booking'
     get 'booking/token'
+    get 'booking/events'
 
     post 'newsletter', to: 'newsletter#create', as: 'newsletter'
 
