@@ -30,3 +30,5 @@
 
 # Ignore dev imgz
 /public/uploads
+
+/.idea
