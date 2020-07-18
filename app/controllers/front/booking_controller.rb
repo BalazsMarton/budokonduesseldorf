@@ -5,8 +5,9 @@ class Front::BookingController < FrontController
     end
 
     def events
-        @events = Simplybook.get_eventlist
-        render json: {:token => @events}
+        @token = request.headers['X-Auth-Token']
+        @events = Simplybook.get_eventlist(token)
+        render json: {:events => @events}
     end
 
 end
