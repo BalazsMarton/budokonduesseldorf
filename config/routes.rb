@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     root 'pages#home'
 
     get 'booking', to: 'pages#booking'
+    get 'booking/token'
 
     post 'newsletter', to: 'newsletter#create', as: 'newsletter'
 
