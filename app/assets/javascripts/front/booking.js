@@ -71,10 +71,10 @@ class BookingService {
     }
 
     async getEvents() {
-        await this._bookingClient.getEvents(this._token);
+        return this._bookingClient.getEvents(this._token);
     }
 
     async getAvailableTimes(date) {
-        await this._bookingClient.getAvailableTimes(this._token, date);
+        return this._bookingClient.getAvailableTimes(this._token, date);
     }
 }

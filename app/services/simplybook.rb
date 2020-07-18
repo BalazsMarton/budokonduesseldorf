@@ -39,6 +39,6 @@ class Simplybook
 
         json = JSON.parse(response.body)
 
-        return json['result']
+        return json['result'].values
     end
 end
