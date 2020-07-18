@@ -15,10 +15,9 @@ class Simplybook
         request.body = "{\"jsonrpc\":\"2.0\",\"method\":\"getToken\",\"params\":[\"#{ENV['SB_USER']}\",\"#{ENV['SB_API_KEY']}\"],\"id\":1}"
 
         response = http.request(request)
-        token = JSON.parse(response.body)
+        json = JSON.parse(response.body)
 
-        token = token["result"]
-
+        return json["result"]
     end
 
     def self.get_eventlist(token)
@@ -34,16 +33,12 @@ class Simplybook
         request["x-token"] = token
         request["accept"] = 'application/json'
         request["cache-control"] = 'no-cache'
-        request.body = "{\"jsonrpc\":\"2.0\",\"method\":\"getExventList\",\"params\":[],\"id\":1}"
+        request.body = "{\"jsonrpc\":\"2.0\",\"method\":\"getEventList\",\"params\":[],\"id\":2}"
 
         response = http.request(request)
 
         json = JSON.parse(response.body)
-    end
 
-    def self.bearer_token
-        pattern = /^Bearer /
-        header  = request.headers['X-Auth-Token']
-        header.gsub(pattern, '') if header && header.match(pattern)
+        return json['result']
     end
 end
