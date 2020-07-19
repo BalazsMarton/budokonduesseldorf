@@ -10,10 +10,7 @@ class SimplyBook
             :id => 1
         }
 
-        response = send_request('/login', params)
-        json = JSON.parse(response.body)
-
-        puts json
+        json = send_request('/login', params)
 
         json['result']
     end
@@ -29,8 +26,7 @@ class SimplyBook
             'X-Token' => token
         }
 
-        response = send_request('/', params, headers)
-        json = JSON.parse(response.body)
+        json = send_request('/', params, headers)
 
         json['result'].values
     end
@@ -46,8 +42,7 @@ class SimplyBook
             'X-Token' => token
         }
 
-        response = send_request('/', params, headers)
-        json = JSON.parse(response.body)
+        json = send_request('/', params, headers)
 
         json['result']
     end
@@ -63,8 +58,7 @@ class SimplyBook
             'X-Token' => token
         }
 
-        response = send_request('/', params, headers)
-        json = JSON.parse(response.body)
+        json = send_request('/', params, headers)
 
         json['result'].select { |k, data| data['is_day_off'] != '1' }.keys
     end
@@ -88,12 +82,12 @@ class SimplyBook
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
         response = http.request(request)
 
-        puts response.code
+        json = JSON.parse(response.body)
 
-        # if response.code != 200
-        #     raise ""
-        # end
+        if json['error'].present?
+            raise 'Error in JSON-RPC Response: ' + json['error']['message']
+        end
 
-        response
+        json
     end
 end
