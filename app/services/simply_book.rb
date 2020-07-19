@@ -66,7 +66,7 @@ class SimplyBook
         response = send_request('/', params, headers)
         json = JSON.parse(response.body)
 
-        json['result']
+        json['result'].select { |k, data| data['is_day_off'] != '1' }.keys
     end
 
     private
