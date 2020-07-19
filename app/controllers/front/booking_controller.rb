@@ -19,8 +19,17 @@ class Front::BookingController < FrontController
         event_id = params[:eventId]
         date = params[:date]
 
-        events = @simply_book.get_available_times(token, event_id, date)
-        render json: events
+        available_times = @simply_book.get_available_times(token, event_id, date)
+        render json: available_times
+    end
+
+    def work_days
+        token = request.headers['X-Auth-Token']
+        year = params[:year]
+        month = params[:month]
+
+        work_days = @simply_book.get_work_days(token, year, month)
+        render json: work_days
     end
 
 end

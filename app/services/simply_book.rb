@@ -8,10 +8,12 @@ class SimplyBook
             :method => 'getToken',
             :params => [ENV['SB_USER'], ENV['SB_API_KEY']],
             :id => 1
-        }.to_json
+        }
 
-        response = send_request(params)
+        response = send_request('/login', params)
         json = JSON.parse(response.body)
+
+        puts json
 
         json['result']
     end
@@ -22,30 +24,46 @@ class SimplyBook
             :method => 'getEventList',
             :params => [],
             :id => 2
-        }.to_json
+        }
         headers = {
             'X-Token' => token
         }
 
-        response = send_request(params, headers)
+        response = send_request('/', params, headers)
         json = JSON.parse(response.body)
 
         json['result'].values
     end
 
-    def get_available_times(token, event_id, date)
-        unit_id = 1
+    def get_available_times(token, event_id, date, performer_id = 1)
         params = {
             :jsonrpc => '2.0',
             :method => 'getStartTimeMatrix',
-            :params => [date, date, event_id, unit_id],
+            :params => [date, date, event_id, performer_id],
             :id => 3
         }
         headers = {
             'X-Token' => token
         }
 
-        response = send_request(params, headers)
+        response = send_request('/', params, headers)
+        json = JSON.parse(response.body)
+
+        json['result']
+    end
+
+    def get_work_days(token, year, month, performer_id = 1)
+        params = {
+            :jsonrpc => '2.0',
+            :method => 'getWorkCalendar',
+            :params => [year, month, performer_id],
+            :id => 4
+        }
+        headers = {
+            'X-Token' => token
+        }
+
+        response = send_request('/', params, headers)
         json = JSON.parse(response.body)
 
         json['result']
@@ -53,8 +71,8 @@ class SimplyBook
 
     private
 
-    def send_request(params, headers = {})
-        url = URI('https://user-api.simplybook.me/')
+    def send_request(url, params, headers = {})
+        url = URI('https://user-api.simplybook.me' + url)
         request = Net::HTTP::Post.new(url)
         headers.each do |name, value|
             request[name] = value
@@ -68,6 +86,14 @@ class SimplyBook
         http = Net::HTTP.new(url.host, url.port)
         http.use_ssl = true
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-        http.request(request)
+        response = http.request(request)
+
+        puts response.code
+
+        # if response.code != 200
+        #     raise ""
+        # end
+
+        response
     end
 end
