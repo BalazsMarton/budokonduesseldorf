@@ -23,13 +23,23 @@ class Front::BookingController < FrontController
         render json: available_times
     end
 
-    def work_days
+    def non_work_days
         token = request.headers['X-Auth-Token']
         year = params[:year]
         month = params[:month]
 
-        work_days = @simply_book.get_work_days(token, year, month)
+        work_days = @simply_book.get_non_work_days(token, year, month)
         render json: work_days
+    end
+
+    def book
+        token = request.headers['X-Auth-Token']
+
+        body = JSON.parse(request.body.read)
+
+        result = @simply_book.book(token, body)
+
+        render json: result
     end
 
 end

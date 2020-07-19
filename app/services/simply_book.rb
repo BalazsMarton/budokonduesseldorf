@@ -47,7 +47,7 @@ class SimplyBook
         json['result']
     end
 
-    def get_work_days(token, year, month, performer_id = 1)
+    def get_non_work_days(token, year, month, performer_id = 1)
         params = {
             :jsonrpc => '2.0',
             :method => 'getWorkCalendar',
@@ -60,7 +60,23 @@ class SimplyBook
 
         json = send_request('/', params, headers)
 
-        json['result'].select { |k, data| data['is_day_off'] != '1' }.keys
+        json['result'].select { |k, data| data['is_day_off'] == '1' }.keys
+    end
+
+    def book(token, data, performer_id = 1)
+        params = {
+            :jsonrpc => '2.0',
+            :method => 'book',
+            :params => [data['eventId'], performer_id, data['date'], data['time'], data['clientData']],
+            :id => 5
+        }
+        headers = {
+            'X-Token' => token
+        }
+
+        json = send_request('/', params, headers)
+
+        json['result']
     end
 
     private

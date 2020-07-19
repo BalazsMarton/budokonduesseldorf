@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     get 'booking/token'
     get 'booking/events'
     get 'booking/available-times/:eventId/:date', to:'booking#available_times'
-    get 'booking/work-days/:year/:month', to:'booking#work_days'
+    get 'booking/non-work-days/:year/:month', to:'booking#non_work_days'
+    post 'booking/book'
 
     post 'newsletter', to: 'newsletter#create', as: 'newsletter'
 

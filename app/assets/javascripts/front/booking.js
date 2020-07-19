@@ -5,15 +5,22 @@ document.addEventListener("turbolinks:load", async function() {
 });
 
 async function initBooking() {
-    const bookingService = new BookingService(new BookingClient());
+    const csrfToken = document.querySelector('meta[name=csrf-token]').getAttribute('content');
+    const bookingClient = new BookingClient(csrfToken);
+    const bookingService = new BookingService(bookingClient);
     await bookingService.login();
 
     console.log(await bookingService.getEvents());
+    console.log(await bookingService.getNonWorkDays(2020, 7));
     console.log(await bookingService.getAvailableTimes(1, '2020-07-20'));
-    console.log(await bookingService.getWorkDays(2020, 7));
+    //console.log(await bookingService.book(1, '2020-07-20', '13:00:00', 'name', 'email', '061234567'));
 }
 
 class BookingClient {
+    constructor(csrfToken) {
+        this._csrfToken = csrfToken;
+    }
+
     async getToken() {
         return this._client('/booking/token')
             .then(data => Promise.resolve(data.token));
@@ -21,6 +28,14 @@ class BookingClient {
 
     async getEvents(token) {
         return this._client('/booking/events', {
+            headers: {
+                'X-Auth-Token': token
+            }
+        });
+    }
+
+    async getNonWorkDays(token, year, month) {
+        return this._client(`/booking/non-work-days/${year}/${month}`, {
             headers: {
                 'X-Auth-Token': token
             }
@@ -35,19 +50,14 @@ class BookingClient {
         });
     }
 
-    async getWorkDays(token, year, month) {
-        return this._client(`/booking/work-days/${year}/${month}`, {
-            headers: {
-                'X-Auth-Token': token
-            }
-        });
-    }
-
-    async book(token) {
-        return this._client(`/booking/add`, {
+    async book(token, data) {
+        return this._client(`/booking/book`, {
             method: 'POST',
+            body: JSON.stringify(data),
             headers: {
-                'X-Auth-Token': token
+                'Content-Type': 'application/json',
+                'X-Auth-Token': token,
+                'X-CSRF-Token': this._csrfToken
             }
         });
     }
@@ -83,11 +93,24 @@ class BookingService {
         return this._bookingClient.getEvents(this._token);
     }
 
+    async getNonWorkDays(year, month) {
+        return this._bookingClient.getNonWorkDays(this._token, year, month);
+    }
+
     async getAvailableTimes(eventId, date) {
         return this._bookingClient.getAvailableTimes(this._token, eventId, date);
     }
 
-    async getWorkDays(year, month) {
-        return this._bookingClient.getWorkDays(this._token, year, month);
+    async book(eventId, date, time, name, email, phone) {
+        return this._bookingClient.book(this._token, {
+            eventId,
+            date,
+            time,
+            clientData: {
+                name,
+                email,
+                phone
+            }
+        });
     }
 }
