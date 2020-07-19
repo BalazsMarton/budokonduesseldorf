@@ -10,6 +10,7 @@ async function initBooking() {
 
     console.log(await bookingService.getEvents());
     console.log(await bookingService.getAvailableTimes(1, '2020-07-20'));
+    console.log(await bookingService.getWorkDays(2020, 7));
 }
 
 class BookingClient {
@@ -28,6 +29,14 @@ class BookingClient {
 
     async getAvailableTimes(token, eventId, date) {
         return this._client(`/booking/available-times/${eventId}/${date}`, {
+            headers: {
+                'X-Auth-Token': token
+            }
+        });
+    }
+
+    async getWorkDays(token, year, month) {
+        return this._client(`/booking/work-days/${year}/${month}`, {
             headers: {
                 'X-Auth-Token': token
             }
@@ -76,5 +85,9 @@ class BookingService {
 
     async getAvailableTimes(eventId, date) {
         return this._bookingClient.getAvailableTimes(this._token, eventId, date);
+    }
+
+    async getWorkDays(year, month) {
+        return this._bookingClient.getWorkDays(this._token, year, month);
     }
 }
