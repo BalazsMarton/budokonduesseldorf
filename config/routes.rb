@@ -6,12 +6,13 @@ Rails.application.routes.draw do
     get 'booking', to: 'pages#booking'
     get 'booking/token'
     get 'booking/events'
+    get 'booking/available-times/:eventId/:date', to:'booking#available_times'
 
     post 'newsletter', to: 'newsletter#create', as: 'newsletter'
 
     get 'budokon', to: 'pages#budokon'
     get 'budokon/:id' => 'pages#budokon_show', as:'show_budokon'
-    
+
     get 'classes', to: 'pages#classes'
     get 'classes/:id', to: 'pages#class_show', as:'show_class'
 
@@ -30,7 +31,7 @@ Rails.application.routes.draw do
 
     get '/workshop/:id' => 'pages#workshop', as: 'show_workshop'
     post '/workshop/:id', to: 'applicant#create'
-    
+
     #LEGACY
     #scope "/services" do
     #  get 'group_training', to: 'pages#group'
@@ -46,7 +47,7 @@ Rails.application.routes.draw do
 
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  
+
   devise_for :admins, path: 'admin', skip: :registrations
   #scope module: 'admin', path: 'admin' do
   namespace :admin do
