@@ -3,6 +3,8 @@ version: '3.6'
 services:
   app:
     build: docker/
+    env_file:
+      - .env
     volumes:
       - ./:/app:delegated
       - ./tmp/bundle:/usr/local/bundle:delegated

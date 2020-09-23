@@ -6,8 +6,11 @@ help: ## Shows this help
 build: ## Builds docker image
 	docker-compose build
 
-install: ## Installs application dependencies
+install: env ## Installs application dependencies
 	$(docker_run_app) bundle install
+
+env: ## Create .env file from .env.example
+	cp .env.example .env
 
 migrate-db: ## Migrates database
 	$(docker_run_app) bash -c "rake db:create && rake db:migrate"
@@ -17,7 +20,7 @@ up: ## Starts docker-compose
 	docker-compose up --build
 
 upd: ## Starts docker-compose in daemon mode
-	@rm -f tmp/pids/server.pid
+	-$(docker_run_app) rm -f tmp/pids/server.pid
 	docker-compose up -d --build
 
 stop: ## Stops docker-compose
@@ -25,6 +28,8 @@ stop: ## Stops docker-compose
 
 down: ## Destroys service containers
 	docker-compose down
+
+restart: down upd ## Destroys and starts the service containers
 
 sh: ## Connects into container
 	$(docker_run_app) bash
