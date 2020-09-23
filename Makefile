@@ -9,8 +9,8 @@ build: ## Builds docker image
 install: env ## Installs application dependencies
 	$(docker_run_app) bundle install
 
-env: ## Create .env file from .env.example
-	cp .env.example .env
+env: ## Create config/application.yml
+	$(docker_run_app) bash -c "bundle exec figaro install && chmod 777 config/application.yml"
 
 migrate-db: ## Migrates database
 	$(docker_run_app) bash -c "rake db:create && rake db:migrate"
