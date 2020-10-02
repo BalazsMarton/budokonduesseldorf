@@ -1,4 +1,4 @@
-.dropdown-menu{
+.nav-item .dropdown-menu{
 	padding:0;
 }
 
@@ -8,7 +8,7 @@
 	border:1px solid white;
 	box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2);
 }
-.dropdown{
+.nav-item .dropdown{
 	background-color: rgba(0,0,0,0);
 	.dropdown-menu{
 		background-color:rgba(0,0,0,0);
@@ -40,7 +40,7 @@ span.navbar-toggler-icon{
 	.navbar{
 		padding: 0 1rem;
 	}
-	.dropdown-menu{
+	.nav-item .dropdown-menu{
 		background-color: rgba(32, 26, 22, 0.9) !important;
 		margin: 0;
 		border:none;
