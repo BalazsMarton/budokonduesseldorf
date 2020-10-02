@@ -16,7 +16,7 @@ migrate-db: ## Migrates database
 	$(docker_run_app) bash -c "rake db:create && rake db:migrate"
 
 up: ## Starts docker-compose
-	@rm -f tmp/pids/server.pid
+	-$(docker_run_app) rm -f tmp/pids/server.pid
 	docker-compose up --build
 
 upd: ## Starts docker-compose in daemon mode
