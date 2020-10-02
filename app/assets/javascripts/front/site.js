@@ -110,13 +110,18 @@ document.addEventListener("turbolinks:load", function () {
 
     ////////////////////////////////////////////////////////////////////////
     const app = document.getElementById('app');
-
+    
     if (app.dataset.controller == 'pages' && app.dataset.action == 'workshop') {
         if (document.getElementById('map')) {
             initShowMap();
         }
     }
-
+    
+    if (app.dataset.controller == 'pages' && app.dataset.action == 'booking') {
+        $('.datepicker-container .col-sm-6').datepicker({
+        });
+       
+    }
     if (app.dataset.controller == 'pages' && app.dataset.action == 'home') {
         $('#carouselCustomerReviews').carousel({
             interval: 15000,
@@ -310,7 +315,7 @@ document.addEventListener("turbolinks:before-cache", function () {
     }
 
     if (app.dataset.controller == 'pages' && app.dataset.action == 'booking') {
-
+        
     }
 
 
