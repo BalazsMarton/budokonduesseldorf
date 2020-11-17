@@ -217,7 +217,9 @@ document.addEventListener("turbolinks:load", function() {
         };
         
         SimplybookWidget.prototype.displayIframe = function () {
+            if(document.getElementById('simplybook-widget-wrap')){
             document.getElementById('simplybook-widget-wrap').innerHTML = '<iframe scrolling="no" class="sb-widget-iframe" width="100%" border="0" frameborder="0" src="' + this.getUrl() + '" name="' + this.name + '" id="' + this.name + '"></iframe>';
+            }
             this.frame = document.getElementById(this.name);
         
             this.subscribeMessages();

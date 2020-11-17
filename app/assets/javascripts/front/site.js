@@ -116,12 +116,7 @@ document.addEventListener("turbolinks:load", function () {
             initShowMap();
         }
     }
-    
-    if (app.dataset.controller == 'pages' && app.dataset.action == 'booking') {
-        $('.datepicker-container .col-sm-6').datepicker({
-        });
-       
-    }
+
     if (app.dataset.controller == 'pages' && app.dataset.action == 'home') {
         $('#carouselCustomerReviews').carousel({
             interval: 15000,
@@ -312,10 +307,6 @@ document.addEventListener("turbolinks:before-cache", function () {
         $('.collapse-example-wrap').remove()
         $('.chide').removeClass('chide')
         $('.close').remove()
-    }
-
-    if (app.dataset.controller == 'pages' && app.dataset.action == 'booking') {
-        
     }
 
 

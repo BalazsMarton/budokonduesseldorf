@@ -39,7 +39,12 @@ class Front::BookingController < FrontController
 
         result = @simply_book.book(token, body)
 
-        render json: result
+        if result['error'].present?
+            render(json: result, status: 500)
+            #raise 'Error in JSON-RPC Response: ' + json['error']['message']    
+        else
+            render json: result
+        end
     end
 
 end

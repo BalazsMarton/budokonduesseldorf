@@ -76,7 +76,7 @@ class SimplyBook
 
         json = send_request('/', params, headers)
 
-        json['result']
+        json
     end
 
     private
@@ -100,10 +100,5 @@ class SimplyBook
 
         json = JSON.parse(response.body)
 
-        if json['error'].present?
-            raise 'Error in JSON-RPC Response: ' + json['error']['message']
-        end
-
-        json
     end
 end
