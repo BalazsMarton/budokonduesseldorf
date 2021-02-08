@@ -55,7 +55,7 @@ gem 'google-analytics-rails', '1.1.0'
 gem 'devise'
 
 #image uploader
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 #image minify
 gem "mini_magick"
 #cloud storage for images, aws s3
